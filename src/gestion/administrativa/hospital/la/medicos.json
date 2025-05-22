@@ -1,0 +1,93 @@
+[
+  {
+    "id": "MED001",
+    "nombre": "Dra. Ana Torres",
+    "especialidad": "Pediatría",
+    "horario_disponible": {
+      "lunes": "08:00 - 12:00",
+      "miércoles": "10:00 - 14:00",
+      "viernes": "08:00 - 12:00"
+    }
+  },
+  {
+    "id": "MED002",
+    "nombre": "Dr. Luis Ramírez",
+    "especialidad": "Cardiología",
+    "horario_disponible": {
+      "martes": "14:00 - 18:00",
+      "jueves": "08:00 - 12:00"
+    }
+  },
+  {
+    "id": "MED003",
+    "nombre": "Dra. Camila Soto",
+    "especialidad": "Dermatología",
+    "horario_disponible": {
+      "lunes": "09:00 - 13:00",
+      "miércoles": "09:00 - 13:00"
+    }
+  },
+  {
+    "id": "MED004",
+    "nombre": "Dr. Esteban Vera",
+    "especialidad": "Traumatología",
+    "horario_disponible": {
+      "martes": "10:00 - 14:00",
+      "viernes": "12:00 - 16:00"
+    }
+  },
+  {
+    "id": "MED005",
+    "nombre": "Dra. Mariana Díaz",
+    "especialidad": "Neurología",
+    "horario_disponible": {
+      "jueves": "08:00 - 11:00",
+      "viernes": "10:00 - 13:00"
+    }
+  },
+  {
+    "id": "MED006",
+    "nombre": "Dr. Javier Gómez",
+    "especialidad": "Gastroenterología",
+    "horario_disponible": {
+      "lunes": "14:00 - 18:00",
+      "miércoles": "08:00 - 12:00"
+    }
+  },
+  {
+    "id": "MED007",
+    "nombre": "Dra. Silvia Ríos",
+    "especialidad": "Ginecología",
+    "horario_disponible": {
+      "martes": "09:00 - 13:00",
+      "jueves": "14:00 - 18:00"
+    }
+  },
+  {
+    "id": "MED008",
+    "nombre": "Dr. Fernando Morales",
+    "especialidad": "Urología",
+    "horario_disponible": {
+      "miércoles": "10:00 - 14:00",
+      "viernes": "08:00 - 12:00"
+    }
+  },
+  {
+    "id": "MED009",
+    "nombre": "Dra. Isabel Castillo",
+    "especialidad": "Oftalmología",
+    "horario_disponible": {
+      "lunes": "13:00 - 17:00",
+      "jueves": "08:00 - 12:00"
+    }
+  },
+  {
+    "id": "MED010",
+    "nombre": "Dr. Ricardo Mejía",
+    "especialidad": "Psiquiatría",
+    "horario_disponible": {
+      "martes": "15:00 - 19:00",
+      "viernes": "09:00 - 13:00"
+    }
+  }
+]
