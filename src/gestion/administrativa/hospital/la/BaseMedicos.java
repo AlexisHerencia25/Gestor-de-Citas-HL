@@ -42,6 +42,34 @@ public class BaseMedicos {
         combo.removeAllItems();
         combo.addItem("---------Sin seleccionar---------");
         for (JSONObject medico : listaMedicos) {
+            if (medico.getString("especialidad").equals(especialidad)) {
+                combo.addItem(medico.getString("nombre"));
+            }
+        }
+    }
+    
+    public void MostrarTablaMedicos(JTextField campoBusqueda, JTable tabla){
+        DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+        model.setRowCount(0);
+        
+        String texto = campoBusqueda.getText().toLowerCase().trim();
+        
+        if (texto.isEmpty()) return;
+        
+        for (JSONObject medico : listaMedicos){
+            String nombre = medico.getString("nombre");
+            if (nombre.toLowerCase().contains(texto)){
+                String id = medico.getString("id");
+                String nombre_medico = medico.getString("nombre");
+                String especialidad = medico.getString("especialidad");
+
+                JSONObject horarios = medico.getJSONObject("horario_disponible");
+                for (String dia : horarios.keySet()) {
+                    String hora = horarios.getString(dia);
+                    model.addRow(new Object[]{id, nombre_medico, especialidad, horarios});
+                }
+            }
+        }
         if (medico.getString("especialidad").equals(especialidad)) {
             combo.addItem(medico.getString("nombre"));
         }
