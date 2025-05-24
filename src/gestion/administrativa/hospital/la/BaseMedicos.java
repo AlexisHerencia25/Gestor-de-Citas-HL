@@ -70,10 +70,6 @@ public class BaseMedicos {
                 }
             }
         }
-        if (medico.getString("especialidad").equals(especialidad)) {
-            combo.addItem(medico.getString("nombre"));
-        }
-    }
     }
 
     public void llenarComboEspecialidades(JComboBox<String> combo) {
