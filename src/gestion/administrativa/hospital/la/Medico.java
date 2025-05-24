@@ -1,8 +1,18 @@
 
 package gestion.administrativa.hospital.la;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import javax.swing.*;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
 public class Medico {
+    private List<JSONObject> listaMedicos;
     private int id;
     private String nombre;
     private String apellido;
@@ -58,37 +68,24 @@ public class Medico {
         this.horarioDisponible = horarioDisponible;
     }
     
-    public String buscarMedico(){
-        if(especialidad.equals("Pediatría")){
-            return "ID: MED001\nNombre: Dra. Ana Torres\nHorario Disponible: Lunes->08:00-12:00, Miercoles->10:00-14:00, Viernes->08:00-12:00";
+    public void llenarTablaMedicoSeleccionado(JTable tabla, String nombreSeleccionado) {
+        DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+        model.setRowCount(0); // Limpiar
+
+        for (JSONObject medico : listaMedicos) {
+            if (medico.getString("nombre").equals(nombreSeleccionado)) {
+                String id = medico.getString("id");
+                String nombre = medico.getString("nombre");
+                String especialidad = medico.getString("especialidad");
+
+                JSONObject horarios = medico.getJSONObject("horario_disponible");
+                for (String dia : horarios.keySet()) {
+                    String hora = horarios.getString(dia);
+                    model.addRow(new Object[]{nombre, id, dia, hora, especialidad});
+                }
+                break;
+            }
         }
-        if(especialidad.equals("Cardiología")){
-            return "ID:MED002\nNombre: Dr. Luis Ramírez\nHorario Disponible: Martes->14:00-18:00, Jueves:->08:00-12:00";
-        }
-        if(especialidad.equals("Dermatología")){
-            return "ID:MED003\nNombre: Dra. Camila Soto\nHorario Disponible: Lunes->14:00-13:00, Miercoles:->09:00-13:00";
-        }
-        if(especialidad.equals("Traumatología")){
-            return "ID:MED004\nNombre: Dr. Esteban Mora\nHorario Disponible: Martes->10:00-14:00, Viernes:->12:00-16:00";
-        }
-        if(especialidad.equals("Neurología")){
-            return "ID:MED005\nNombre: Dra. Mariana Díaz\nHorario Disponible: Jueves->08:00-11:00, Viernes:->10:00-13:00";
-        }
-        if(especialidad.equals("Gastroentología")){
-            return "ID:MED006\nNombre: Dr. Javier Gómez\nHorario Disponible: Lunes->14:00-18:00, Miercoles:->08:00-12:00";
-        }
-        if(especialidad.equals("Ginecología")){
-            return "ID:MED007\nNombre: Dra. Silvia Ríos\nHorario Disponible: Martes->09:00-13:00, Miercoles:->14:00-18:00";
-        }
-        if(especialidad.equals("Urología")){
-            return "ID:MED008\nNombre: Dr. Fernando Morales\nHorario Disponible: Miercoles->10:00-14:00, Viernes:->08:00-12:00";
-        }
-        if(especialidad.equals("Oftalmología")){
-            return "ID:MED009\nNombre: Dra. Isabel Castillo\nHorario Disponible: Lunes->13:00-17:00, Jueves:->08:00-12:00";
-        }
-        if(especialidad.equals("Psiquiatría")){
-            return "ID:MED010\nNombre: Dr. Ricardo Mejía\nHorario Disponible: Martes->15:00-19:00, Miercoles:->09:00-13:00";
-        }
-        return "Especialidad no escontrada";
+        
     }
 }
