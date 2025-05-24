@@ -37,45 +37,66 @@ public class Registro_De_Citas extends javax.swing.JFrame {
     private void initComponents() {//GEN-BEGIN:initComponents
 
         Lbl_RegistroCitas = new javax.swing.JLabel();
+        Lbl_RegistroCitas1 = new javax.swing.JLabel();
         lbl_especialidad = new javax.swing.JLabel();
-        CB_Especialidad = new javax.swing.JComboBox<>();
         CB_Médicos = new javax.swing.JComboBox<>();
+        CB_Especialidad = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla_Médico = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         lbl_especialidad1 = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(570, 820));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Lbl_RegistroCitas.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        Lbl_RegistroCitas.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        Lbl_RegistroCitas.setForeground(new java.awt.Color(255, 255, 255));
         Lbl_RegistroCitas.setText("Registro de Citas");
+        getContentPane().add(Lbl_RegistroCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 410, -1));
 
-        lbl_especialidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Lbl_RegistroCitas1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        Lbl_RegistroCitas1.setForeground(new java.awt.Color(57, 74, 128));
+        Lbl_RegistroCitas1.setText("Registro de Citas");
+        getContentPane().add(Lbl_RegistroCitas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 6, 410, -1));
+
+        lbl_especialidad.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_especialidad.setForeground(new java.awt.Color(0, 0, 0));
         lbl_especialidad.setText("Médico:");
+        getContentPane().add(lbl_especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 92, 70, -1));
 
-        CB_Especialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------Sin seleccionar---------" }));
-        CB_Especialidad.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                CB_EspecialidadItemStateChanged(evt);
-            }
-        });
-
+        CB_Médicos.setBackground(new java.awt.Color(255, 255, 255));
+        CB_Médicos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        CB_Médicos.setForeground(new java.awt.Color(0, 0, 0));
         CB_Médicos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------Sin seleccionar---------" }));
+        CB_Médicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
         CB_Médicos.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CB_MédicosItemStateChanged(evt);
             }
         });
+        getContentPane().add(CB_Médicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 88, -1, 39));
 
+        CB_Especialidad.setBackground(new java.awt.Color(255, 255, 255));
+        CB_Especialidad.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        CB_Especialidad.setForeground(new java.awt.Color(0, 0, 0));
+        CB_Especialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------Sin seleccionar---------" }));
+        CB_Especialidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
+        CB_Especialidad.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CB_EspecialidadItemStateChanged(evt);
+            }
+        });
+        getContentPane().add(CB_Especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 88, -1, 39));
+
+        Tabla_Médico.setBackground(new java.awt.Color(255, 255, 255));
+        Tabla_Médico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Tabla_Médico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Apellidos y Nombres", "ID", "Fecha", "Hora", "Especialidad"
@@ -91,54 +112,22 @@ public class Registro_De_Citas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tabla_Médico);
 
-        jButton1.setText("Registrar CIta");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 145, 654, 296));
 
-        lbl_especialidad1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("CONFIRMAR");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 450, 170, 50));
+
+        lbl_especialidad1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_especialidad1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_especialidad1.setText("Especialidad:");
+        getContentPane().add(lbl_especialidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_especialidad1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CB_Especialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(lbl_especialidad)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CB_Médicos, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Lbl_RegistroCitas)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Lbl_RegistroCitas)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CB_Especialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CB_Médicos, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_especialidad)
-                    .addComponent(lbl_especialidad1))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
+        Background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexis\\Documents\\GitHub\\Gestor-de-Citas-HL\\src\\gestion\\administrativa\\hospital\\la\\background.jpeg")); // NOI18N
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, -1));
 
         pack();
     }//GEN-END:initComponents
@@ -176,7 +165,7 @@ public class Registro_De_Citas extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -203,9 +192,11 @@ public class Registro_De_Citas extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Background;
     private javax.swing.JComboBox<String> CB_Especialidad;
     private javax.swing.JComboBox<String> CB_Médicos;
     private javax.swing.JLabel Lbl_RegistroCitas;
+    private javax.swing.JLabel Lbl_RegistroCitas1;
     private javax.swing.JTable Tabla_Médico;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
