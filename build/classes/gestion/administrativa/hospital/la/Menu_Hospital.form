@@ -35,7 +35,7 @@
                   <Component id="LblLoayza" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
-              <Component id="LblNumero2" min="-2" pref="100" max="-2" attributes="0"/>
+              <Component id="LblContacto" min="-2" pref="100" max="-2" attributes="0"/>
               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
               <Component id="wsp" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
@@ -71,7 +71,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                      <Component id="LblNumero2" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblContacto" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
@@ -151,7 +151,7 @@
         <Property name="text" type="java.lang.String" value="4800"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LblNumero2">
+    <Component class="javax.swing.JLabel" name="LblContacto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI Semibold" size="18" style="2"/>
@@ -160,6 +160,17 @@
           <Color blue="eb" green="5" red="6" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="CONTACTO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LblNumero3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI Semibold" size="24" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="eb" green="5" red="6" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="509"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LblPacientes">
@@ -255,17 +266,6 @@
           <Color id="Hand Cursor"/>
         </Property>
         <Property name="horizontalTextPosition" type="int" value="10"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="LblNumero3">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI Semibold" size="24" style="0"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="eb" green="5" red="6" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="509"/>
       </Properties>
     </Component>
   </SubComponents>

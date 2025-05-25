@@ -37,14 +37,14 @@ public class Menu_Hospital extends javax.swing.JFrame {
         wsp = new javax.swing.JLabel();
         LblLoayza = new javax.swing.JLabel();
         LblNumero1 = new javax.swing.JLabel();
-        LblNumero2 = new javax.swing.JLabel();
+        LblContacto = new javax.swing.JLabel();
+        LblNumero3 = new javax.swing.JLabel();
         LblPacientes = new javax.swing.JLabel();
         LblHospital = new javax.swing.JLabel();
         LblMedicos = new javax.swing.JLabel();
         LblExamenes = new javax.swing.JLabel();
         LblCitas = new javax.swing.JLabel();
         BtnAgendar = new javax.swing.JButton();
-        LblNumero3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -64,9 +64,13 @@ public class Menu_Hospital extends javax.swing.JFrame {
         LblNumero1.setForeground(new java.awt.Color(6, 5, 235));
         LblNumero1.setText("4800");
 
-        LblNumero2.setFont(new java.awt.Font("Segoe UI Semibold", 2, 18)); // NOI18N
-        LblNumero2.setForeground(new java.awt.Color(6, 5, 235));
-        LblNumero2.setText("CONTACTO");
+        LblContacto.setFont(new java.awt.Font("Segoe UI Semibold", 2, 18)); // NOI18N
+        LblContacto.setForeground(new java.awt.Color(6, 5, 235));
+        LblContacto.setText("CONTACTO");
+
+        LblNumero3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        LblNumero3.setForeground(new java.awt.Color(6, 5, 235));
+        LblNumero3.setText("509");
 
         LblPacientes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblPacientes.setForeground(new java.awt.Color(6, 5, 235));
@@ -123,10 +127,6 @@ public class Menu_Hospital extends javax.swing.JFrame {
         BtnAgendar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnAgendar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
-        LblNumero3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        LblNumero3.setForeground(new java.awt.Color(6, 5, 235));
-        LblNumero3.setText("509");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,7 +139,7 @@ public class Menu_Hospital extends javax.swing.JFrame {
                     .addComponent(LblHospital)
                     .addComponent(LblLoayza))
                 .addGap(24, 24, 24)
-                .addComponent(LblNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LblContacto, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(wsp)
                 .addGap(8, 8, 8)
@@ -170,7 +170,7 @@ public class Menu_Hospital extends javax.swing.JFrame {
                         .addComponent(LblLoayza))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(LblNumero2))
+                        .addComponent(LblContacto))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(wsp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -261,12 +261,12 @@ public class Menu_Hospital extends javax.swing.JFrame {
     private javax.swing.JButton BtnAgendar;
     private javax.swing.JLabel IconMenu;
     private javax.swing.JLabel LblCitas;
+    private javax.swing.JLabel LblContacto;
     private javax.swing.JLabel LblExamenes;
     private javax.swing.JLabel LblHospital;
     private javax.swing.JLabel LblLoayza;
     private javax.swing.JLabel LblMedicos;
     private javax.swing.JLabel LblNumero1;
-    private javax.swing.JLabel LblNumero2;
     private javax.swing.JLabel LblNumero3;
     private javax.swing.JLabel LblPacientes;
     private javax.swing.JLabel wsp;
