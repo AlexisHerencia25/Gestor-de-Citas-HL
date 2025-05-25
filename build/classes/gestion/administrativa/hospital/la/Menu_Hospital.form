@@ -40,8 +40,8 @@
               <Component id="wsp" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="LblNumero3" min="-2" max="-2" attributes="0"/>
                   <Component id="LblNumero1" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="LblNumero3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
               <Component id="BtnAgendar" min="-2" pref="150" max="-2" attributes="0"/>
@@ -80,11 +80,11 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="LblNumero3" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                               <Component id="LblNumero1" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="LblNumero3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
