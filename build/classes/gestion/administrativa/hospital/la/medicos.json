@@ -89,5 +89,95 @@
       "martes": "15:00 - 19:00",
       "viernes": "09:00 - 13:00"
     }
+  },
+  {
+    "id": "MED011",
+    "nombre": "Dr. Pablo Linares",
+    "especialidad": "Pediatría",
+    "horario_disponible": {
+      "martes": "08:00 - 12:00",
+      "jueves": "10:00 - 14:00"
+    }
+  },
+  {
+    "id": "MED012",
+    "nombre": "Dra. Julia Fernández",
+    "especialidad": "Cardiología",
+    "horario_disponible": {
+      "lunes": "09:00 - 13:00",
+      "viernes": "08:00 - 12:00"
+    }
+  },
+  {
+    "id": "MED013",
+    "nombre": "Dr. Andrés Molina",
+    "especialidad": "Dermatología",
+    "horario_disponible": {
+      "miércoles": "14:00 - 18:00",
+      "viernes": "08:00 - 11:00"
+    }
+  },
+  {
+    "id": "MED014",
+    "nombre": "Dra. Verónica Ayala",
+    "especialidad": "Neurología",
+    "horario_disponible": {
+      "martes": "13:00 - 17:00",
+      "jueves": "09:00 - 12:00"
+    }
+  },
+  {
+    "id": "MED015",
+    "nombre": "Dr. Mauricio Peña",
+    "especialidad": "Gastroenterología",
+    "horario_disponible": {
+      "lunes": "10:00 - 14:00",
+      "miércoles": "08:00 - 12:00"
+    }
+  },
+  {
+    "id": "MED016",
+    "nombre": "Dra. Leticia Guzmán",
+    "especialidad": "Urología",
+    "horario_disponible": {
+      "lunes": "13:00 - 17:00",
+      "viernes": "10:00 - 14:00"
+    }
+  },
+  {
+    "id": "MED017",
+    "nombre": "Dr. Hugo Rivas",
+    "especialidad": "Psiquiatría",
+    "horario_disponible": {
+      "martes": "08:00 - 11:00",
+      "jueves": "14:00 - 17:00"
+    }
+  },
+  {
+    "id": "MED018",
+    "nombre": "Dra. Mónica Delgado",
+    "especialidad": "Traumatología",
+    "horario_disponible": {
+      "miércoles": "09:00 - 13:00",
+      "viernes": "13:00 - 17:00"
+    }
+  },
+  {
+    "id": "MED019",
+    "nombre": "Dr. Ernesto Cabrera",
+    "especialidad": "Ginecología",
+    "horario_disponible": {
+      "lunes": "08:00 - 12:00",
+      "jueves": "10:00 - 13:00"
+    }
+  },
+  {
+    "id": "MED020",
+    "nombre": "Dra. Alejandra Pino",
+    "especialidad": "Oftalmología",
+    "horario_disponible": {
+      "martes": "14:00 - 18:00",
+      "viernes": "09:00 - 12:00"
+    }
   }
 ]
