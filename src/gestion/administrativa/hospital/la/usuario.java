@@ -1,4 +1,4 @@
-package login;
+package gestion.administrativa.hospital.la;
 
 public class usuario {
     private String nombreUsuario;

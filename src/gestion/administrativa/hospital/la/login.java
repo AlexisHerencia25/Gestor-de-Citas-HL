@@ -1,4 +1,4 @@
-package login;
+package gestion.administrativa.hospital.la;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 public class login {
