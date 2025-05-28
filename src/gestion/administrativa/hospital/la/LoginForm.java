@@ -7,19 +7,13 @@ package gestion.administrativa.hospital.la;
 import javax.swing.*;
 import javax.swing.JOptionPane;
 import java.awt.*;
-import javax.swing.JPasswordField;
 import javax.swing.JLabel;
-import javax.swing.JEditorPane;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.HyperlinkListener;
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 
 
 public class LoginForm extends javax.swing.JFrame {
+    
+    Login login = new Login();
     
     public LoginForm() {
         initComponents();
@@ -47,9 +41,10 @@ public class LoginForm extends javax.swing.JFrame {
         Background = new javax.swing.JLabel();
         LblLoayza = new javax.swing.JLabel();
         LblHospital = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        LblOlvideContraseña = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
         setResizable(false);
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -127,12 +122,12 @@ public class LoginForm extends javax.swing.JFrame {
         LblHospital.setForeground(new java.awt.Color(6, 5, 235));
         LblHospital.setText("HOSPITAL ARZOBISPO");
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("<html><u>OLVIDE MI<br>CONTRASEÑA</u></html>");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        LblOlvideContraseña.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        LblOlvideContraseña.setForeground(new java.awt.Color(0, 0, 0));
+        LblOlvideContraseña.setText("<html><u>OLVIDE MI<br>CONTRASEÑA</u></html>");
+        LblOlvideContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                LblOlvideContraseñaMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 JLabelMouseEncima(evt);
@@ -171,7 +166,7 @@ public class LoginForm extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(LblOlvideContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(chterminos)
@@ -207,7 +202,7 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LblOlvideContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(chterminos)
@@ -238,28 +233,22 @@ public class LoginForm extends javax.swing.JFrame {
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         String usuario = txtusuario.getText();
         String contraseña = new String(txtcontraseña.getPassword());
-        
-        
-        if(!chterminos.isSelected())
-        {
+        if(!chterminos.isSelected()){
             JOptionPane.showMessageDialog(this, "Debe aceptar los Términos y Condiciones.", "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if(!chdatos.isSelected())
-        {
+        if(!chdatos.isSelected()){
             JOptionPane.showMessageDialog(this, "Debe aceptar el tratamiento de datos personales.", "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if (usuario.equals("admin") && contraseña.equals("1234")) {
-        JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso.");
-        // Aquí puedes abrir la siguiente ventana, por ejemplo
-    } else {
-        JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
-        //login login = new login();
-            //if (login.iniciarSesion(txtusuario.getText(), new String(txtcontraseña.getPassword()))) {
-            //JOptionPane.showMessageDialog(this, "Bienvenido al sistema", "Acceso Concedido", JOptionPane.INFORMATION_MESSAGE);
-       // }//
+        if (login.iniciarSesion(usuario, contraseña)) {
+            JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso.");
+            this.dispose();
+            FormMenu_Hospital menu = new FormMenu_Hospital();
+            menu.setVisible(true);
+        } else{
+            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void chterminosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chterminosActionPerformed
@@ -271,10 +260,10 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chdatosActionPerformed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        login login = new login();
-        login.recuperarContraseña(txtusuario.getText());
-    }//GEN-LAST:event_jLabel1MouseClicked
+    private void LblOlvideContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblOlvideContraseñaMouseClicked
+        FormRecuperacionContraseña recuperar = new FormRecuperacionContraseña(login.LecturaJsonUsuarios(txtusuario.getText()));
+        recuperar.setVisible(true);
+    }//GEN-LAST:event_LblOlvideContraseñaMouseClicked
 
     private void JLabelMouseEncima(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLabelMouseEncima
         Object fuente = evt.getSource();
@@ -332,10 +321,10 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel Background;
     private javax.swing.JLabel LblHospital;
     private javax.swing.JLabel LblLoayza;
+    private javax.swing.JLabel LblOlvideContraseña;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JCheckBox chdatos;
     private javax.swing.JCheckBox chterminos;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblcontraseña;
     private javax.swing.JLabel lblterminos;
     private javax.swing.JLabel lbltitulo;

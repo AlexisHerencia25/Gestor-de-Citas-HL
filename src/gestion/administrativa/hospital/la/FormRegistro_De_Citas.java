@@ -3,26 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package gestion.administrativa.hospital.la;
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.JSONException;
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 /**
  *
  * @author Alexis
  */
-public class Registro_De_Citas extends javax.swing.JFrame {
+public class FormRegistro_De_Citas extends javax.swing.JFrame {
 
     /**
-     * Creates new form Registro_De_Citas
+     * Creates new form FormRegistro_De_Citas
      */
     private BaseMedicos base_de_datos = new BaseMedicos("src/gestion/administrativa/hospital/la/medicos.json");
     private List<JSONObject> listaMedicos;
-    public Registro_De_Citas() {
+    public FormRegistro_De_Citas() {
         initComponents();
         this.setLocationRelativeTo(null);
         base_de_datos.llenarComboEspecialidades(CB_Especialidad);
@@ -36,8 +31,7 @@ public class Registro_De_Citas extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {//GEN-BEGIN:initComponents
 
-        Lbl_RegistroCitas = new javax.swing.JLabel();
-        Lbl_RegistroCitas1 = new javax.swing.JLabel();
+        Lbl_Titulo = new javax.swing.JLabel();
         lbl_especialidad = new javax.swing.JLabel();
         CB_Médicos = new javax.swing.JComboBox<>();
         CB_Especialidad = new javax.swing.JComboBox<>();
@@ -53,15 +47,10 @@ public class Registro_De_Citas extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(570, 820));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Lbl_RegistroCitas.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
-        Lbl_RegistroCitas.setForeground(new java.awt.Color(255, 255, 255));
-        Lbl_RegistroCitas.setText("Registro de Citas");
-        getContentPane().add(Lbl_RegistroCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 410, -1));
-
-        Lbl_RegistroCitas1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
-        Lbl_RegistroCitas1.setForeground(new java.awt.Color(57, 74, 128));
-        Lbl_RegistroCitas1.setText("Registro de Citas");
-        getContentPane().add(Lbl_RegistroCitas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 6, 410, -1));
+        Lbl_Titulo.setFont(new java.awt.Font("Chewy", 1, 48)); // NOI18N
+        Lbl_Titulo.setForeground(new java.awt.Color(57, 74, 128));
+        Lbl_Titulo.setText("Registro de Citas");
+        getContentPane().add(Lbl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 6, 460, -1));
 
         lbl_especialidad.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_especialidad.setForeground(new java.awt.Color(0, 0, 0));
@@ -171,21 +160,22 @@ public class Registro_De_Citas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormRegistro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormRegistro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormRegistro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormRegistro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Registro_De_Citas().setVisible(true);
+                new FormRegistro_De_Citas().setVisible(true);
             }
         });
     }
@@ -195,8 +185,7 @@ public class Registro_De_Citas extends javax.swing.JFrame {
     private javax.swing.JLabel Background;
     private javax.swing.JComboBox<String> CB_Especialidad;
     private javax.swing.JComboBox<String> CB_Médicos;
-    private javax.swing.JLabel Lbl_RegistroCitas;
-    private javax.swing.JLabel Lbl_RegistroCitas1;
+    private javax.swing.JLabel Lbl_Titulo;
     private javax.swing.JTable Tabla_Médico;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;

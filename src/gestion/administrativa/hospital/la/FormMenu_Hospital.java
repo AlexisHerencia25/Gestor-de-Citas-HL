@@ -10,12 +10,12 @@ import java.awt.*;
  *
  * @author Alexis
  */
-public class Menu_Hospital extends javax.swing.JFrame {
+public class FormMenu_Hospital extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu_Hospital
      */
-    public Menu_Hospital() {
+    public FormMenu_Hospital() {
         initComponents();
         this.setLocationRelativeTo(null);
         BtnAgendar.setBorder(new CompoundBorder(
@@ -47,7 +47,9 @@ public class Menu_Hospital extends javax.swing.JFrame {
         BtnAgendar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu");
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         IconMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/logo.jpeg"))); // NOI18N
         IconMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -126,6 +128,11 @@ public class Menu_Hospital extends javax.swing.JFrame {
         BtnAgendar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 74, 173), 0, true));
         BtnAgendar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnAgendar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        BtnAgendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAgendarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,11 +204,13 @@ public class Menu_Hospital extends javax.swing.JFrame {
     }//GEN-END:initComponents
 
     private void LblMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosMouseClicked
-        // TODO add your handling code here:
+        FormMedicos medicos = new FormMedicos();
+        medicos.setVisible(true);
     }//GEN-LAST:event_LblMedicosMouseClicked
 
     private void LblPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesMouseClicked
-        // TODO add your handling code here:
+        FormPacientes pacientes = new FormPacientes();
+        pacientes.setVisible(true);
     }//GEN-LAST:event_LblPacientesMouseClicked
 
     private void LblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMouseEncimaOpciones
@@ -221,6 +230,11 @@ public class Menu_Hospital extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LblMouseSalirOpciones
 
+    private void BtnAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgendarActionPerformed
+        FormRegistro_De_Citas citas = new FormRegistro_De_Citas();
+        citas.setVisible(true);
+    }//GEN-LAST:event_BtnAgendarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -238,20 +252,21 @@ public class Menu_Hospital extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormMenu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormMenu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormMenu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormMenu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu_Hospital().setVisible(true);
+                new FormMenu_Hospital().setVisible(true);
             }
         });
     }
