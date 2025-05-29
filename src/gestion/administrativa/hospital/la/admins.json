@@ -1,37 +1,27 @@
 [
-  {
-    "Administrador": {
-      "Usuario": "admin01",
-      "Correo electrónico": "alexisherencia25@gmail.com",
-      "Contraseña": "seaosos"
-    }
-  },
-  {
-    "Administrador": {
-      "Usuario": "admin02",
-      "Correo electrónico": "admin02@gmail.com",
-      "Contraseña": "SecurePass#02"
-    }
-  },
-  {
-    "Administrador": {
-      "Usuario": "jefeAdmin",
-      "Correo electrónico": "jefe.admin@gmail.com",
-      "Contraseña": "Jefe@2025"
-    }
-  },
-  {
-    "Administrador": {
-      "Usuario": "soporte01",
-      "Correo electrónico": "soporte@gmail.com",
-      "Contraseña": "Soporte!123"
-    }
-  },
-  {
-    "Administrador": {
-      "Usuario": "adminExtra",
-      "Correo electrónico": "extra.admin@gmail.com",
-      "Contraseña": "Extra$Admin9"
-    }
-  }
+  {"Administrador": {
+    "Usuario": "admin01",
+    "Correo electrónico": "alexisherencia25@gmail.com",
+    "Contraseña": "iopin"
+  }},
+  {"Administrador": {
+    "Usuario": "admin02",
+    "Correo electrónico": "admin02@gmail.com",
+    "Contraseña": "NuevaContraseñaSegura123"
+  }},
+  {"Administrador": {
+    "Usuario": "jefeAdmin",
+    "Correo electrónico": "jefe.admin@gmail.com",
+    "Contraseña": "Jefe@2025"
+  }},
+  {"Administrador": {
+    "Usuario": "soporte01",
+    "Correo electrónico": "soporte@gmail.com",
+    "Contraseña": "Soporte!123"
+  }},
+  {"Administrador": {
+    "Usuario": "adminExtra",
+    "Correo electrónico": "extra.admin@gmail.com",
+    "Contraseña": "Extra$Admin9"
+  }}
 ]

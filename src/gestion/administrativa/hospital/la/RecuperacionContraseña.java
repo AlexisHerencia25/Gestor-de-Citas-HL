@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 import java.io.IOException;
 
 import jakarta.mail.*;
@@ -59,20 +60,30 @@ public class RecuperacionContraseña {
     }
     
     public static void cambiarContrasena(String correo, String nuevaClave) {
-        String ruta = "src/gestion/administrativa/hospital/la/admins.json";
+        String rutaArchivo = "src/gestion/administrativa/hospital/la/admins.json";
+
         try {
-            String contenido = new String(Files.readAllBytes(Paths.get(ruta)), "UTF-8");
-            JSONArray arreglo = new JSONArray(contenido);
-            for (int i = 0; i < arreglo.length(); i++) {
-                JSONObject admin = arreglo.getJSONObject(i).getJSONObject("Administrador");
-                if (admin.getString("Correo electrónico").equalsIgnoreCase(correo)) {
+            // Leer contenido del archivo JSON
+            String contenido = new String(Files.readAllBytes(Paths.get(rutaArchivo)));
+
+            // Convertir a JSONArray
+            JSONArray jsonArray = new JSONArray(contenido);
+
+            // Buscar al usuario "admin02" y cambiar su contraseña
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject obj = jsonArray.getJSONObject(i);
+                JSONObject admin = obj.getJSONObject("Administrador");
+
+                if (admin.getString("Correo electrónico").equals(correo)) {
                     admin.put("Contraseña", nuevaClave);
-                    Files.write(Paths.get(ruta), arreglo.toString(2).getBytes("UTF-8"));
-                    System.out.println("Contraseña actualizada correctamente.");
-                    return;
+                    break;
                 }
             }
-            System.out.println("No se encontró el correo.");
+
+            // Guardar el JSON actualizado en el mismo archivo
+            Files.write(Paths.get(rutaArchivo), jsonArray.toString(2).getBytes(StandardCharsets.UTF_8));
+
+            System.out.println("Contraseña actualizada correctamente.");
 
         } catch (IOException e) {
             System.out.println("Error leyendo o escribiendo el archivo: " + e.getMessage());

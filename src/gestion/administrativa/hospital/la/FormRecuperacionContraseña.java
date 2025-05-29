@@ -1,4 +1,7 @@
 package gestion.administrativa.hospital.la;
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -30,7 +33,6 @@ public class FormRecuperacionContraseña extends javax.swing.JFrame {
         codigo = recuperar.GenerarCodigo();
         correo_admin = correo;
         recuperar.Enviar_Codigo(correo, codigo);
-        TxtFClave.setText(codigo);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,11 +93,6 @@ public class FormRecuperacionContraseña extends javax.swing.JFrame {
         TxtFClave.setBackground(new java.awt.Color(255, 255, 255));
         TxtFClave.setForeground(new java.awt.Color(0, 0, 0));
         TxtFClave.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        TxtFClave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtFClaveActionPerformed(evt);
-            }
-        });
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
 
@@ -151,29 +148,34 @@ public class FormRecuperacionContraseña extends javax.swing.JFrame {
         pack();
     }//GEN-END:initComponents
 
-    private void TxtFClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFClaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtFClaveActionPerformed
-
     private void TxtFCorreoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtFCorreoKeyReleased
         if(TxtFCorreo.getText().endsWith("@gmail.com"))
             EnviarEmail(TxtFCorreo.getText());
     }//GEN-LAST:event_TxtFCorreoKeyReleased
 
     private void BtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAceptarActionPerformed
-        /*if (codigo == TxtFClave.getText()){
+        if (LblCorreo.getText() == "NUEVA CONTRASEÑA" && LblClave.getText() == "ESCRIBIR DE NUEVO LA CONTRASEÑA"){
+            if (TxtFCorreo.getText().equals(TxtFClave.getText())){
+                RecuperacionContraseña cambio = new RecuperacionContraseña();
+                cambio.cambiarContrasena(correo_admin ,TxtFClave.getText());
+                JOptionPane.showMessageDialog(this, "Usted cambió la contraseña correctamente.");
+                this.dispose();
+            }
+            else
+                JOptionPane.showMessageDialog(this, "Por favor escriba correctamente los 2 campos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (TxtFClave.getText().equals(codigo)){
+            JOptionPane.showMessageDialog(this, "Código correcto.");
+            LblEnvioCorrectamente.setText("");
             LblCorreo.setText("NUEVA CONTRASEÑA");
             LblClave.setText("ESCRIBIR DE NUEVO LA CONTRASEÑA");
+            TxtFCorreo.setText("");
+            TxtFClave.setText("");
             return;
-        }*/
-        if (LblCorreo.getText() == "NUEVA CONTRASEÑA" && LblClave.getText() == "ESCRIBIR DE NUEVO LA CONTRASEÑA"){
-            if (LblCorreo.getText() == LblClave.getText()){
-                RecuperacionContraseña cambio = new RecuperacionContraseña();
-                cambio.cambiarContrasena(correo_admin ,codigo);
-            }
         }
-        LblCorreo.setText("NUEVA CONTRASEÑA");
-        LblClave.setText("ESCRIBIR DE NUEVO LA CONTRASEÑA");
+        else
+            JOptionPane.showMessageDialog(this, "La clave no coincide.", "Error", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_BtnAceptarActionPerformed
 
     /**

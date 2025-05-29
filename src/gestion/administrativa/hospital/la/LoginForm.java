@@ -84,21 +84,11 @@ public class LoginForm extends javax.swing.JFrame {
         chterminos.setForeground(new java.awt.Color(255, 255, 255));
         chterminos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         chterminos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        chterminos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chterminosActionPerformed(evt);
-            }
-        });
 
         chdatos.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         chdatos.setForeground(new java.awt.Color(0, 0, 0));
         chdatos.setText("<html>HE LEÍDO Y ACEPTO EL TRATAMIENTO DE MIS DATOS PERSONALES<br>PARA FINALIDADES ADICONALES<html>");
         chdatos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        chdatos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chdatosActionPerformed(evt);
-            }
-        });
 
         lblterminos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblterminos.setForeground(new java.awt.Color(0, 0, 0));
@@ -250,15 +240,6 @@ public class LoginForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
-
-    private void chterminosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chterminosActionPerformed
-        
-            
-    }//GEN-LAST:event_chterminosActionPerformed
-
-    private void chdatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chdatosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chdatosActionPerformed
 
     private void LblOlvideContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblOlvideContraseñaMouseClicked
         FormRecuperacionContraseña recuperar = new FormRecuperacionContraseña(login.LecturaJsonUsuarios(txtusuario.getText()));

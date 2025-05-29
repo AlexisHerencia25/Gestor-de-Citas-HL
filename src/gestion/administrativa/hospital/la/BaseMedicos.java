@@ -53,8 +53,10 @@ public class BaseMedicos {
         model.setRowCount(0);
         
         String texto = campoBusqueda.getText().toLowerCase().trim();
+        Boolean datos_existe = false;
         
         if (texto.isEmpty()) return;
+        
         
         for (JSONObject medico : listaMedicos){
             String nombre = medico.getString("nombre");
@@ -67,6 +69,7 @@ public class BaseMedicos {
                 for (String dia : horarios.keySet()) {
                     String hora = horarios.getString(dia);
                     model.addRow(new Object[]{id, nombre_medico, especialidad, horarios});
+                    datos_existe = true;
                 }
             }
         }
@@ -101,4 +104,5 @@ public class BaseMedicos {
             }
         }
     }
+    
 }

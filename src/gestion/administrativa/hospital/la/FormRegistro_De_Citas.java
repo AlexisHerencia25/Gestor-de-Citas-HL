@@ -6,6 +6,10 @@ package gestion.administrativa.hospital.la;
 import org.json.JSONObject;
 import javax.swing.*;
 import java.util.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 /**
  *
  * @author Alexis
@@ -37,11 +41,12 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
         CB_Especialidad = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla_Médico = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        BtnConfirmar = new javax.swing.JButton();
         lbl_especialidad1 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro de Citas");
         setLocation(new java.awt.Point(0, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(570, 820));
@@ -103,12 +108,17 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 145, 654, 296));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("CONFIRMAR");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 450, 170, 50));
+        BtnConfirmar.setBackground(new java.awt.Color(255, 255, 255));
+        BtnConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BtnConfirmar.setForeground(new java.awt.Color(0, 0, 0));
+        BtnConfirmar.setText("CONFIRMAR");
+        BtnConfirmar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
+        BtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnConfirmarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 450, 170, 50));
 
         lbl_especialidad1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_especialidad1.setForeground(new java.awt.Color(0, 0, 0));
@@ -121,6 +131,34 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
         pack();
     }//GEN-END:initComponents
 
+    public static void guardarFilaSeleccionada(JTable tabla) {
+        int filaSeleccionada = tabla.getSelectedRow();
+
+        if (filaSeleccionada == -1) {
+            System.out.println("No hay fila seleccionada.");
+            return;
+        }
+
+        try {
+            String rutaProyecto = System.getProperty("user.dir");
+            String rutaArchivo = rutaProyecto + "/citas.txt";
+
+            File archivo = new File(rutaArchivo);
+
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true))) {
+                for (int columna = 0; columna < tabla.getColumnCount(); columna++) {
+                    Object valorCelda = tabla.getValueAt(filaSeleccionada, columna);
+                    writer.write(valorCelda != null ? valorCelda.toString() : "");
+                    writer.newLine();
+                }
+                writer.newLine();
+            }
+
+            System.out.println("Archivo guardado en: " + rutaArchivo);
+        } catch (IOException e) {
+            System.out.println("Error al guardar el archivo: " + e.getMessage());
+        }
+    }
     public void llenarComboMedicosPorEspecialidad(JComboBox<String> combo, String especialidad) {
     combo.removeAllItems();
     for (JSONObject medico : listaMedicos) {
@@ -138,10 +176,14 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
 
     private void CB_MédicosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_MédicosItemStateChanged
         if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
-        String medicoSeleccionado = (String) CB_Médicos.getSelectedItem();
-        base_de_datos.llenarTablaMedicoSeleccionado(Tabla_Médico, medicoSeleccionado);
-    }
+            String medicoSeleccionado = (String) CB_Médicos.getSelectedItem();
+            base_de_datos.llenarTablaMedicoSeleccionado(Tabla_Médico, medicoSeleccionado);
+        }
     }//GEN-LAST:event_CB_MédicosItemStateChanged
+
+    private void BtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConfirmarActionPerformed
+        guardarFilaSeleccionada(Tabla_Médico);
+    }//GEN-LAST:event_BtnConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,11 +225,11 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JButton BtnConfirmar;
     private javax.swing.JComboBox<String> CB_Especialidad;
     private javax.swing.JComboBox<String> CB_Médicos;
     private javax.swing.JLabel Lbl_Titulo;
     private javax.swing.JTable Tabla_Médico;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_especialidad;
     private javax.swing.JLabel lbl_especialidad1;

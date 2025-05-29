@@ -4,7 +4,6 @@
  */
 package gestion.administrativa.hospital.la;
 import java.awt.Color;
-
 /**
  *
  * @author LAPTOP
@@ -178,7 +177,8 @@ public class FormMedicos extends javax.swing.JFrame {
     }//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        System.exit(0);
+        FormRegistro_De_Citas registro = new FormRegistro_De_Citas();
+        registro.setVisible(true);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
