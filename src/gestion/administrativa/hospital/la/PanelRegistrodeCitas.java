@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package gestion.administrativa.hospital.la;
 import org.json.JSONObject;
@@ -14,16 +14,15 @@ import java.io.IOException;
  *
  * @author Alexis
  */
-public class FormRegistro_De_Citas extends javax.swing.JFrame {
+public class PanelRegistrodeCitas extends javax.swing.JPanel {
 
     /**
-     * Creates new form FormRegistro_De_Citas
+     * Creates new form PanelRegistrodeCitas
      */
     private BaseMedicos base_de_datos = new BaseMedicos("src/gestion/administrativa/hospital/la/medicos.json");
     private List<JSONObject> listaMedicos;
-    public FormRegistro_De_Citas() {
+    public PanelRegistrodeCitas() {
         initComponents();
-        this.setLocationRelativeTo(null);
         base_de_datos.llenarComboEspecialidades(CB_Especialidad);
     }
 
@@ -45,22 +44,17 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
         lbl_especialidad1 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Registro de Citas");
-        setLocation(new java.awt.Point(0, 0));
-        setResizable(false);
-        setSize(new java.awt.Dimension(570, 820));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Lbl_Titulo.setFont(new java.awt.Font("Chewy", 1, 48)); // NOI18N
         Lbl_Titulo.setForeground(new java.awt.Color(57, 74, 128));
         Lbl_Titulo.setText("Registro de Citas");
-        getContentPane().add(Lbl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 6, 460, -1));
+        add(Lbl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 6, 460, -1));
 
         lbl_especialidad.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_especialidad.setForeground(new java.awt.Color(0, 0, 0));
         lbl_especialidad.setText("Médico:");
-        getContentPane().add(lbl_especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 92, 70, -1));
+        add(lbl_especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 92, 70, -1));
 
         CB_Médicos.setBackground(new java.awt.Color(255, 255, 255));
         CB_Médicos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -72,7 +66,7 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
                 CB_MédicosItemStateChanged(evt);
             }
         });
-        getContentPane().add(CB_Médicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 88, -1, 39));
+        add(CB_Médicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 88, -1, 39));
 
         CB_Especialidad.setBackground(new java.awt.Color(255, 255, 255));
         CB_Especialidad.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -84,7 +78,7 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
                 CB_EspecialidadItemStateChanged(evt);
             }
         });
-        getContentPane().add(CB_Especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 88, -1, 39));
+        add(CB_Especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 88, -1, 39));
 
         Tabla_Médico.setBackground(new java.awt.Color(255, 255, 255));
         Tabla_Médico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -106,7 +100,7 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tabla_Médico);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 145, 654, 296));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 145, 680, 300));
 
         BtnConfirmar.setBackground(new java.awt.Color(255, 255, 255));
         BtnConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -118,17 +112,15 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
                 BtnConfirmarActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 450, 170, 50));
+        add(BtnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 170, 50));
 
         lbl_especialidad1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_especialidad1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_especialidad1.setText("Especialidad:");
-        getContentPane().add(lbl_especialidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, -1, -1));
+        add(lbl_especialidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, -1, -1));
 
-        Background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexis\\Documents\\GitHub\\Gestor-de-Citas-HL\\src\\gestion\\administrativa\\hospital\\la\\background.jpeg")); // NOI18N
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, -1));
-
-        pack();
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
+        add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 560));
     }//GEN-END:initComponents
 
     public static void guardarFilaSeleccionada(JTable tabla) {
@@ -159,6 +151,7 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
             System.out.println("Error al guardar el archivo: " + e.getMessage());
         }
     }
+    
     public void llenarComboMedicosPorEspecialidad(JComboBox<String> combo, String especialidad) {
     combo.removeAllItems();
     for (JSONObject medico : listaMedicos) {
@@ -167,13 +160,7 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
         }
     }
 }
-    private void CB_EspecialidadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_EspecialidadItemStateChanged
-        if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED){
-            String especialidadSeleccionada = (String) CB_Especialidad.getSelectedItem();
-            base_de_datos.llenarComboMedicos(CB_Médicos, CB_Especialidad.getSelectedItem().toString());
-        }
-    }//GEN-LAST:event_CB_EspecialidadItemStateChanged
-
+    
     private void CB_MédicosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_MédicosItemStateChanged
         if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
             String medicoSeleccionado = (String) CB_Médicos.getSelectedItem();
@@ -181,47 +168,17 @@ public class FormRegistro_De_Citas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CB_MédicosItemStateChanged
 
+    private void CB_EspecialidadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_EspecialidadItemStateChanged
+        if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED){
+            String especialidadSeleccionada = (String) CB_Especialidad.getSelectedItem();
+            base_de_datos.llenarComboMedicos(CB_Médicos, CB_Especialidad.getSelectedItem().toString());
+        }
+    }//GEN-LAST:event_CB_EspecialidadItemStateChanged
+
     private void BtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConfirmarActionPerformed
         guardarFilaSeleccionada(Tabla_Médico);
     }//GEN-LAST:event_BtnConfirmarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormRegistro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormRegistro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormRegistro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormRegistro_De_Citas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormRegistro_De_Citas().setVisible(true);
-            }
-        });
-    }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;

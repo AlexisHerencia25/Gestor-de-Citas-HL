@@ -1,21 +1,22 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package gestion.administrativa.hospital.la;
 import java.io.File;
-
-public class FormPacientes extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormPacientes.class.getName());
+/**
+ *
+ * @author Alexis
+ */
+public class PanelPacientes extends javax.swing.JPanel {
 
     /**
-     * Creates new form frmprincipal
+     * Creates new form PanelPacientes
      */
-    public FormPacientes() {
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PanelPacientes.class.getName());
+    
+    public PanelPacientes() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        
     }
 
     /**
@@ -37,10 +38,7 @@ public class FormPacientes extends javax.swing.JFrame {
         tblinformacion = new javax.swing.JTable();
         Background = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Pacientes");
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblMedicos.setBackground(new java.awt.Color(255, 255, 255));
         lblMedicos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -48,32 +46,32 @@ public class FormPacientes extends javax.swing.JFrame {
         lblMedicos.setText("PACIENTES");
         lblMedicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(8, 79, 176), 3));
         lblMedicos.setOpaque(true);
-        getContentPane().add(lblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 228, 620, 60));
+        add(lblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 228, 610, 60));
 
         LblTitulo.setFont(new java.awt.Font("Chewy", 1, 48)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(57, 74, 128));
         LblTitulo.setText("PACIENTES REGISTROS");
-        getContentPane().add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 439, 50));
+        add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 439, 50));
 
         LblNombre.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         LblNombre.setForeground(new java.awt.Color(0, 0, 0));
         LblNombre.setText("NOMBRE");
-        getContentPane().add(LblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 110, 30));
+        add(LblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 110, 30));
 
         LblID.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         LblID.setForeground(new java.awt.Color(0, 0, 0));
         LblID.setText("ID");
-        getContentPane().add(LblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 30, 40));
+        add(LblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 30, 40));
 
         txtBuscar.setBackground(new java.awt.Color(255, 255, 255));
         txtBuscar.setForeground(new java.awt.Color(0, 0, 0));
         txtBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 270, 39));
+        add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 280, 39));
 
         txtID.setBackground(new java.awt.Color(255, 255, 255));
         txtID.setForeground(new java.awt.Color(0, 0, 0));
         txtID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 270, 39));
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 280, 39));
 
         btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
@@ -85,7 +83,7 @@ public class FormPacientes extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 180, 60));
+        add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 180, 60));
 
         tblinformacion.setBackground(new java.awt.Color(255, 255, 255));
         tblinformacion.setForeground(new java.awt.Color(0, 0, 0));
@@ -99,12 +97,10 @@ public class FormPacientes extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblinformacion);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 290, 620, 180));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 290, 610, 200));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 500));
-
-        pack();
+        add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 510));
     }//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -113,30 +109,6 @@ public class FormPacientes extends javax.swing.JFrame {
         pacientes.BuscarYMostrarPacientes(json, tblinformacion, txtID, txtBuscar);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Dark Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FormPacientes().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;

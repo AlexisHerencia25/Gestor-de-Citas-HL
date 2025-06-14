@@ -86,7 +86,7 @@
                   <Component id="logo" min="-2" pref="90" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="LblHospital" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                       <Component id="LblLoayza" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>

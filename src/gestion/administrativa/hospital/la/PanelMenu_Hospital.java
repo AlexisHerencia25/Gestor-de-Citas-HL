@@ -1,26 +1,27 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package gestion.administrativa.hospital.la;
+
+import java.awt.Color;
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
-
-import org.kordamp.ikonli.swing.FontIcon;
 import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
+import org.kordamp.ikonli.swing.FontIcon;
+
 /**
  *
  * @author Alexis
  */
-public class FormMenu_Hospital extends javax.swing.JFrame {
+public class PanelMenu_Hospital extends javax.swing.JPanel {
 
     /**
-     * Creates new form Menu_Hospital
+     * Creates new form PanelMenu_Hospital
      */
-    public FormMenu_Hospital() {
+    public PanelMenu_Hospital() {
         initComponents();
-        this.setLocationRelativeTo(null);
         BtnAgendar.setBorder(new CompoundBorder(
                 new LineBorder(Color.BLUE,5,true),
                 new EmptyBorder(10,20,10,20)
@@ -33,10 +34,6 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         BtnAgendar.setHorizontalAlignment(SwingConstants.LEFT);
         BtnAgendar.setHorizontalTextPosition(SwingConstants.RIGHT);
         BtnAgendar.setIconTextGap(5);
-        
-        FontIcon iconoregresar = FontIcon.of(FontAwesomeSolid.CHEVRON_LEFT);
-        iconoregresar.setIconColor(java.awt.Color.RED);
-        Iconoprueba.setIcon(iconoregresar);
     }
 
     /**
@@ -61,12 +58,8 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         LblExamenes = new javax.swing.JLabel();
         LblCitas = new javax.swing.JLabel();
         BtnAgendar = new javax.swing.JButton();
-        Iconoprueba = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Menu");
-        setBackground(new java.awt.Color(255, 255, 255));
-        setResizable(false);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -78,7 +71,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         content.add(BackgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 730, 350));
 
         wsp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/wsp.png"))); // NOI18N
-        content.add(wsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, 30));
+        content.add(wsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 40, -1, 30));
 
         LblLoayza.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         LblLoayza.setForeground(new java.awt.Color(236, 31, 54));
@@ -88,17 +81,17 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         LblNumero1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblNumero1.setForeground(new java.awt.Color(6, 5, 235));
         LblNumero1.setText("4800");
-        content.add(LblNumero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 60, -1));
+        content.add(LblNumero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 50, 60, -1));
 
         LblContacto.setFont(new java.awt.Font("Segoe UI Semibold", 2, 18)); // NOI18N
         LblContacto.setForeground(new java.awt.Color(6, 5, 235));
         LblContacto.setText("CONTACTO");
-        content.add(LblContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 100, -1));
+        content.add(LblContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 40, 100, -1));
 
         LblNumero3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblNumero3.setForeground(new java.awt.Color(6, 5, 235));
         LblNumero3.setText("509");
-        content.add(LblNumero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, -1));
+        content.add(LblNumero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 20, -1, -1));
 
         LblPacientes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblPacientes.setForeground(new java.awt.Color(6, 5, 235));
@@ -109,10 +102,10 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
                 LblPacientesMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LblMouseEncimaOpciones(evt);
+                LblPacientesLblMouseEncimaOpciones(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                LblMouseSalirOpciones(evt);
+                LblPacientesLblMouseSalirOpciones(evt);
             }
         });
         content.add(LblPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 140, 150, 40));
@@ -131,10 +124,10 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
                 LblMedicosMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LblMouseEncimaOpciones(evt);
+                LblMedicosLblMouseEncimaOpciones(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                LblMouseSalirOpciones(evt);
+                LblMedicosLblMouseSalirOpciones(evt);
             }
         });
         content.add(LblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 140, 150, 40));
@@ -164,122 +157,86 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
                 BtnAgendarActionPerformed(evt);
             }
         });
-        content.add(BtnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 20, 170, 70));
-        content.add(Iconoprueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 50));
+        content.add(BtnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 20, 140, 70));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        pack();
+        add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }//GEN-END:initComponents
-
-    private void LblMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosMouseClicked
-        PanelMedicos medicos = new PanelMedicos();
-        medicos.setSize(740, 530);
-        medicos.setLocation(0,0);
-        
-        content.setLayout(new BorderLayout());
-        content.removeAll();
-        content.add(medicos, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-        this.setTitle("Medicos");
-    }//GEN-LAST:event_LblMedicosMouseClicked
 
     private void LblPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesMouseClicked
         PanelPacientes pacientes = new PanelPacientes();
         pacientes.setSize(740, 530);
         pacientes.setLocation(0,0);
-        
+
         content.setLayout(new BorderLayout());
         content.removeAll();
         content.add(pacientes, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
-        
-        this.setTitle("Pacientes");
     }//GEN-LAST:event_LblPacientesMouseClicked
 
-    private void LblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMouseEncimaOpciones
+    private void LblPacientesLblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesLblMouseEncimaOpciones
         Object fuente = evt.getSource();
         if (fuente instanceof JLabel){
             JLabel label = (JLabel) fuente;
             label.setForeground(Color.WHITE);
             label.setCursor(new Cursor(Cursor.HAND_CURSOR));
         }
-    }//GEN-LAST:event_LblMouseEncimaOpciones
+    }//GEN-LAST:event_LblPacientesLblMouseEncimaOpciones
 
-    private void LblMouseSalirOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMouseSalirOpciones
+    private void LblPacientesLblMouseSalirOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesLblMouseSalirOpciones
         if (evt.getSource() instanceof JComponent componente){
             componente.setForeground(new Color (6,5,235));
             componente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-        
+
         }
-    }//GEN-LAST:event_LblMouseSalirOpciones
+    }//GEN-LAST:event_LblPacientesLblMouseSalirOpciones
+
+    private void LblMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosMouseClicked
+        PanelMedicos medicos = new PanelMedicos();
+        medicos.setSize(740, 530);
+        medicos.setLocation(0,0);
+
+        content.setLayout(new BorderLayout());
+        content.removeAll();
+        content.add(medicos, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_LblMedicosMouseClicked
+
+    private void LblMedicosLblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosLblMouseEncimaOpciones
+        Object fuente = evt.getSource();
+        if (fuente instanceof JLabel){
+            JLabel label = (JLabel) fuente;
+            label.setForeground(Color.WHITE);
+            label.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
+    }//GEN-LAST:event_LblMedicosLblMouseEncimaOpciones
+
+    private void LblMedicosLblMouseSalirOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosLblMouseSalirOpciones
+        if (evt.getSource() instanceof JComponent componente){
+            componente.setForeground(new Color (6,5,235));
+            componente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+        }
+    }//GEN-LAST:event_LblMedicosLblMouseSalirOpciones
 
     private void BtnAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgendarActionPerformed
         PanelRegistrodeCitas registros = new PanelRegistrodeCitas();
         registros.setSize(740, 530);
         registros.setLocation(0,0);
-        
+
         content.setLayout(new BorderLayout());
         content.removeAll();
         content.add(registros, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
-        
-        this.setTitle("Registros");
     }//GEN-LAST:event_BtnAgendarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Dark Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormMenu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormMenu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormMenu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormMenu_Hospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormMenu_Hospital().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackgroundMenu;
     private javax.swing.JButton BtnAgendar;
     private javax.swing.JLabel IconMenu;
-    private javax.swing.JLabel Iconoprueba;
     private javax.swing.JLabel LblCitas;
     private javax.swing.JLabel LblContacto;
     private javax.swing.JLabel LblExamenes;
