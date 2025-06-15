@@ -1,262 +1,290 @@
 [
   {
     "Información personal": {
-      "ID": "P001",
-      "Nombres completos": "María Fernanda López",
       "Fecha de nacimiento": "1985-04-12",
+      "Nombres completos": "María Fernanda López",
       "Género": "Femenino",
+      "ID": "P-hazWoHRaPKMubR0n2q9peTfy01mDBz",
       "DNI": "45678901",
       "Teléfono": "+51 917123457"
     },
+    "Citas programadas": {"Próxima cita": "2025-06-01"},
     "Datos médicos": {
       "Alergias": "Penicilina",
+      "Notas médicas urgentes": "Evitar medicamentos con sulfa",
       "Enfermedades Crónicas": "Hipertensión",
-      "Tipo de Sangre": "O+",
-      "Notas médicas urgentes": "Evitar medicamentos con sulfa"
+      "Tipo de Sangre": "O+"
     },
     "Última atención médica": {
       "Fecha": "2025-04-10",
       "motivo de consulta": "Dolor de cabeza persistente",
-      "diagnóstico": "Migraña",
       "tratamiento o receta indicada": "Paracetamol 500mg cada 8 horas",
+      "diagnóstico": "Migraña",
       "Medico encargado": "Dr. Javier Ruiz"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-06-01"
     }
   },
   {
     "Información personal": {
-      "ID": "P002",
-      "Nombres completos": "Carlos Eduardo Ramírez",
       "Fecha de nacimiento": "1992-11-23",
+      "Nombres completos": "Carlos Eduardo Ramírez",
       "Género": "Masculino",
+      "ID": "P-NuMFQ7bbM8sYJjJ9fY7Q1JLpSGh4nK",
       "DNI": "50789234",
       "Teléfono": "+51 978945612"
     },
+    "Citas programadas": {"Próxima cita": "2025-06-15"},
     "Datos médicos": {
       "Alergias": "Ninguna",
+      "Notas médicas urgentes": "Inhalador siempre disponible",
       "Enfermedades Crónicas": "Asma",
-      "Tipo de Sangre": "A-",
-      "Notas médicas urgentes": "Inhalador siempre disponible"
+      "Tipo de Sangre": "A-"
     },
     "Última atención médica": {
       "Fecha": "2025-05-05",
       "motivo de consulta": "Dificultad respiratoria",
-      "diagnóstico": "Crisis asmática",
       "tratamiento o receta indicada": "Salbutamol en inhalador",
+      "diagnóstico": "Crisis asmática",
       "Medico encargado": "Dra. Teresa Vargas"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-06-15"
     }
   },
   {
     "Información personal": {
-      "ID": "P003",
-      "Nombres completos": "Luciana Andrea Ríos",
       "Fecha de nacimiento": "2001-02-15",
+      "Nombres completos": "Luciana Andrea Ríos",
       "Género": "Femenino",
+      "ID": "P-ALzGEiJBI1g5tJMN38T8ClbHYZ9FMD",
       "DNI": "38904562",
       "Teléfono": "+51 917648920"
     },
+    "Citas programadas": {"Próxima cita": "2025-06-10"},
     "Datos médicos": {
       "Alergias": "Polvo, Polen",
+      "Notas médicas urgentes": "Evitar ambientes con mucho polvo",
       "Enfermedades Crónicas": "Rinitis alérgica",
-      "Tipo de Sangre": "B+",
-      "Notas médicas urgentes": "Evitar ambientes con mucho polvo"
+      "Tipo de Sangre": "B+"
     },
     "Última atención médica": {
       "Fecha": "2025-03-20",
       "motivo de consulta": "Estornudos frecuentes y congestión",
-      "diagnóstico": "Rinitis estacional",
       "tratamiento o receta indicada": "Loratadina 10mg diaria",
+      "diagnóstico": "Rinitis estacional",
       "Medico encargado": "Dr. Álvaro Méndez"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-06-10"
     }
   },
   {
     "Información personal": {
-      "ID": "P004",
-      "Nombres completos": "Pedro Ignacio Chávez",
       "Fecha de nacimiento": "1970-07-30",
+      "Nombres completos": "Pedro Ignacio Chávez",
       "Género": "Masculino",
+      "ID": "P-K6B7AeInOrVKzqdZWrZ2xz9kL44U4K",
       "DNI": "25673489",
       "Teléfono": "+51 916543128"
     },
+    "Citas programadas": {"Próxima cita": "2025-07-12"},
     "Datos médicos": {
       "Alergias": "Ibuprofeno",
+      "Notas médicas urgentes": "Control estricto de azúcar",
       "Enfermedades Crónicas": "Diabetes tipo 2",
-      "Tipo de Sangre": "AB+",
-      "Notas médicas urgentes": "Control estricto de azúcar"
+      "Tipo de Sangre": "AB+"
     },
     "Última atención médica": {
       "Fecha": "2025-05-12",
       "motivo de consulta": "Chequeo general",
-      "diagnóstico": "Control estable",
       "tratamiento o receta indicada": "Metformina 850mg",
+      "diagnóstico": "Control estable",
       "Medico encargado": "Dra. Carmen Salinas"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-07-12"
     }
   },
   {
     "Información personal": {
-      "ID": "P005",
-      "Nombres completos": "Ana Patricia Gutiérrez",
       "Fecha de nacimiento": "1998-06-18",
+      "Nombres completos": "Ana Patricia Gutiérrez",
       "Género": "Femenino",
+      "ID": "P-rCQ9idElKiW1zPgB5MoRIStZ1Usybe",
       "DNI": "42981637",
       "Teléfono": "+51 917129476"
     },
+    "Citas programadas": {"Próxima cita": "2025-06-22"},
     "Datos médicos": {
       "Alergias": "Lactosa",
+      "Notas médicas urgentes": "Dieta sin lácteos",
       "Enfermedades Crónicas": "Ninguna",
-      "Tipo de Sangre": "O-",
-      "Notas médicas urgentes": "Dieta sin lácteos"
+      "Tipo de Sangre": "O-"
     },
     "Última atención médica": {
       "Fecha": "2025-04-02",
       "motivo de consulta": "Dolor abdominal",
-      "diagnóstico": "Intolerancia alimentaria",
       "tratamiento o receta indicada": "Dieta libre de lactosa",
+      "diagnóstico": "Intolerancia alimentaria",
       "Medico encargado": "Dr. Ricardo Flores"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-06-22"
     }
   },
   {
     "Información personal": {
-      "ID": "P006",
-      "Nombres completos": "Jorge Mario Ayala",
       "Fecha de nacimiento": "1980-10-10",
+      "Nombres completos": "Jorge Mario Ayala",
       "Género": "Masculino",
+      "ID": "P-sZTZ7m59uJgb1c1Mjr6DT41aVwKDOf",
       "DNI": "30458276",
       "Teléfono": "+51 917645187"
     },
+    "Citas programadas": {"Próxima cita": "2025-06-20"},
     "Datos médicos": {
       "Alergias": "Ninguna",
+      "Notas médicas urgentes": "Evitar alimentos grasos",
       "Enfermedades Crónicas": "Colesterol alto",
-      "Tipo de Sangre": "A+",
-      "Notas médicas urgentes": "Evitar alimentos grasos"
+      "Tipo de Sangre": "A+"
     },
     "Última atención médica": {
       "Fecha": "2025-03-15",
       "motivo de consulta": "Chequeo de colesterol",
-      "diagnóstico": "Hiperlipidemia",
       "tratamiento o receta indicada": "Atorvastatina 20mg",
+      "diagnóstico": "Hiperlipidemia",
       "Medico encargado": "Dra. Sandra Moreno"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-06-20"
     }
   },
   {
     "Información personal": {
-      "ID": "P007",
-      "Nombres completos": "Camila Soledad Ortiz",
       "Fecha de nacimiento": "2003-01-05",
+      "Nombres completos": "Camila Soledad Ortiz",
       "Género": "Femenino",
+      "ID": "P-NfA4kXybTLDNu0ccybGO1Qe5BrlEHF",
       "DNI": "47820145",
       "Teléfono": "+51 917543210"
     },
+    "Citas programadas": {"Próxima cita": "2025-06-30"},
     "Datos médicos": {
       "Alergias": "Maní",
+      "Notas médicas urgentes": "Alerta de anafilaxia por frutos secos",
       "Enfermedades Crónicas": "Ninguna",
-      "Tipo de Sangre": "B-",
-      "Notas médicas urgentes": "Alerta de anafilaxia por frutos secos"
+      "Tipo de Sangre": "B-"
     },
     "Última atención médica": {
       "Fecha": "2025-02-28",
       "motivo de consulta": "Reacción alérgica",
-      "diagnóstico": "Anafilaxia leve",
       "tratamiento o receta indicada": "Antihistamínicos de emergencia",
+      "diagnóstico": "Anafilaxia leve",
       "Medico encargado": "Dr. José Medina"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-06-30"
     }
   },
   {
     "Información personal": {
-      "ID": "P008",
-      "Nombres completos": "Luis Fernando Vega",
       "Fecha de nacimiento": "1965-03-14",
+      "Nombres completos": "Luis Fernando Vega",
       "Género": "Masculino",
+      "ID": "P-ZloQdhQMyWoIBkTTJk5AGpN3yk3esF",
       "DNI": "23789105",
       "Teléfono": "+51 917612347"
     },
+    "Citas programadas": {"Próxima cita": "2025-07-01"},
     "Datos médicos": {
       "Alergias": "Antiinflamatorios no esteroides",
+      "Notas médicas urgentes": "Medicamentos bajo supervisión",
       "Enfermedades Crónicas": "Artritis",
-      "Tipo de Sangre": "O+",
-      "Notas médicas urgentes": "Medicamentos bajo supervisión"
+      "Tipo de Sangre": "O+"
     },
     "Última atención médica": {
       "Fecha": "2025-04-25",
       "motivo de consulta": "Dolor articular",
-      "diagnóstico": "Artritis reumatoide",
       "tratamiento o receta indicada": "Ibuprofeno suspendido, iniciar naproxeno",
+      "diagnóstico": "Artritis reumatoide",
       "Medico encargado": "Dra. Gabriela Reyes"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-07-01"
     }
   },
   {
     "Información personal": {
-      "ID": "P009",
-      "Nombres completos": "Esteban Julián Torres",
       "Fecha de nacimiento": "1990-09-02",
+      "Nombres completos": "Esteban Julián Torres",
       "Género": "Masculino",
+      "ID": "P-MssM3AORIbkNo6WIn38v1CH46vTBCS",
       "DNI": "39047281",
       "Teléfono": "+51 917659874"
     },
+    "Citas programadas": {"Próxima cita": "2025-06-25"},
     "Datos médicos": {
       "Alergias": "Ninguna",
+      "Notas médicas urgentes": "Evitar ayunos prolongados",
       "Enfermedades Crónicas": "Gastritis",
-      "Tipo de Sangre": "AB-",
-      "Notas médicas urgentes": "Evitar ayunos prolongados"
+      "Tipo de Sangre": "AB-"
     },
     "Última atención médica": {
       "Fecha": "2025-05-07",
       "motivo de consulta": "Dolor estomacal",
-      "diagnóstico": "Gastritis aguda",
       "tratamiento o receta indicada": "Omeprazol 20mg",
+      "diagnóstico": "Gastritis aguda",
       "Medico encargado": "Dr. Marco Ortiz"
-    },
-    "Citas programadas": {
-      "Próxima cita": "2025-06-25"
     }
   },
   {
     "Información personal": {
-      "ID": "P010",
-      "Nombres completos": "Valeria Noemí Pinto",
       "Fecha de nacimiento": "1995-08-19",
+      "Nombres completos": "Valeria Noemí Pinto",
       "Género": "Femenino",
+      "ID": "P-KZKPxXm8a3Xl5RaAcT6Yg0ZTxpcCpb",
       "DNI": "47013825",
       "Teléfono": "+51 917132574"
     },
+    "Citas programadas": {"Próxima cita": "2025-07-05"},
     "Datos médicos": {
       "Alergias": "Penicilina, Mariscos",
+      "Notas médicas urgentes": "Control hormonal regular",
       "Enfermedades Crónicas": "Hipotiroidismo",
-      "Tipo de Sangre": "A+",
-      "Notas médicas urgentes": "Control hormonal regular"
+      "Tipo de Sangre": "A+"
     },
     "Última atención médica": {
       "Fecha": "2025-04-28",
       "motivo de consulta": "Revisión endocrinológica",
-      "diagnóstico": "TSH elevada",
       "tratamiento o receta indicada": "Levotiroxina 50mcg",
+      "diagnóstico": "TSH elevada",
       "Medico encargado": "Dra. Natalia Guzmán"
+    }
+  },
+  {
+    "Información personal": {
+      "Fecha de nacimiento": "11-07-2025",
+      "Nombres completos": "Alexis Javier Jesus Herencia Huaracha",
+      "Género": "Masculino",
+      "ID": "P-YX9LG5yU2ADOd09JieNnjeyI5jrRH9",
+      "DNI": "73578388",
+      "Teléfono": "970593573"
     },
-    "Citas programadas": {
-      "Próxima cita": "2025-07-05"
+    "Citas programadas": {"Próxima cita": ""},
+    "Datos médicos": {
+      "Alergias": "Polen",
+      "Notas médicas urgentes": "----",
+      "Enfermedades Crónicas": "Ninguna",
+      "Tipo de Sangre": "AB+"
+    },
+    "Última atención médica": {
+      "Fecha": "",
+      "motivo de consulta": "",
+      "tratamiento o receta indicada": "",
+      "diagnóstico": "",
+      "Medico encargado": ""
+    }
+  },
+  {
+    "Información personal": {
+      "Fecha de nacimiento": "12-06-2025",
+      "Nombres completos": "Carlos Perez",
+      "Género": "Masculino",
+      "ID": "P-1HYYYOrT3xBxtRyadws38wEU5iVjNV",
+      "DNI": "73847337",
+      "Teléfono": "923923221"
+    },
+    "Citas programadas": {"Próxima cita": ""},
+    "Datos médicos": {
+      "Alergias": "Polvo",
+      "Notas médicas urgentes": "A",
+      "Enfermedades Crónicas": "Ninguna",
+      "Tipo de Sangre": "B+"
+    },
+    "Última atención médica": {
+      "Fecha": "",
+      "motivo de consulta": "",
+      "tratamiento o receta indicada": "",
+      "diagnóstico": "",
+      "Medico encargado": ""
     }
   }
 ]
