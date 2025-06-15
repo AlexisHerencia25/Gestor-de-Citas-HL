@@ -46,7 +46,7 @@ public class PanelPacientes extends javax.swing.JPanel {
         lblMedicos.setText("PACIENTES");
         lblMedicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(8, 79, 176), 3));
         lblMedicos.setOpaque(true);
-        add(lblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 228, 610, 60));
+        add(lblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 610, 60));
 
         LblTitulo.setFont(new java.awt.Font("Chewy", 1, 48)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(57, 74, 128));
@@ -56,22 +56,22 @@ public class PanelPacientes extends javax.swing.JPanel {
         LblNombre.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         LblNombre.setForeground(new java.awt.Color(0, 0, 0));
         LblNombre.setText("NOMBRE");
-        add(LblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 110, 30));
+        add(LblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 110, 30));
 
         LblID.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         LblID.setForeground(new java.awt.Color(0, 0, 0));
         LblID.setText("ID");
-        add(LblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 30, 40));
+        add(LblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 30, 40));
 
         txtBuscar.setBackground(new java.awt.Color(255, 255, 255));
         txtBuscar.setForeground(new java.awt.Color(0, 0, 0));
         txtBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 280, 39));
+        add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 280, 39));
 
         txtID.setBackground(new java.awt.Color(255, 255, 255));
         txtID.setForeground(new java.awt.Color(0, 0, 0));
         txtID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 280, 39));
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 280, 39));
 
         btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
@@ -83,7 +83,7 @@ public class PanelPacientes extends javax.swing.JPanel {
                 btnBuscarActionPerformed(evt);
             }
         });
-        add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 180, 60));
+        add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 180, 60));
 
         tblinformacion.setBackground(new java.awt.Color(255, 255, 255));
         tblinformacion.setForeground(new java.awt.Color(0, 0, 0));
@@ -97,7 +97,7 @@ public class PanelPacientes extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblinformacion);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 290, 610, 200));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 610, 200));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
         add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 510));
@@ -105,8 +105,7 @@ public class PanelPacientes extends javax.swing.JPanel {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         Pacientes pacientes = new Pacientes();
-        File json = new File("src/gestion/administrativa/hospital/la/pacientes.json");
-        pacientes.BuscarYMostrarPacientes(json, tblinformacion, txtID, txtBuscar);
+        pacientes.BuscarYMostrarPacientes(tblinformacion, txtID, txtBuscar);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
 

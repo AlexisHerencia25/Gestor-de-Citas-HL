@@ -171,7 +171,9 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,17 +197,37 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
     }//GEN-LAST:event_LblMedicosMouseClicked
 
     private void LblPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesMouseClicked
-        PanelPacientes pacientes = new PanelPacientes();
-        pacientes.setSize(740, 530);
-        pacientes.setLocation(0,0);
-        
-        content.setLayout(new BorderLayout());
-        content.removeAll();
-        content.add(pacientes, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-        
-        this.setTitle("Pacientes");
+        int opcion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Qué deseas hacer?\na) Registrar nuevos pacientes\nb) Buscar y eliminar",
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new Object[] { "a", "b" },  // Opciones personalizadas
+                    "Sí"
+                );
+        if (opcion == JOptionPane.YES_OPTION) {
+            PanelRegistroPacientes pacientes_registro = new PanelRegistroPacientes();
+            pacientes_registro.setSize(740, 530);
+            pacientes_registro.setLocation(0,0);
+            content.setLayout(new BorderLayout());
+            content.removeAll();
+            content.add(pacientes_registro, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+            this.setTitle("Registro de pacientes");
+        } else if (opcion == JOptionPane.NO_OPTION) {
+            PanelPacientes pacientes = new PanelPacientes();
+            pacientes.setSize(740, 530);
+            pacientes.setLocation(0,0);
+            content.setLayout(new BorderLayout());
+            content.removeAll();
+            content.add(pacientes, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+            this.setTitle("Pacientes");
+        }
     }//GEN-LAST:event_LblPacientesMouseClicked
 
     private void LblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMouseEncimaOpciones
