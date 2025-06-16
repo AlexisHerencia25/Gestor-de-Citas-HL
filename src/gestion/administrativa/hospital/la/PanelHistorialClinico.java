@@ -42,7 +42,6 @@ public class PanelHistorialClinico extends javax.swing.JPanel {
         LblNombre = new javax.swing.JLabel();
         LblTitulo = new javax.swing.JLabel();
         lblMedicos = new javax.swing.JLabel();
-        btnEditar = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,7 +58,7 @@ public class PanelHistorialClinico extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblinformacion);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 610, 200));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 610, 250));
 
         btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
@@ -106,18 +105,6 @@ public class PanelHistorialClinico extends javax.swing.JPanel {
         lblMedicos.setOpaque(true);
         add(lblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 610, 60));
 
-        btnEditar.setBackground(new java.awt.Color(255, 255, 255));
-        btnEditar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        btnEditar.setForeground(new java.awt.Color(0, 0, 0));
-        btnEditar.setText("EDITAR");
-        btnEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
-        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 180, 50));
-
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
         add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 510));
     }//GEN-END:initComponents
@@ -149,12 +136,6 @@ public class PanelHistorialClinico extends javax.swing.JPanel {
         tblinformacion.getColumnModel().getColumn(1).setCellRenderer(centrado);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        Pacientes pacientes = new Pacientes();
-        String id = tblinformacion.getValueAt(tblinformacion.getSelectedRow(), 0).toString();
-        pacientes.EditarPaciente(id, contenedor);
-    }//GEN-LAST:event_btnEditarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
@@ -162,7 +143,6 @@ public class PanelHistorialClinico extends javax.swing.JPanel {
     private javax.swing.JLabel LblNombre;
     private javax.swing.JLabel LblTitulo;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnEditar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMedicos;
     private javax.swing.JTable tblinformacion;
