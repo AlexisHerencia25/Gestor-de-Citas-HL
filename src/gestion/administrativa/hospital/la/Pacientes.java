@@ -34,7 +34,12 @@ public class Pacientes {
         String contenido = new String(Files.readAllBytes(jsonpacientes.toPath()));
         JSONArray pacientes = new JSONArray(contenido);
 
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"ID" ,"Nombre", "Detalle"}, 0);
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"ID" ,"Nombre", "Detalle"}, 0){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // 🔒 Esto bloquea edición en TODAS las celdas
+            }
+        };
 
         String idBuscado = txtID.getText().trim().toLowerCase();
         String nombreBuscado = txtBuscar.getText().trim().toLowerCase();
@@ -56,15 +61,11 @@ public class Pacientes {
 
             if (coincideID || coincideNombre) {
                 StringBuilder info = new StringBuilder();
-
-                for (String key : paciente.keySet()) {
-                    JSONObject seccion = paciente.getJSONObject(key);
-                    info.append("[").append(key).append("]\n");
-                    for (String campo : seccion.keySet()) {
-                        info.append(campo).append(": ").append(seccion.getString(campo)).append("\n");
-                    }
-                    info.append("\n");
-                }
+                info.append("Nombre: ").append(infoPersonal.getString("Nombres completos")).append("\n");
+                info.append("DNI: ").append(infoPersonal.getString("DNI")).append("\n");
+                info.append("Teléfono: ").append(infoPersonal.getString("Teléfono")).append("\n");
+                info.append("Fecha de nacimiento: ").append(infoPersonal.getString("Fecha de nacimiento")).append("\n");
+                info.append("Género: ").append(infoPersonal.getString("Género")).append("\n");
 
                 modelo.addRow(new Object[]{
                     infoPersonal.getString("ID"),
@@ -323,4 +324,73 @@ public class Pacientes {
         e.printStackTrace();
     }
     }
+    public void BuscarYMostrarHistorialClinico(JTable tabla, JTextField txtID, JTextField txtBuscar) {
+    try {
+        String contenido = new String(Files.readAllBytes(jsonpacientes.toPath()));
+        JSONArray pacientes = new JSONArray(contenido);
+
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"ID" ,"Nombre", "Historial clínico"}, 0){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // 🔒 Esto bloquea edición en TODAS las celdas
+            }
+        };
+
+        String idBuscado = txtID.getText().trim().toLowerCase();
+        String nombreBuscado = txtBuscar.getText().trim().toLowerCase();
+
+        // Solo buscar si hay al menos un campo lleno
+        if (idBuscado.isEmpty() && nombreBuscado.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese un ID o Nombre para buscar.");
+            return;
+        }
+
+        for (int i = 0; i < pacientes.length(); i++) {
+            JSONObject paciente = pacientes.getJSONObject(i);
+            JSONObject infoPersonal = paciente.getJSONObject("Información personal");
+            String id = infoPersonal.getString("ID").toLowerCase();
+            String nombre = infoPersonal.getString("Nombres completos").toLowerCase();
+
+            boolean coincideID = !idBuscado.isEmpty() && id.contains(idBuscado);
+            boolean coincideNombre = !nombreBuscado.isEmpty() && nombre.contains(nombreBuscado);
+
+            if (coincideID || coincideNombre) {
+                StringBuilder info = new StringBuilder();
+                JSONObject datosMedicos = paciente.getJSONObject("Datos médicos");
+
+                info.append("Alergias: ").append(datosMedicos.getString("Alergias")).append("\n");
+                info.append("Notas médicas urgentes: ").append(datosMedicos.getString("Notas médicas urgentes")).append("\n");
+                info.append("Enfermedades crónicas: ").append(datosMedicos.getString("Enfermedades Crónicas")).append("\n");
+                info.append("Tipo de sangre: ").append(datosMedicos.getString("Tipo de Sangre")).append("\n");
+
+                modelo.addRow(new Object[]{
+                    infoPersonal.getString("ID"),
+                    infoPersonal.getString("Nombres completos"), 
+                    info.toString()});
+            }
+        }
+
+        tabla.setModel(modelo);
+        tabla.setRowHeight(150);
+        tabla.getColumnModel().getColumn(1).setCellRenderer(new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value,
+                                                           boolean isSelected, boolean hasFocus,
+                                                           int row, int column) {
+                JTextArea area = new JTextArea();
+                area.setText(value != null ? value.toString() : "");
+                area.setWrapStyleWord(true);
+                area.setLineWrap(true);
+                area.setOpaque(true);
+                area.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+                area.setForeground(isSelected ? table.getSelectionForeground() : table.getForeground());
+                return area;
+            }
+        });
+
+    } catch (IOException | JSONException e) {
+        JOptionPane.showMessageDialog(null, "Error al leer el archivo JSON: " + e.getMessage());
+        e.printStackTrace();
+    }
+}
 }
