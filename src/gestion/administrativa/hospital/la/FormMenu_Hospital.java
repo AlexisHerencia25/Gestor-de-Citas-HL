@@ -218,7 +218,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
             content.repaint();
             this.setTitle("Registro de pacientes");
         } else if (opcion == JOptionPane.NO_OPTION) {
-            PanelPacientes pacientes = new PanelPacientes();
+            PanelPacientes pacientes = new PanelPacientes(content);
             pacientes.setSize(740, 530);
             pacientes.setLocation(0,0);
             content.setLayout(new BorderLayout());

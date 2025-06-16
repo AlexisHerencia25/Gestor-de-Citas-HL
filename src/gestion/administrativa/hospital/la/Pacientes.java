@@ -8,9 +8,14 @@ import org.json.JSONException;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+
 import java.awt.*;
+
 import java.io.File;
 import java.io.IOException;
+import java.io.FileWriter;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -22,14 +27,14 @@ import java.security.SecureRandom;
 
 
 public class Pacientes {
-    File jsonpacientes = new File("src/gestion/administrativa/hospital/la/pacientes.json");
+    private File jsonpacientes = new File("src/gestion/administrativa/hospital/la/pacientes.json");
     
     public void BuscarYMostrarPacientes(JTable tabla, JTextField txtID, JTextField txtBuscar) {
     try {
         String contenido = new String(Files.readAllBytes(jsonpacientes.toPath()));
         JSONArray pacientes = new JSONArray(contenido);
 
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Nombre", "Detalle"}, 0);
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"ID" ,"Nombre", "Detalle"}, 0);
 
         String idBuscado = txtID.getText().trim().toLowerCase();
         String nombreBuscado = txtBuscar.getText().trim().toLowerCase();
@@ -61,7 +66,10 @@ public class Pacientes {
                     info.append("\n");
                 }
 
-                modelo.addRow(new Object[]{infoPersonal.getString("Nombres completos"), info.toString()});
+                modelo.addRow(new Object[]{
+                    infoPersonal.getString("ID"),
+                    infoPersonal.getString("Nombres completos"), 
+                    info.toString()});
             }
         }
 
@@ -102,7 +110,7 @@ public class Pacientes {
             infoPersonal.put("Fecha de nacimiento", fechaNacimiento);
             infoPersonal.put("Género", genero);
             infoPersonal.put("DNI", dni);
-            infoPersonal.put("Teléfono", telefono);
+            infoPersonal.put("Teléfono", "51+ " + telefono);
 
             JSONObject datosMedicos = new JSONObject();
             datosMedicos.put("Alergias", alergias); // Por defecto
@@ -134,12 +142,12 @@ public class Pacientes {
             Files.write(Paths.get(jsonpacientes.getPath()), pacientes.toString(2).getBytes(), StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
 
             
-            System.out.println("✅ Paciente agregado correctamente: " + ID);
+            System.out.println("Paciente agregado correctamente: " + ID);
 
         } catch (IOException e) {
-            System.err.println("❌ Error de archivo: " + e.getMessage());
+            System.err.println("Error de archivo: " + e.getMessage());
         } catch (Exception e) {
-            System.err.println("❌ Error general: " + e.getMessage());
+            System.err.println("Error general: " + e.getMessage());
         }
     }
     public String generarIDAlfanumerico() {
@@ -177,5 +185,142 @@ public class Pacientes {
                 e.printStackTrace();
             }
         return ids;
+    }
+    public void EliminarPaciente(String IDEliminar){
+        try {
+            String contenido = new String(Files.readAllBytes(jsonpacientes.toPath()));
+            JSONArray pacientes = new JSONArray(contenido);
+            JSONArray pacientesFiltrados = new JSONArray();
+
+            boolean eliminado = false;
+            for (int i = 0; i < pacientes.length(); i++) {
+                JSONObject paciente = pacientes.getJSONObject(i);
+                JSONObject infoPersonal = paciente.getJSONObject("Información personal");
+                String idPaciente = infoPersonal.getString("ID");
+
+                if (!idPaciente.equals(IDEliminar))
+                    pacientesFiltrados.put(paciente);
+                else
+                    eliminado = true;
+            }
+
+            if (eliminado) {
+                FileWriter writer = new FileWriter(jsonpacientes);
+                writer.write(pacientesFiltrados.toString(4)); // 4 espacios de indentación
+                writer.close();
+                System.out.print("Se ha eliminado correctamente los datos del paciente");
+            } else
+                System.out.print("No se pudo eliminar los datos");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void EditarPaciente(String IDEditar, JPanel content){
+        try {
+            String contenido = new String(Files.readAllBytes(jsonpacientes.toPath()));
+            JSONArray pacientes = new JSONArray(contenido);
+            JSONArray pacientesFiltrados = new JSONArray();
+
+            String nombresCompletos = "", fechaNacimiento = "", genero = "", dni = "", telefono = "";
+            String proximaCita = "", alergias = "", notasUrgentes = "", enfermedadesCronicas = "", tipoSangre = "";
+            String fechaUltimaAtencion = "", motivoConsulta = "", tratamiento = "", diagnostico = "", medicoEncargado = "";
+
+            for (int i = 0; i < pacientes.length(); i++) {
+                JSONObject paciente = pacientes.getJSONObject(i);
+                JSONObject infoPersonal = paciente.getJSONObject("Información personal");
+                String idPaciente = infoPersonal.getString("ID");
+
+                if (!idPaciente.equals(IDEditar)) {
+                    pacientesFiltrados.put(paciente);
+                } else {
+
+                    // Información Personal
+                    nombresCompletos = infoPersonal.getString("Nombres completos");
+                    fechaNacimiento = infoPersonal.getString("Fecha de nacimiento");
+                    genero = infoPersonal.getString("Género");
+                    dni = infoPersonal.getString("DNI");
+                    telefono = infoPersonal.getString("Teléfono");
+
+                    // Citas Programadas
+                    JSONObject citas = paciente.getJSONObject("Citas programadas");
+                    proximaCita = citas.getString("Próxima cita");
+
+                    // Datos Médicos
+                    JSONObject datosMedicos = paciente.getJSONObject("Datos médicos");
+                    alergias = datosMedicos.getString("Alergias");
+                    notasUrgentes = datosMedicos.getString("Notas médicas urgentes");
+                    enfermedadesCronicas = datosMedicos.getString("Enfermedades Crónicas");
+                    tipoSangre = datosMedicos.getString("Tipo de Sangre");
+
+                    // Última Atención Médica
+                    JSONObject ultimaAtencion = paciente.getJSONObject("Última atención médica");
+                    fechaUltimaAtencion = ultimaAtencion.getString("Fecha");
+                    motivoConsulta = ultimaAtencion.getString("motivo de consulta");
+                    tratamiento = ultimaAtencion.getString("tratamiento o receta indicada");
+                    diagnostico = ultimaAtencion.getString("diagnóstico");
+                    medicoEncargado = ultimaAtencion.getString("Medico encargado");
+                    
+                    PanelEditarPaciente pacientesform = new PanelEditarPaciente(IDEditar, nombresCompletos, fechaNacimiento, genero, dni, telefono, alergias, tipoSangre, enfermedadesCronicas, notasUrgentes);
+                    pacientesform.setSize(740, 530);
+                    pacientesform.setLocation(0,0);
+        
+                    content.setLayout(new BorderLayout());
+                    content.removeAll();
+                    content.add(pacientesform, BorderLayout.CENTER);
+                    content.revalidate();
+                    content.repaint();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void ConfirmarEdicion(String idModificar, String nombresCompletos, String fechaNacimiento, String genero, 
+            String dni, String telefono, String alergias, String enfermedadesCronicas, String tipoSangre, 
+            String notasUrgentes){
+        try {
+        // Leer archivo
+        String contenido = new String(Files.readAllBytes(jsonpacientes.toPath()));
+        JSONArray pacientes = new JSONArray(contenido);
+
+        // Buscar y reemplazar
+        boolean modificado = false;
+        for (int i = 0; i < pacientes.length(); i++) {
+            JSONObject paciente = pacientes.getJSONObject(i);
+            JSONObject infoPersonal = paciente.getJSONObject("Información personal");
+            JSONObject datosMedicos = paciente.getJSONObject("Datos médicos");
+            String idPaciente = infoPersonal.getString("ID");
+
+            if (idPaciente.equals(idModificar)) {
+                infoPersonal.put("Nombres completos", nombresCompletos);
+                infoPersonal.put("Género", genero);
+                infoPersonal.put("DNI", dni);
+                infoPersonal.put("Teléfono", telefono);
+                infoPersonal.put("Fecha de nacimiento", fechaNacimiento);
+                
+                datosMedicos.put("Alergias", alergias);
+                datosMedicos.put("Notas médicas urgentes", notasUrgentes);
+                datosMedicos.put("Enfermedades Crónicas", enfermedadesCronicas);
+                datosMedicos.put("Tipo de Sangre", tipoSangre);
+    
+                modificado = true;
+                break;
+            }
+        }
+
+        // Guardar cambios
+        if (modificado) {
+            FileWriter writer = new FileWriter(jsonpacientes);
+            writer.write(pacientes.toString(4)); // con indentación de 4 espacios
+            writer.close();
+            System.out.println("✅ Paciente actualizado correctamente.");
+        } else {
+            System.out.println("⚠️ No se encontró un paciente con ese ID.");
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
     }
 }

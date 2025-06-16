@@ -3,26 +3,56 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package gestion.administrativa.hospital.la;
+
+import java.awt.Color;
+import javax.swing.border.LineBorder;
 import java.util.Date;
 import com.toedter.calendar.JDateChooser;
 import java.text.SimpleDateFormat;
-
-import javax.swing.*;
-import javax.swing.border.LineBorder;
-import java.awt.*;
+import java.text.ParseException;
+import javax.swing.JOptionPane;
+import org.json.JSONObject;
 /**
  *
  * @author Alexis
  */
-public class PanelRegistroPacientes extends javax.swing.JPanel {
+public class PanelEditarPaciente extends javax.swing.JPanel {
 
     JDateChooser dateChooser = new JDateChooser();
     /**
-     * Creates new form PanelRegistroPacientesd
+     * Creates new form PanelEditarPaciente
      */
-    public PanelRegistroPacientes() {
+    public PanelEditarPaciente(String ID, String nombres, String fechaNacimiento, String genero,
+        String dni, String telefono, String alergias, String tipoSangre,
+        String enfermedadesCronicas, String notasUrgentes) {
         initComponents();
-        add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 210, 30));
+        TxtFID.setText(ID);
+        TxtFNombre.setText(nombres);
+        TxtFDNI.setText(dni);
+        for (int i = 0; i < CBGenero.getItemCount(); i++) {
+            if (CBGenero.getItemAt(i).equals(genero)){
+                CBGenero.setSelectedIndex(i);
+                break;
+            }
+        }
+        TxtFTelefono.setText(telefono);
+        TxtFAlergias.setText(alergias);
+        for (int i = 0; i < CBSangre.getItemCount(); i++) {
+            if (CBSangre.getItemAt(i).equals(tipoSangre)){
+                CBSangre.setSelectedIndex(i);
+                break;
+            }
+        }
+        TxtFEnfermedadesCronicas.setText(enfermedadesCronicas);
+        TxtFNotasMedicas.setText(notasUrgentes);
+        add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 210, 30));
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date fecha = formato.parse(fechaNacimiento);
+            dateChooser.setDate(fecha);
+        } catch (ParseException e) {
+            e.printStackTrace(); // Maneja el error aquí como prefieras
+        }
         dateChooser.getDateEditor().setEnabled(false);
         dateChooser.getDateEditor().getUiComponent().setForeground(Color.BLACK);
         dateChooser.setBorder(new LineBorder(Color.BLUE, 2));
@@ -39,6 +69,8 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
     private void initComponents() {//GEN-BEGIN:initComponents
 
         LblTitulo = new javax.swing.JLabel();
+        jLabelID = new javax.swing.JLabel();
+        TxtFID = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         TxtFNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -54,7 +86,7 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         TxtFNotasMedicas = new javax.swing.JTextField();
-        btnRegistrar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         TxtFAlergias = new javax.swing.JTextField();
         Background = new javax.swing.JLabel();
@@ -63,127 +95,137 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
 
         LblTitulo.setFont(new java.awt.Font("Chewy", 1, 48)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(57, 74, 128));
-        LblTitulo.setText("REGISTRO DE PACIENTES");
+        LblTitulo.setText("PACIENTE A EDITAR");
         add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 480, 50));
+
+        jLabelID.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabelID.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelID.setText("ID:");
+        add(jLabelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+
+        TxtFID.setEditable(false);
+        TxtFID.setBackground(new java.awt.Color(102, 102, 102));
+        TxtFID.setForeground(new java.awt.Color(255, 255, 255));
+        TxtFID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
+        add(TxtFID, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 250, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("NOMBRES COMPLETOS:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
 
         TxtFNombre.setBackground(new java.awt.Color(255, 255, 255));
         TxtFNombre.setForeground(new java.awt.Color(0, 0, 0));
         TxtFNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
-        add(TxtFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 210, 30));
+        add(TxtFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 440, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("FECHA DE NACIMIENTO:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("GÉNERO:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
         CBSangre.setBackground(new java.awt.Color(255, 255, 255));
         CBSangre.setForeground(new java.awt.Color(0, 0, 0));
         CBSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------------------------------", "A+", "A−", "B+", "B−", "AB+", "AB−", "O+", " O−" }));
         CBSangre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
-        add(CBSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 210, 30));
+        add(CBSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 160, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("DNI:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, -1, -1));
 
         TxtFDNI.setBackground(new java.awt.Color(255, 255, 255));
         TxtFDNI.setForeground(new java.awt.Color(0, 0, 0));
         TxtFDNI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
-        add(TxtFDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 210, 30));
+        add(TxtFDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 160, 30));
 
         TxtFTelefono.setBackground(new java.awt.Color(255, 255, 255));
         TxtFTelefono.setForeground(new java.awt.Color(0, 0, 0));
         TxtFTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
-        add(TxtFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 210, 30));
+        add(TxtFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 190, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("TELÉFONO:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, -1, -1));
 
         TxtFEnfermedadesCronicas.setBackground(new java.awt.Color(255, 255, 255));
         TxtFEnfermedadesCronicas.setForeground(new java.awt.Color(0, 0, 0));
         TxtFEnfermedadesCronicas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
-        add(TxtFEnfermedadesCronicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 210, 30));
+        add(TxtFEnfermedadesCronicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 410, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("ENFERMEDADES CRONICAS:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, -1));
 
         CBGenero.setBackground(new java.awt.Color(255, 255, 255));
         CBGenero.setForeground(new java.awt.Color(0, 0, 0));
         CBGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------------------------------", "Masculino", "Femenino" }));
         CBGenero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
-        add(CBGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 210, 30));
+        add(CBGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 210, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("TIPO DE SANGRE:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("NOTAS MÉDICAS URGENTES:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
 
         TxtFNotasMedicas.setBackground(new java.awt.Color(255, 255, 255));
         TxtFNotasMedicas.setForeground(new java.awt.Color(0, 0, 0));
         TxtFNotasMedicas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
-        add(TxtFNotasMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 210, 30));
+        add(TxtFNotasMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 400, 30));
 
-        btnRegistrar.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        btnRegistrar.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrar.setText("REGISTRAR");
-        btnRegistrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        btnEditar.setForeground(new java.awt.Color(0, 0, 0));
+        btnEditar.setText("CONFIRMAR CAMBIOS");
+        btnEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
-        add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, 150, 60));
+        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 250, 60));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("ALERGIAS:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
         TxtFAlergias.setBackground(new java.awt.Color(255, 255, 255));
         TxtFAlergias.setForeground(new java.awt.Color(0, 0, 0));
         TxtFAlergias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
-        add(TxtFAlergias, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 210, 30));
+        add(TxtFAlergias, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 210, 30));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
         add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 510));
     }//GEN-END:initComponents
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        Pacientes pacientes = new Pacientes();
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        Pacientes paciente = new Pacientes();
+        JSONObject nuevoPaciente = new JSONObject();
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = dateChooser.getDate();
-        pacientes.RegistrarNuevosPacientes(TxtFNombre.getText(), 
-                                            formato.format(fecha), 
-                                            CBGenero.getSelectedItem().toString(), 
-                                            TxtFDNI.getText(), 
-                                            TxtFTelefono.getText(), 
-                                            TxtFAlergias.getText(), 
-                                            TxtFEnfermedadesCronicas.getText(), 
-                                            CBSangre.getSelectedItem().toString(), 
-                                            TxtFNotasMedicas.getText(), 
-                                            pacientes.generarIDAlfanumerico());
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+        try{
+            paciente.ConfirmarEdicion(TxtFID.getText(), TxtFNombre.getText(), formato.format(fecha), 
+                CBGenero.getSelectedItem().toString(), TxtFDNI.getText(), TxtFTelefono.getText(),
+                TxtFAlergias.getText(), TxtFEnfermedadesCronicas.getText(), CBSangre.getSelectedItem().toString(), TxtFNotasMedicas.getText());
+            JOptionPane.showMessageDialog(null, "Se editaron correctamente los cambios.", "Editado", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex){
+            JOptionPane.showMessageDialog(null, "No se pudieron realizar los cambios: " + ex.getMessage(), "ERROR", JOptionPane.ERROR);
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -194,10 +236,11 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
     private javax.swing.JTextField TxtFAlergias;
     private javax.swing.JTextField TxtFDNI;
     private javax.swing.JTextField TxtFEnfermedadesCronicas;
+    private javax.swing.JTextField TxtFID;
     private javax.swing.JTextField TxtFNombre;
     private javax.swing.JTextField TxtFNotasMedicas;
     private javax.swing.JTextField TxtFTelefono;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -207,5 +250,6 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelID;
     // End of variables declaration//GEN-END:variables
 }
