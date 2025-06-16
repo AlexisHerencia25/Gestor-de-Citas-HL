@@ -116,39 +116,32 @@ public class BaseMedicos {
             String area, String ID){
         try {
             String contenido = new String(Files.readAllBytes(jsonmedicos.toPath()));
-            JSONArray pacientes = new JSONArray(contenido);
+            JSONArray medicos = new JSONArray(contenido);
 
-            // Crear objetos
-            JSONObject infoPersonal = new JSONObject();
-            infoPersonal.put("ID", "M-" + ID);
-            infoPersonal.put("Nombres completos", nombresCompletos);
-            infoPersonal.put("Fecha de nacimiento", fechaNacimiento);
-            infoPersonal.put("Género", genero);
-            infoPersonal.put("DNI", dni);
-            infoPersonal.put("Teléfono", "51+ " + telefono);
+            JSONObject informacionPersonal = new JSONObject();
+            informacionPersonal.put("Nombres completos", nombresCompletos);
+            informacionPersonal.put("Fecha de nacimiento", fechaNacimiento);
+            informacionPersonal.put("DNI", dni);
+            informacionPersonal.put("Teléfono", "51+ " + telefono);
+            informacionPersonal.put("Cargo", cargo);
+            informacionPersonal.put("Tipo de sangre", tipoSangre);
+            informacionPersonal.put("Área", area);
 
-            JSONObject datosMedicos = new JSONObject();
-            datosMedicos.put("Alergias", especialidad); // Por defecto
-            datosMedicos.put("Enfermedades Crónicas", cargo);
-            datosMedicos.put("Tipo de Sangre", tipoSangre);
-            datosMedicos.put("Notas médicas urgentes", area);
-
-            JSONObject ultimaAtencion = new JSONObject();
-            ultimaAtencion.put("Fecha", ""); // Vacío inicialmente
-            ultimaAtencion.put("motivo de consulta", "");
-            ultimaAtencion.put("diagnóstico", "");
-            ultimaAtencion.put("tratamiento o receta indicada", "");
-            ultimaAtencion.put("Medico encargado", "");
-
-            JSONObject cita = new JSONObject();
-            cita.put("Próxima cita", "");
             JSONObject nuevoMedico = new JSONObject();
-            nuevoMedico.put("Información personal", infoPersonal);
-            nuevoMedico.put("Datos médicos", datosMedicos);
-            nuevoMedico.put("Última atención médica", ultimaAtencion);
-            nuevoMedico.put("Citas programadas", cita);
-            pacientes.put(nuevoMedico);
-            Files.write(Paths.get(jsonmedicos.getPath()), pacientes.toString(2).getBytes(), StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+            nuevoMedico.put("id", "M-" + ID);
+            if (genero.equals("Femenino"))
+                nuevoMedico.put("nombre", "Dra. " + nombresCompletos);
+            else if (genero.equals("Masculino"))
+                nuevoMedico.put("nombre", "Dr. " + nombresCompletos);
+            nuevoMedico.put("especialidad", especialidad);
+            nuevoMedico.put("informacion_personal", informacionPersonal);
+            
+            JSONObject horariosdisponibles = new JSONObject();
+            nuevoMedico.put("horario_disponible", horariosdisponibles);
+            medicos.put(nuevoMedico);
+
+            Files.write(Paths.get(jsonmedicos.getPath()), medicos.toString(2).getBytes(), StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+
             System.out.println("Médico agregado correctamente: " + ID);
             return true;
         } catch (IOException e) {
@@ -185,9 +178,8 @@ public class BaseMedicos {
                 String contenido = new String(Files.readAllBytes(jsonmedicos.toPath()));
                 JSONArray pacientes = new JSONArray(contenido);
                 for (Object obj : pacientes) {
-                    JSONObject paciente = (JSONObject) obj;
-                    JSONObject info = (JSONObject) paciente.get("Información personal");
-                    String id = (String) info.get("ID");
+                    JSONObject medico = (JSONObject) obj;
+                    String id = medico.optString("id", null);
                     if (id != null) {
                         ids.add(id);
                     }

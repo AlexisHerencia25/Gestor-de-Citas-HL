@@ -1,363 +1,377 @@
 [
   {
-    "id": "MED001",
-    "nombre": "Dra. Ana Torres",
-    "especialidad": "Pediatría",
     "horario_disponible": {
-      "lunes": "08:00 - 12:00",
       "miércoles": "10:00 - 14:00",
+      "lunes": "08:00 - 12:00",
       "viernes": "08:00 - 12:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Ana Torres",
-      "Fecha de nacimiento": "",
-      "DNI": "76545632",
-      "Telefono": "+51 954943492",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Pediatría"
-    }
+      "Area": "Pediatría",
+      "Fecha de nacimiento": "05/10/1980",
+      "Nombres completos": "Ana Torres",
+      "Telefono": "987654321",
+      "Tipo de sangre": "B+",
+      "DNI": "74545678"
+    },
+    "id": "M-aBc12XyZ90pQr34TuV56WlMn78kOJp",
+    "nombre": "Dra. Ana Torres",
+    "especialidad": "Pediatría"
   },
   {
-    "id": "MED002",
-    "nombre": "Dr. Luis Ramírez",
-    "especialidad": "Cardiología",
     "horario_disponible": {
       "martes": "14:00 - 18:00",
       "jueves": "08:00 - 12:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Luis Ramírez",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Cardiología"
-    }
+      "Area": "Cardiología",
+      "Fecha de nacimiento": "10/11/1969",
+      "Nombres completos": "Luis Ramírez",
+      "Telefono": "998745385",
+      "Tipo de sangre": "AB-",
+      "DNI": "09576312"
+    },
+    "id": "M-PqRs12TuVwXyZaBc34DeFgHiJkLmuT",
+    "nombre": "Dr. Luis Ramírez",
+    "especialidad": "Cardiología"
   },
   {
-    "id": "MED003",
-    "nombre": "Dra. Camila Soto",
-    "especialidad": "Dermatología",
     "horario_disponible": {
-      "lunes": "09:00 - 13:00",
-      "miércoles": "09:00 - 13:00"
+      "miércoles": "09:00 - 13:00",
+      "lunes": "09:00 - 13:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Camila Soto",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Dermatología"
-    }
+      "Area": "Dermatología",
+      "Fecha de nacimiento": "29/03/1995",
+      "Nombres completos": "Camila Soto",
+      "Telefono": "954321679",
+      "Tipo de sangre": "AB+",
+      "DNI": "87543261"
+    },
+    "id": "M-dEf45GhIj67KlMnOpQrStUvWxYz1a2",
+    "nombre": "Dra. Camila Soto",
+    "especialidad": "Dermatología"
   },
   {
-    "id": "MED004",
-    "nombre": "Dr. Esteban Vera",
-    "especialidad": "Traumatología",
     "horario_disponible": {
       "martes": "10:00 - 14:00",
       "viernes": "12:00 - 16:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Esteban Vera",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Traumatología"
-    }
+      "Area": "Traumatología",
+      "Fecha de nacimiento": "12/01/2000",
+      "Nombres completos": "Esteban Vera",
+      "Telefono": "9096435145",
+      "Tipo de sangre": "O+",
+      "DNI": "75342173"
+    },
+    "id": "M-zYxWvUtS12rQpOnMlKjIhGfEdCbAe4",
+    "nombre": "Dr. Esteban Vera",
+    "especialidad": "Traumatología"
   },
   {
-    "id": "MED005",
-    "nombre": "Dra. Mariana Díaz",
-    "especialidad": "Neurología",
     "horario_disponible": {
       "jueves": "08:00 - 11:00",
       "viernes": "10:00 - 13:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Mariana Díaz",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Neurología"
-    }
+      "Area": "Neurología",
+      "Fecha de nacimiento": "09/05/1972",
+      "Nombres completos": "Mariana Díaz",
+      "Telefono": "986543127",
+      "Tipo de sangre": "A-",
+      "DNI": "76542317"
+    },
+    "id": "M-aBcDeFgHiJkLmNoPqRsTuVwXyZ12Uv",
+    "nombre": "Dra. Mariana Díaz",
+    "especialidad": "Neurología"
   },
   {
-    "id": "MED006",
-    "nombre": "Dr. Javier Gómez",
-    "especialidad": "Gastroenterología",
     "horario_disponible": {
-      "lunes": "14:00 - 18:00",
-      "miércoles": "08:00 - 12:00"
+      "miércoles": "08:00 - 12:00",
+      "lunes": "14:00 - 18:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Javier Gómez",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Gastroenterología"
-    }
+      "Area": "Gastroenterología",
+      "Fecha de nacimiento": "12/03/1982",
+      "Nombres completos": "Javier Gómez",
+      "Telefono": "987654132",
+      "Tipo de sangre": "AB+",
+      "DNI": "75241342"
+    },
+    "id": "M-QzXwEcRvTfGbYhUnJmIkOlPaSd19YT",
+    "nombre": "Dr. Javier Gómez",
+    "especialidad": "Gastroenterología"
   },
   {
-    "id": "MED007",
-    "nombre": "Dra. Silvia Ríos",
-    "especialidad": "Ginecología",
     "horario_disponible": {
       "martes": "09:00 - 13:00",
       "jueves": "14:00 - 18:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Silvia Ríos",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Ginecología"
-    }
+      "Area": "Ginecología",
+      "Fecha de nacimiento": "29/12/1987",
+      "Nombres completos": "Silvia Ríos",
+      "Telefono": "934567",
+      "Tipo de sangre": "B-",
+      "DNI": "77889900"
+    },
+    "id": "M-mNoPqRsTuVwXyZaBcDeFgHiJkL45a9",
+    "nombre": "Dra. Silvia Ríos",
+    "especialidad": "Ginecología"
   },
   {
-    "id": "MED008",
-    "nombre": "Dr. Fernando Morales",
-    "especialidad": "Urología",
     "horario_disponible": {
       "miércoles": "10:00 - 14:00",
       "viernes": "08:00 - 12:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Fernando Morales",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Urología"
-    }
+      "Area": "Urología",
+      "Fecha de nacimiento": "02/03/1976",
+      "Nombres completos": "Fernando Morales",
+      "Telefono": "923456789",
+      "Tipo de sangre": "A-",
+      "DNI": "33445566"
+    },
+    "id": "M-wXyZaBcDeFgHiJkLmNoPqRsTuV34uI",
+    "nombre": "Dr. Fernando Morales",
+    "especialidad": "Urología"
   },
   {
-    "id": "MED009",
-    "nombre": "Dra. Isabel Castillo",
-    "especialidad": "Oftalmología",
     "horario_disponible": {
-      "lunes": "13:00 - 17:00",
-      "jueves": "08:00 - 12:00"
+      "jueves": "08:00 - 12:00",
+      "lunes": "13:00 - 17:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Isabel Castillo",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Oftalmología"
-    }
+      "Area": "Oftalmología",
+      "Fecha de nacimiento": "17/05/1986",
+      "Nombres completos": "Isabel Castillo",
+      "Telefono": "912345678",
+      "Tipo de sangre": "AB+",
+      "DNI": "99001122"
+    },
+    "id": "M-1a2B3c4D5e6F7g8H9i0JkLmNoPqRaZ",
+    "nombre": "Dra. Isabel Castillo",
+    "especialidad": "Oftalmología"
   },
   {
-    "id": "MED010",
-    "nombre": "Dr. Ricardo Mejía",
-    "especialidad": "Psiquiatría",
     "horario_disponible": {
       "martes": "15:00 - 19:00",
       "viernes": "09:00 - 13:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Ricardo Mejía",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Psiquiatría"
-    }
+      "Area": "Psiquiatría",
+      "Fecha de nacimiento": "22/09/1984",
+      "Nombres completos": "Ricardo Mejía",
+      "Telefono": "901234567",
+      "Tipo de sangre": "B-",
+      "DNI": "55667788"
+    },
+    "id": "M-uVwXyZaBcDeFgHiJkLmNoPqRsT12hG",
+    "nombre": "Dr. Ricardo Mejía",
+    "especialidad": "Psiquiatría"
   },
   {
-    "id": "MED011",
-    "nombre": "Dr. Pablo Linares",
-    "especialidad": "Pediatría",
     "horario_disponible": {
       "martes": "08:00 - 12:00",
       "jueves": "10:00 - 14:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Pablo Linares",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Pediatría"
-    }
+      "Area": "Pediatría",
+      "Fecha de nacimiento": "08/01/1980",
+      "Nombres completos": "Pablo Linares",
+      "Telefono": "990123456",
+      "Tipo de sangre": "A+",
+      "DNI": "11223344"
+    },
+    "id": "M-XyZaBcDeFgHiJkLmNoPqRsTuVw34nC",
+    "nombre": "Dr. Pablo Linares",
+    "especialidad": "Pediatría"
   },
   {
-    "id": "MED012",
-    "nombre": "Dra. Julia Fernández",
-    "especialidad": "Cardiología",
     "horario_disponible": {
       "lunes": "09:00 - 13:00",
       "viernes": "08:00 - 12:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Julia Fernández",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Cardiología"
-    }
+      "Area": "Cardiología",
+      "Fecha de nacimiento": "12/08/1977",
+      "Nombres completos": "Julia Fernández",
+      "Telefono": "989012345",
+      "Tipo de sangre": "AB-",
+      "DNI": "44556677"
+    },
+    "id": "M-eFgHiJkLmNoPqRsTuVwXyZaBcD12Po",
+    "nombre": "Dra. Julia Fernández",
+    "especialidad": "Cardiología"
   },
   {
-    "id": "MED013",
-    "nombre": "Dr. Andrés Molina",
-    "especialidad": "Dermatología",
     "horario_disponible": {
       "miércoles": "14:00 - 18:00",
       "viernes": "08:00 - 11:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Andrés Molina",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Dermatología"
-    }
+      "Area": "Dermatología",
+      "Fecha de nacimiento": "03/06/1983",
+      "Nombres completos": "Andrés Molina",
+      "Telefono": "978901234",
+      "Tipo de sangre": "O+",
+      "DNI": "77889900"
+    },
+    "id": "M-kLmNoPqRsTuVwXyZaBcDeFgHiJ78jK",
+    "nombre": "Dr. Andrés Molina",
+    "especialidad": "Dermatología"
   },
   {
-    "id": "MED014",
-    "nombre": "Dra. Verónica Ayala",
-    "especialidad": "Neurología",
     "horario_disponible": {
       "martes": "13:00 - 17:00",
       "jueves": "09:00 - 12:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Verónica Ayala",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Neurología"
-    }
+      "Area": "Neurología",
+      "Fecha de nacimiento": "06/07/2001",
+      "Nombres completos": "Verónica Ayala",
+      "Telefono": "996534317",
+      "Tipo de sangre": "AB-",
+      "DNI": "75432134"
+    },
+    "id": "M-aBcDeFgHiJkLmNoPqRsTuVwXyZ12uF",
+    "nombre": "Dra. Verónica Ayala",
+    "especialidad": "Neurología"
   },
   {
-    "id": "MED015",
-    "nombre": "Dr. Mauricio Peña",
-    "especialidad": "Gastroenterología",
     "horario_disponible": {
-      "lunes": "10:00 - 14:00",
-      "miércoles": "08:00 - 12:00"
+      "miércoles": "08:00 - 12:00",
+      "lunes": "10:00 - 14:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Mauricio Peña",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Gastroenterología"
-    }
+      "Area": "Gastroenterología",
+      "Fecha de nacimiento": "18/02/1979",
+      "Nombres completos": "Mauricio Peña",
+      "Telefono": "956789012",
+      "Tipo de sangre": "A-",
+      "DNI": "99001122"
+    },
+    "id": "M-oPqRsTuVwXyZaBcDeFgHiJkLmN34Rt",
+    "nombre": "Dr. Mauricio Peña",
+    "especialidad": "Gastroenterología"
   },
   {
-    "id": "MED016",
-    "nombre": "Dra. Leticia Guzmán",
-    "especialidad": "Urología",
     "horario_disponible": {
       "lunes": "13:00 - 17:00",
       "viernes": "10:00 - 14:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Leticia Guzmán",
-      "Fecha de nacimiento": "",
-      "DNI": "75645644",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Urología"
-    }
+      "Area": "Urología",
+      "Fecha de nacimiento": "10/11/1978",
+      "Nombres completos": "Leticia Guzmán",
+      "Telefono": "945678901",
+      "Tipo de sangre": "O-",
+      "DNI": "55667788"
+    },
+    "id": "M-hIjK12LmNoPqRsTuVwXyZaBcDeFgS2",
+    "nombre": "Dra. Leticia Guzmán",
+    "especialidad": "Urología"
   },
   {
-    "id": "MED017",
-    "nombre": "Dr. Hugo Rivas",
-    "especialidad": "Psiquiatría",
     "horario_disponible": {
       "martes": "08:00 - 11:00",
       "jueves": "14:00 - 17:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Hugo Rivas",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Psiquiatría"
-    }
+      "Area": "Psiquiatría",
+      "Fecha de nacimiento": "05/09/1985",
+      "Nombres completos": "Hugo Rivas",
+      "Telefono": "934567890",
+      "Tipo de sangre": "AB+",
+      "DNI": "11223344"
+    },
+    "id": "M-ZzYyXxWwVvUuTtSsRrQqPpOoNn12sU",
+    "nombre": "Dr. Hugo Rivas",
+    "especialidad": "Psiquiatría"
   },
   {
-    "id": "MED018",
-    "nombre": "Dra. Mónica Delgado",
-    "especialidad": "Traumatología",
     "horario_disponible": {
       "miércoles": "09:00 - 13:00",
       "viernes": "13:00 - 17:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Mónica Delgado",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Traumatología"
-    }
+      "Area": "Traumatología",
+      "Fecha de nacimiento": "20/07/1982",
+      "Nombres completos": "Mónica Delgado",
+      "Telefono": "923456789",
+      "Tipo de sangre": "A+",
+      "DNI": "24681357"
+    },
+    "id": "M-dEfGhIjKlMnOpQrStUvWxYzAbC45p6",
+    "nombre": "Dra. Mónica Delgado",
+    "especialidad": "Traumatología"
   },
   {
-    "id": "MED019",
-    "nombre": "Dr. Ernesto Cabrera",
-    "especialidad": "Ginecología",
     "horario_disponible": {
-      "lunes": "08:00 - 12:00",
-      "jueves": "10:00 - 13:00"
+      "jueves": "10:00 - 13:00",
+      "lunes": "08:00 - 12:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Ernesto Cabrera",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctor",
-      "Tipo de sangre": "",
-      "Area": "Ginecología"
-    }
+      "Area": "Ginecología",
+      "Fecha de nacimiento": "15/03/1975",
+      "Nombres completos": "Ernesto Cabrera",
+      "Telefono": "912345678",
+      "Tipo de sangre": "A-",
+      "DNI": "98765432"
+    },
+    "id": "M-fGhIjKlMnOpQrStUvWxYzAbCdE34sS",
+    "nombre": "Dr. Ernesto Cabrera",
+    "especialidad": "Ginecología"
   },
   {
-    "id": "MED020",
-    "nombre": "Dra. Alejandra Pino",
-    "especialidad": "Oftalmología",
     "horario_disponible": {
       "martes": "14:00 - 18:00",
       "viernes": "09:00 - 12:00"
     },
     "informacion_personal": {
-      "Nombres completos": "Alejandra Pino",
-      "Fecha de nacimiento": "",
-      "DNI": "",
-      "Telefono": "",
       "Cargo": "Doctora",
-      "Tipo de sangre": "",
-      "Area": "Oftalmología"
-    }
+      "Area": "Oftalmología",
+      "Fecha de nacimiento": "25/04/1981",
+      "Nombres completos": "Alejandra Pino",
+      "Telefono": "967890123",
+      "Tipo de sangre": "B+",
+      "DNI": "33445566"
+    },
+    "id": "M-uVwXyZaBcDeFgHiJkLmNoPqRsT12TY",
+    "nombre": "Dra. Alejandra Pino",
+    "especialidad": "Oftalmología"
+  },
+  {
+    "horario_disponible": {},
+    "informacion_personal": {
+      "Cargo": "Doctor",
+      "Fecha de nacimiento": "1995-11-11",
+      "Nombres completos": "Miguel Sanches",
+      "Área": "Pediatria",
+      "Tipo de sangre": "A+",
+      "DNI": "347821",
+      "Teléfono": "51+ 948932137"
+    },
+    "id": "M-Nr9BJnvTunyjRBgl0cDpICdmSpYKlk",
+    "especialidad": "Pediatria"
   }
 ]
