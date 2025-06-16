@@ -5,13 +5,11 @@
 package gestion.administrativa.hospital.la;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-import org.json.JSONObject;
-import org.json.JSONArray;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import java.awt.Component;
 
 /**
  *
@@ -107,7 +105,16 @@ public class PanelPacientes extends javax.swing.JPanel {
             new String [] {
                 "ID", "NOMBRES Y APELLIDOS", "INFORMACIÓN"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblinformacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tblinformacion);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 610, 200));
@@ -143,6 +150,28 @@ public class PanelPacientes extends javax.swing.JPanel {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         Pacientes pacientes = new Pacientes();
         pacientes.BuscarYMostrarPacientes(tblinformacion, txtID, txtBuscar);
+        tblinformacion.getColumnModel().getColumn(2).setCellRenderer(new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value,
+                                                   boolean isSelected, boolean hasFocus,
+                                                   int row, int column) {
+                JTextArea area = new JTextArea();
+                area.setText(value != null ? value.toString() : "");
+                area.setWrapStyleWord(true);
+                area.setLineWrap(true);
+                area.setOpaque(true);
+                area.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+                area.setForeground(isSelected ? table.getSelectionForeground() : table.getForeground());
+                return area;
+            }
+        });
+        tblinformacion.setRowHeight(80);
+        tblinformacion.getColumnModel().getColumn(0).setPreferredWidth(200);
+        tblinformacion.getColumnModel().getColumn(1).setPreferredWidth(180);
+        tblinformacion.getColumnModel().getColumn(2).setPreferredWidth(300);
+        DefaultTableCellRenderer centrado = new DefaultTableCellRenderer();
+        centrado.setHorizontalAlignment(SwingConstants.CENTER);
+        tblinformacion.getColumnModel().getColumn(1).setCellRenderer(centrado);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

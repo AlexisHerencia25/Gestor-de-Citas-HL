@@ -58,7 +58,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         LblPacientes = new javax.swing.JLabel();
         LblHospital = new javax.swing.JLabel();
         LblMedicos = new javax.swing.JLabel();
-        LblExamenes = new javax.swing.JLabel();
+        LblHistorialesClinicos = new javax.swing.JLabel();
         LblCitas = new javax.swing.JLabel();
         BtnAgendar = new javax.swing.JButton();
         Iconoprueba = new javax.swing.JLabel();
@@ -115,7 +115,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
                 LblMouseSalirOpciones(evt);
             }
         });
-        content.add(LblPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 140, 150, 40));
+        content.add(LblPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 140, 130, 40));
 
         LblHospital.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         LblHospital.setForeground(new java.awt.Color(6, 5, 235));
@@ -137,19 +137,30 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
                 LblMouseSalirOpciones(evt);
             }
         });
-        content.add(LblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 140, 150, 40));
+        content.add(LblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 140, 120, 40));
 
-        LblExamenes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        LblExamenes.setForeground(new java.awt.Color(48, 73, 101));
-        LblExamenes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LblExamenes.setText("Exámenes");
-        content.add(LblExamenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 140, 150, 40));
+        LblHistorialesClinicos.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        LblHistorialesClinicos.setForeground(new java.awt.Color(6, 5, 235));
+        LblHistorialesClinicos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblHistorialesClinicos.setText("Historiales clínicos");
+        LblHistorialesClinicos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblHistorialesClinicosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LblMouseEncimaOpciones(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LblMouseSalirOpciones(evt);
+            }
+        });
+        content.add(LblHistorialesClinicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 210, 40));
 
         LblCitas.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblCitas.setForeground(new java.awt.Color(48, 73, 101));
         LblCitas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblCitas.setText("Citas médicas activas");
-        content.add(LblCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 140, 270, 40));
+        content.add(LblCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 240, 40));
 
         BtnAgendar.setBackground(new java.awt.Color(0, 74, 173));
         BtnAgendar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -261,6 +272,20 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         this.setTitle("Registros");
     }//GEN-LAST:event_BtnAgendarActionPerformed
 
+    private void LblHistorialesClinicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblHistorialesClinicosMouseClicked
+        PanelHistorialClinico historial = new PanelHistorialClinico(content);
+        historial.setSize(740, 530);
+        historial.setLocation(0,0);
+        
+        content.setLayout(new BorderLayout());
+        content.removeAll();
+        content.add(historial, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+        
+        this.setTitle("Historiales Clínicos");
+    }//GEN-LAST:event_LblHistorialesClinicosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -304,7 +329,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
     private javax.swing.JLabel Iconoprueba;
     private javax.swing.JLabel LblCitas;
     private javax.swing.JLabel LblContacto;
-    private javax.swing.JLabel LblExamenes;
+    private javax.swing.JLabel LblHistorialesClinicos;
     private javax.swing.JLabel LblHospital;
     private javax.swing.JLabel LblLoayza;
     private javax.swing.JLabel LblMedicos;
