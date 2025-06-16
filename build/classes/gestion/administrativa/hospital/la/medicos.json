@@ -7,6 +7,15 @@
       "lunes": "08:00 - 12:00",
       "miércoles": "10:00 - 14:00",
       "viernes": "08:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Ana Torres",
+      "Fecha de nacimiento": "",
+      "DNI": "76545632",
+      "Telefono": "+51 954943492",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Pediatría"
     }
   },
   {
@@ -16,6 +25,15 @@
     "horario_disponible": {
       "martes": "14:00 - 18:00",
       "jueves": "08:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Luis Ramírez",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Cardiología"
     }
   },
   {
@@ -25,6 +43,15 @@
     "horario_disponible": {
       "lunes": "09:00 - 13:00",
       "miércoles": "09:00 - 13:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Camila Soto",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Dermatología"
     }
   },
   {
@@ -34,6 +61,15 @@
     "horario_disponible": {
       "martes": "10:00 - 14:00",
       "viernes": "12:00 - 16:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Esteban Vera",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Traumatología"
     }
   },
   {
@@ -43,6 +79,15 @@
     "horario_disponible": {
       "jueves": "08:00 - 11:00",
       "viernes": "10:00 - 13:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Mariana Díaz",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Neurología"
     }
   },
   {
@@ -52,6 +97,15 @@
     "horario_disponible": {
       "lunes": "14:00 - 18:00",
       "miércoles": "08:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Javier Gómez",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Gastroenterología"
     }
   },
   {
@@ -61,6 +115,15 @@
     "horario_disponible": {
       "martes": "09:00 - 13:00",
       "jueves": "14:00 - 18:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Silvia Ríos",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Ginecología"
     }
   },
   {
@@ -70,6 +133,15 @@
     "horario_disponible": {
       "miércoles": "10:00 - 14:00",
       "viernes": "08:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Fernando Morales",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Urología"
     }
   },
   {
@@ -79,6 +151,15 @@
     "horario_disponible": {
       "lunes": "13:00 - 17:00",
       "jueves": "08:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Isabel Castillo",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Oftalmología"
     }
   },
   {
@@ -88,6 +169,15 @@
     "horario_disponible": {
       "martes": "15:00 - 19:00",
       "viernes": "09:00 - 13:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Ricardo Mejía",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Psiquiatría"
     }
   },
   {
@@ -97,6 +187,15 @@
     "horario_disponible": {
       "martes": "08:00 - 12:00",
       "jueves": "10:00 - 14:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Pablo Linares",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Pediatría"
     }
   },
   {
@@ -106,6 +205,15 @@
     "horario_disponible": {
       "lunes": "09:00 - 13:00",
       "viernes": "08:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Julia Fernández",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Cardiología"
     }
   },
   {
@@ -115,6 +223,15 @@
     "horario_disponible": {
       "miércoles": "14:00 - 18:00",
       "viernes": "08:00 - 11:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Andrés Molina",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Dermatología"
     }
   },
   {
@@ -124,6 +241,15 @@
     "horario_disponible": {
       "martes": "13:00 - 17:00",
       "jueves": "09:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Verónica Ayala",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Neurología"
     }
   },
   {
@@ -133,6 +259,15 @@
     "horario_disponible": {
       "lunes": "10:00 - 14:00",
       "miércoles": "08:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Mauricio Peña",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Gastroenterología"
     }
   },
   {
@@ -142,6 +277,15 @@
     "horario_disponible": {
       "lunes": "13:00 - 17:00",
       "viernes": "10:00 - 14:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Leticia Guzmán",
+      "Fecha de nacimiento": "",
+      "DNI": "75645644",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Urología"
     }
   },
   {
@@ -151,6 +295,15 @@
     "horario_disponible": {
       "martes": "08:00 - 11:00",
       "jueves": "14:00 - 17:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Hugo Rivas",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Psiquiatría"
     }
   },
   {
@@ -160,6 +313,15 @@
     "horario_disponible": {
       "miércoles": "09:00 - 13:00",
       "viernes": "13:00 - 17:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Mónica Delgado",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Traumatología"
     }
   },
   {
@@ -169,6 +331,15 @@
     "horario_disponible": {
       "lunes": "08:00 - 12:00",
       "jueves": "10:00 - 13:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Ernesto Cabrera",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctor",
+      "Tipo de sangre": "",
+      "Area": "Ginecología"
     }
   },
   {
@@ -178,6 +349,15 @@
     "horario_disponible": {
       "martes": "14:00 - 18:00",
       "viernes": "09:00 - 12:00"
+    },
+    "informacion_personal": {
+      "Nombres completos": "Alejandra Pino",
+      "Fecha de nacimiento": "",
+      "DNI": "",
+      "Telefono": "",
+      "Cargo": "Doctora",
+      "Tipo de sangre": "",
+      "Area": "Oftalmología"
     }
   }
 ]

@@ -238,29 +238,5 @@
             "diagnóstico": "",
             "Medico encargado": ""
         }
-    },
-    {
-        "Información personal": {
-            "Fecha de nacimiento": "2007-06-22",
-            "Nombres completos": "Carlos Huaman",
-            "Género": "Masculino",
-            "ID": "P-EBoA3FaGqNR3sytAqpxLXmp9B6Y97H",
-            "DNI": "75645232",
-            "Teléfono": "51+ 970343932"
-        },
-        "Citas programadas": {"Próxima cita": ""},
-        "Datos médicos": {
-            "Alergias": "Polen",
-            "Notas médicas urgentes": "Tiene que asistir seguidamente",
-            "Enfermedades Crónicas": "Sida",
-            "Tipo de Sangre": "AB−"
-        },
-        "Última atención médica": {
-            "Fecha": "",
-            "motivo de consulta": "",
-            "tratamiento o receta indicada": "",
-            "diagnóstico": "",
-            "Medico encargado": ""
-        }
     }
 ]

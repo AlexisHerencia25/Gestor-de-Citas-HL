@@ -195,16 +195,40 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
     }//GEN-END:initComponents
 
     private void LblMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosMouseClicked
-        PanelMedicos medicos = new PanelMedicos();
-        medicos.setSize(740, 530);
-        medicos.setLocation(0,0);
-        
-        content.setLayout(new BorderLayout());
-        content.removeAll();
-        content.add(medicos, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
         this.setTitle("Medicos");
+        
+        int opcion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Qué deseas hacer?\na) Registrar nuevos médicos\nb) Buscar y eliminar",
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new Object[] { "a", "b" },  // Opciones personalizadas
+                    "Sí"
+                );
+        if (opcion == JOptionPane.YES_OPTION) {
+            PanelRegistroMedicos medicos_registro = new PanelRegistroMedicos();
+            medicos_registro.setSize(740, 530);
+            medicos_registro.setLocation(0,0);
+            content.setLayout(new BorderLayout());
+            content.removeAll();
+            content.add(medicos_registro, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+            this.setTitle("Registro de Médicos");
+        } else if (opcion == JOptionPane.NO_OPTION) {
+            PanelMedicos medicos = new PanelMedicos();
+            medicos.setSize(740, 530);
+            medicos.setLocation(0,0);
+        
+            content.setLayout(new BorderLayout());
+            content.removeAll();
+            content.add(medicos, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+            this.setTitle("Medicos");
+        }
     }//GEN-LAST:event_LblMedicosMouseClicked
 
     private void LblPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesMouseClicked
