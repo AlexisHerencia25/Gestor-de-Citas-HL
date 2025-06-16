@@ -163,7 +163,7 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
     }//GEN-END:initComponents
 
     private void LblPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesMouseClicked
-        PanelPacientes pacientes = new PanelPacientes();
+        PanelPacientes pacientes = new PanelPacientes(content);
         pacientes.setSize(740, 530);
         pacientes.setLocation(0,0);
 

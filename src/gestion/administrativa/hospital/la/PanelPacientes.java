@@ -3,7 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package gestion.administrativa.hospital.la;
-import java.io.File;
+
+import javax.swing.*;
+import java.awt.BorderLayout;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import org.json.JSONObject;
+import org.json.JSONArray;
+
 /**
  *
  * @author Alexis
@@ -14,9 +23,11 @@ public class PanelPacientes extends javax.swing.JPanel {
      * Creates new form PanelPacientes
      */
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PanelPacientes.class.getName());
+    private JPanel contenedor;
     
-    public PanelPacientes() {
+    public PanelPacientes(JPanel content) {
         initComponents();
+        contenedor = content;
     }
 
     /**
@@ -36,6 +47,8 @@ public class PanelPacientes extends javax.swing.JPanel {
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblinformacion = new javax.swing.JTable();
+        btnEditar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,7 +64,7 @@ public class PanelPacientes extends javax.swing.JPanel {
         LblTitulo.setFont(new java.awt.Font("Chewy", 1, 48)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(57, 74, 128));
         LblTitulo.setText("PACIENTES REGISTROS");
-        add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 439, 50));
+        add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 439, 50));
 
         LblNombre.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         LblNombre.setForeground(new java.awt.Color(0, 0, 0));
@@ -61,7 +74,7 @@ public class PanelPacientes extends javax.swing.JPanel {
         LblID.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         LblID.setForeground(new java.awt.Color(0, 0, 0));
         LblID.setText("ID");
-        add(LblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 30, 40));
+        add(LblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 30, 40));
 
         txtBuscar.setBackground(new java.awt.Color(255, 255, 255));
         txtBuscar.setForeground(new java.awt.Color(0, 0, 0));
@@ -83,7 +96,7 @@ public class PanelPacientes extends javax.swing.JPanel {
                 btnBuscarActionPerformed(evt);
             }
         });
-        add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 180, 60));
+        add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 180, 50));
 
         tblinformacion.setBackground(new java.awt.Color(255, 255, 255));
         tblinformacion.setForeground(new java.awt.Color(0, 0, 0));
@@ -99,6 +112,30 @@ public class PanelPacientes extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 610, 200));
 
+        btnEditar.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        btnEditar.setForeground(new java.awt.Color(0, 0, 0));
+        btnEditar.setText("EDITAR");
+        btnEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 180, 50));
+
+        btnEliminar.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(0, 0, 0));
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 180, 50));
+
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
         add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 510));
     }//GEN-END:initComponents
@@ -108,6 +145,32 @@ public class PanelPacientes extends javax.swing.JPanel {
         pacientes.BuscarYMostrarPacientes(tblinformacion, txtID, txtBuscar);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        Pacientes pacientes = new Pacientes();
+        String id = tblinformacion.getValueAt(tblinformacion.getSelectedRow(), 0).toString();
+        pacientes.EditarPaciente(id, contenedor);
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        Pacientes pacientes = new Pacientes();
+        String id = tblinformacion.getValueAt(tblinformacion.getSelectedRow(), 0).toString();
+        pacientes.EliminarPaciente(id);
+        int opcion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Estas seguro que deseas eliminar a" + tblinformacion.getValueAt(tblinformacion.getSelectedRow(), 1).toString() + "?",
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new Object[] { "Si", "No" },  // Opciones personalizadas
+                    "Sí"
+                );
+        if (opcion == JOptionPane.YES_OPTION){
+            pacientes.EliminarPaciente(id);
+            JOptionPane.showMessageDialog(null, "Se eliminó al paciente correspondite con éxito.", "¡Eliminado!", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
@@ -115,6 +178,8 @@ public class PanelPacientes extends javax.swing.JPanel {
     private javax.swing.JLabel LblNombre;
     private javax.swing.JLabel LblTitulo;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMedicos;
     private javax.swing.JTable tblinformacion;
