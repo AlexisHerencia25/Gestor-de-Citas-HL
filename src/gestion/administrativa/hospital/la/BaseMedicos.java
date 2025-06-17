@@ -68,15 +68,18 @@ public class BaseMedicos {
             String nombre = medico.getString("nombre");
             if (nombre.toLowerCase().contains(texto)){
                 String id = medico.getString("id");
-                String nombre_medico = medico.getString("nombre");
+                String nombre_medico = medico.optString("nombre");
                 String especialidad = medico.getString("especialidad");
 
-                JSONObject horarios = medico.getJSONObject("horario_disponible");
-                for (String dia : horarios.keySet()) {
-                    String hora = horarios.getString(dia);
-                    model.addRow(new Object[]{id, nombre_medico, especialidad, horarios});
+                JSONObject info = medico.getJSONObject("informacion_personal");
+                String contacto = info.optString("Telefono", "Sin telefono");
+                model.addRow(new Object[]{id, nombre_medico, contacto, especialidad});
+                datos_existe = true;
+                /*for (String numero : info.keySet()) {
+                    String contacto = info.getString(numero);
+                    model.addRow(new Object[]{id, nombre_medico, contacto, especialidad});
                     datos_existe = true;
-                }
+                }*/
             }
         }
     }

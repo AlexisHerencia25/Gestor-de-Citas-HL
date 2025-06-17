@@ -155,8 +155,8 @@
               <Table columnCount="4" rowCount="0">
                 <Column editable="true" title="ID" type="java.lang.String"/>
                 <Column editable="true" title="NOMBRES Y APELLIDOS" type="java.lang.String"/>
+                <Column editable="true" title="CONTACTO" type="java.lang.String"/>
                 <Column editable="true" title="ESPECIALIDAD" type="java.lang.String"/>
-                <Column editable="true" title="HORARIOS DISPONIBLES" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
