@@ -64,7 +64,7 @@
       "Area": "Traumatología",
       "Fecha de nacimiento": "12/01/2000",
       "Nombres completos": "Esteban Vera",
-      "Telefono": "9096435145",
+      "Telefono": "909643514",
       "Tipo de sangre": "O+",
       "DNI": "75342173"
     },
@@ -118,7 +118,7 @@
       "Area": "Ginecología",
       "Fecha de nacimiento": "29/12/1987",
       "Nombres completos": "Silvia Ríos",
-      "Telefono": "934567",
+      "Telefono": "934567432",
       "Tipo de sangre": "B-",
       "DNI": "77889900"
     },
@@ -369,9 +369,10 @@
       "Área": "Pediatria",
       "Tipo de sangre": "A+",
       "DNI": "347821",
-      "Teléfono": "51+ 948932137"
+      "Teléfono": "948932137"
     },
     "id": "M-Nr9BJnvTunyjRBgl0cDpICdmSpYKlk",
-    "especialidad": "Pediatria"
+    "especialidad": "Pediatria",
+    "nombre": "Dr. Miguel Sanches"
   }
 ]

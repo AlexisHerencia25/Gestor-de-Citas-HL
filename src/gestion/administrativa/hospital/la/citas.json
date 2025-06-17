@@ -1,0 +1,153 @@
+[
+  {
+    "fecha": "2025-06-21",
+    "cita_id": "CITA-001",
+    "estado": "Programada",
+    "hora": "12:30",
+    "paciente": {
+      "nombres_completos": "Luciana Andrea Ríos",
+      "id": "P-ALzGEiJBI1g5tJMN38T8ClbHYZ9FMD"
+    },
+    "medico": {
+      "horario_disponible": "12:00 - 16:00",
+      "nombres_completos": "Dr. Esteban Vera",
+      "id": "M-aBc12XyZ90pQr34TuV56WlMn78kOJp"
+    },
+    "dia": "viernes",
+    "especialidad": "Traumatología"
+  },
+  {
+    "fecha": "2025-06-22",
+    "cita_id": "CITA-002",
+    "estado": "Programada",
+    "hora": "09:00",
+    "paciente": {
+      "nombres_completos": "Martina Sofía Hidalgo",
+      "id": "P-KL3Y7HiXBGqPLUzJQ1m98vFoCNZ2XRM"
+    },
+    "medico": {
+      "horario_disponible": "08:00 - 12:00",
+      "nombres_completos": "Dra. Ana Torres",
+      "id": "M-aBc12XyZ90pQr34TuV56WlMn78kOJp"
+    },
+    "dia": "sábado",
+    "especialidad": "Pediatría"
+  },
+  {
+    "fecha": "2025-06-24",
+    "cita_id": "CITA-003",
+    "estado": "Programada",
+    "hora": "15:00",
+    "paciente": {
+      "nombres_completos": "Pedro Ignacio Chávez",
+      "id": "P-K6B7AeInOrVKzqdZWrZ2xz9kL44U4K"
+    },
+    "medico": {
+      "horario_disponible": "14:00 - 18:00",
+      "nombres_completos": "Dr. Luis Ramírez",
+      "id": "M-PqRs12TuVwXyZaBc34DeFgHiJkLmuT"
+    },
+    "dia": "lunes",
+    "especialidad": "Cardiología"
+  },
+  {
+    "fecha": "2025-06-25",
+    "cita_id": "CITA-004",
+    "estado": "Programada",
+    "hora": "10:30",
+    "paciente": {
+      "nombres_completos": "Valeria Nicole Mendoza",
+      "id": "P-VALn39ZxtFJ6MztXKL8CJqebYT47PkL"
+    },
+    "medico": {
+      "horario_disponible": "10:00 - 14:00",
+      "nombres_completos": "Dra. Camila Paredes",
+      "id": "M-Dermat93hTQr92Jm54zNcYu34WeRvt7"
+    },
+    "dia": "martes",
+    "especialidad": "Dermatología"
+  },
+  {
+    "fecha": "2025-06-26",
+    "cita_id": "CITA-005",
+    "estado": "Programada",
+    "hora": "08:30",
+    "paciente": {
+      "nombres_completos": "Natalie Roxana Suárez",
+      "id": "P-NAtrQw7vZLUeD3JKnFcX8aMIYePf14L"
+    },
+    "medico": {
+      "horario_disponible": "08:00 - 12:00",
+      "nombres_completos": "Dr. Manuel Castillo",
+      "id": "M-NeuXkz78LpQw4tHu59TyMvBgYeIoWr"
+    },
+    "dia": "miércoles",
+    "especialidad": "Neurología"
+  },
+  {
+    "fecha": "2025-06-27",
+    "cita_id": "CITA-006",
+    "estado": "Programada",
+    "hora": "11:00",
+    "paciente": {
+      "nombres_completos": "Alonso Enrique Ferrer",
+      "id": "P-AloEnFZ9WrkXZRM67CTyNvUoJQ8vVdP"
+    },
+    "medico": {
+      "horario_disponible": "10:00 - 13:00",
+      "nombres_completos": "Dra. Teresa Llontop",
+      "id": "M-GastroR45KPlZnv82MTfG9YiHpBqLoWX"
+    },
+    "dia": "jueves",
+    "especialidad": "Gastroenterología"
+  },
+  {
+    "fecha": "",
+    "cita_id": "CITA-LxHvXOcqOr",
+    "estado": "Programada",
+    "hora": "",
+    "paciente": {
+      "nombres_completos": "Jorge Mario Ayala",
+      "id": "P-Jorge Mario Ayala"
+    },
+    "medico": {
+      "horario_disponible": "lunes / 14:00 - 18:00",
+      "nombres_completos": "Dr. Javier Gómez",
+      "id": "M-QzXwEcRvTfGbYhUnJmIkOlPaSd19YT"
+    },
+    "dia": "",
+    "especialidad": "Gastroenterología"
+  },
+  {
+    "cita_id": "CITA-7cZTbQZOpB",
+    "estado": "Programada",
+    "hora": "jueves",
+    "paciente": {
+      "nombres_completos": "Luis Fernando Vega",
+      "id": "P-Luis Fernando Vega"
+    },
+    "medico": {
+      "horario_disponible": "08:00 - 12:00 / jueves",
+      "nombres_completos": "Dra. Isabel Castillo",
+      "id": "M-1a2B3c4D5e6F7g8H9i0JkLmNoPqRaZ"
+    },
+    "dia": "08:00 - 12:00",
+    "especialidad": "Oftalmología"
+  },
+  {
+    "cita_id": "CITA-vwzXSI0YO1",
+    "estado": "Programada",
+    "hora": "jueves",
+    "paciente": {
+      "nombres_completos": "Camila Soledad Ortiz",
+      "id": "P-Camila Soledad Ortiz"
+    },
+    "medico": {
+      "horario_disponible": "10:00 - 13:00 / jueves",
+      "nombres_completos": "Dr. Ernesto Cabrera",
+      "id": "M-fGhIjKlMnOpQrStUvWxYzAbCdE34sS"
+    },
+    "dia": "10:00 - 13:00",
+    "especialidad": "Ginecología"
+  }
+]

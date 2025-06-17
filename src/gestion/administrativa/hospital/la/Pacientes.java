@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import java.security.SecureRandom;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class Pacientes {
@@ -393,4 +395,25 @@ public class Pacientes {
         e.printStackTrace();
     }
 }
+    
+    public static void CargarNombresMedicos(JComboBox<String> comboBox) {
+        try {
+            String ruta = "src/gestion/administrativa/hospital/la/pacientes.json"; // Ajusta la ruta a tu archivo
+            String contenido = new String(Files.readAllBytes(Paths.get(ruta)));
+            JSONArray pacientes = new JSONArray(contenido);
+
+            comboBox.removeAllItems(); // Limpiar antes de agregar
+            comboBox.addItem("---------Sin seleccionar---------");
+            for (int i = 0; i < pacientes.length(); i++) {
+                JSONObject paciente = pacientes.getJSONObject(i);
+                JSONObject infoPersonal = paciente.getJSONObject("Información personal");
+
+                String nombreCompleto = infoPersonal.optString("Nombres completos", "Sin nombre");
+                comboBox.addItem(nombreCompleto);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

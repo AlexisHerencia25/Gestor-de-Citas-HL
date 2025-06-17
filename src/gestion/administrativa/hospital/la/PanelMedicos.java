@@ -28,10 +28,10 @@ public class PanelMedicos extends javax.swing.JPanel {
     public PanelMedicos() {
         initComponents();
         jScrollPane2.setBackground(Color.red);
-        TblMedicos.getColumnModel().getColumn(0).setPreferredWidth(70);   // ID
-        TblMedicos.getColumnModel().getColumn(1).setPreferredWidth(180);  // Nombres y Apellidos
-        TblMedicos.getColumnModel().getColumn(2).setPreferredWidth(130);  // Especialidad
-        TblMedicos.getColumnModel().getColumn(3).setPreferredWidth(350);
+        TblMedicos.getColumnModel().getColumn(0).setPreferredWidth(250);   // ID
+        TblMedicos.getColumnModel().getColumn(1).setPreferredWidth(150);  // Nombres y Apellidos
+        TblMedicos.getColumnModel().getColumn(2).setPreferredWidth(80);  // Especialidad
+        TblMedicos.getColumnModel().getColumn(3).setPreferredWidth(70);
     }
 
     /**
@@ -102,7 +102,7 @@ public class PanelMedicos extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "NOMBRES Y APELLIDOS", "ESPECIALIDAD", "HORARIOS DISPONIBLES"
+                "ID", "NOMBRES Y APELLIDOS", "CONTACTO", "ESPECIALIDAD"
             }
         ) {
             Class[] types = new Class [] {
