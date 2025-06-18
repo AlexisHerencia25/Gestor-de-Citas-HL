@@ -57,7 +57,7 @@ public class PanelMedicos extends javax.swing.JPanel {
         sublblTitulo = new javax.swing.JLabel();
         LblNombre = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
-        btnRegistrar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TblMedicos = new javax.swing.JTable();
         TxfFNombre = new javax.swing.JTextField();
@@ -95,17 +95,17 @@ public class PanelMedicos extends javax.swing.JPanel {
         });
         add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 160, 50));
 
-        btnRegistrar.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnRegistrar.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrar.setText("ELIMINAR");
-        btnRegistrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(0, 0, 0));
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 170, 50));
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 170, 50));
 
         TblMedicos.setBackground(new java.awt.Color(255, 255, 255));
         TblMedicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(8, 79, 176), 3));
@@ -172,7 +172,7 @@ public class PanelMedicos extends javax.swing.JPanel {
         base_de_datos.MostrarTablaMedicos(TxfFNombre, TblMedicos);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         PanelRegistrodeCitas registros = new PanelRegistrodeCitas(contenedor);
         registros.setSize(740, 530);
         registros.setLocation(0,0);
@@ -182,7 +182,7 @@ public class PanelMedicos extends javax.swing.JPanel {
         this.add(registros, BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void BotonRegresar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresar1MouseClicked
         PanelMenu_Hospital medicos_registro = new PanelMenu_Hospital();
@@ -213,7 +213,7 @@ public class PanelMedicos extends javax.swing.JPanel {
     private javax.swing.JTable TblMedicos;
     private javax.swing.JTextField TxfFNombre;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblMedicos;
     private javax.swing.JLabel lblTitulo;
