@@ -149,5 +149,21 @@
     },
     "dia": "10:00 - 13:00",
     "especialidad": "Ginecología"
+  },
+  {
+    "cita_id": "CITA-Y58Rkqv8Wh",
+    "estado": "Programada",
+    "hora": "viernes",
+    "paciente": {
+      "nombres_completos": "Alexis Javier Jesus Herencia Huaracha",
+      "id": "P-Alexis Javier Jesus Herencia Huaracha"
+    },
+    "medico": {
+      "horario_disponible": "12:00 - 16:00 / viernes",
+      "nombres_completos": "Dr. Esteban Vera",
+      "id": "M-zYxWvUtS12rQpOnMlKjIhGfEdCbAe4"
+    },
+    "dia": "12:00 - 16:00",
+    "especialidad": "Traumatología"
   }
 ]

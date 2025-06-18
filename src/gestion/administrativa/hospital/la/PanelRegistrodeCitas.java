@@ -10,6 +10,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import java.awt.BorderLayout;
+import java.awt.Cursor;
+import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
+import org.kordamp.ikonli.swing.FontIcon;
 /**
  *
  * @author Alexis
@@ -22,8 +27,13 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
     private BaseMedicos base_de_datos = new BaseMedicos("src/gestion/administrativa/hospital/la/medicos.json");
     private Pacientes paciente = new Pacientes();
     private List<JSONObject> listaMedicos;
-    public PanelRegistrodeCitas() {
+    private JPanel contenedor;
+    FontIcon icon = FontIcon.of(FontAwesomeSolid.CHEVRON_LEFT, 35);
+    public PanelRegistrodeCitas(JPanel content) {
         initComponents();
+        contenedor = content;
+        icon.setIconColor(java.awt.Color.RED);
+        BotonRegresar.setIcon(icon);
         base_de_datos.llenarComboEspecialidades(CB_Especialidad);
         paciente.CargarNombresMedicos(CB_Paciente);
     }
@@ -46,6 +56,7 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         CB_Paciente = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         Tabla_Médico = new javax.swing.JTable();
+        BotonRegresar = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,10 +66,10 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         Lbl_Titulo.setText("Registro de Citas");
         add(Lbl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 6, 460, -1));
 
-        lbl_especialidad.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_especialidad.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         lbl_especialidad.setForeground(new java.awt.Color(0, 0, 0));
         lbl_especialidad.setText("Médico:");
-        add(lbl_especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 92, 70, -1));
+        add(lbl_especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 80, -1));
 
         CB_Médicos.setBackground(new java.awt.Color(255, 255, 255));
         CB_Médicos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -70,7 +81,7 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
                 CB_MédicosItemStateChanged(evt);
             }
         });
-        add(CB_Médicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 88, -1, 39));
+        add(CB_Médicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, 39));
 
         CB_Especialidad.setBackground(new java.awt.Color(255, 255, 255));
         CB_Especialidad.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -82,7 +93,7 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
                 CB_EspecialidadItemStateChanged(evt);
             }
         });
-        add(CB_Especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 88, -1, 39));
+        add(CB_Especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, 39));
 
         BtnConfirmar.setBackground(new java.awt.Color(255, 255, 255));
         BtnConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -96,12 +107,12 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         });
         add(BtnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 170, 50));
 
-        lbl_especialidad1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_especialidad1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         lbl_especialidad1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_especialidad1.setText("Especialidad:");
         add(lbl_especialidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, -1, -1));
 
-        lbl_paciente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_paciente.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         lbl_paciente.setForeground(new java.awt.Color(0, 0, 0));
         lbl_paciente.setText("Paciente:");
         add(lbl_paciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
@@ -135,8 +146,21 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 145, 680, 300));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
-        add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 560));
+        BotonRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseExited(evt);
+            }
+        });
+        add(BotonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/registro-citas.jpg"))); // NOI18N
+        add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 530));
     }//GEN-END:initComponents
 
     public static void guardarFilaSeleccionada(JTable tabla) {
@@ -211,9 +235,31 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         base_de_datos.llenarTablaMedicoSeleccionado(Tabla_Médico, medicoSeleccionado);
     }//GEN-LAST:event_BtnConfirmarActionPerformed
 
+    private void BotonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseClicked
+        PanelMenu_Hospital medicos_registro = new PanelMenu_Hospital();
+        medicos_registro.setSize(740, 530);
+        medicos_registro.setLocation(0,0);
+        contenedor.setLayout(new BorderLayout());
+        contenedor.removeAll();
+        contenedor.add(medicos_registro, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }//GEN-LAST:event_BotonRegresarMouseClicked
+
+    private void BotonRegresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseEntered
+        icon.setIconColor(java.awt.Color.WHITE);
+        BotonRegresar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_BotonRegresarMouseEntered
+
+    private void BotonRegresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseExited
+        icon.setIconColor(java.awt.Color.RED);
+        BotonRegresar.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_BotonRegresarMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel BotonRegresar;
     private javax.swing.JButton BtnConfirmar;
     private javax.swing.JComboBox<String> CB_Especialidad;
     private javax.swing.JComboBox<String> CB_Médicos;

@@ -10,6 +10,12 @@ import java.text.SimpleDateFormat;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+
+import java.awt.*;
+import javax.swing.JOptionPane;
+import java.awt.Component;
+import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
+import org.kordamp.ikonli.swing.FontIcon;
 /**
  *
  * @author Alexis
@@ -17,11 +23,16 @@ import java.awt.*;
 public class PanelRegistroPacientes extends javax.swing.JPanel {
 
     JDateChooser dateChooser = new JDateChooser();
+    private JPanel contenedor;
+    FontIcon icon = FontIcon.of(FontAwesomeSolid.CHEVRON_LEFT, 35);
     /**
      * Creates new form PanelRegistroPacientesd
      */
-    public PanelRegistroPacientes() {
+    public PanelRegistroPacientes(JPanel content) {
         initComponents();
+        contenedor = content;
+        icon.setIconColor(java.awt.Color.RED);
+        BotonRegresar.setIcon(icon);
         add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 210, 30));
         dateChooser.getDateEditor().setEnabled(false);
         dateChooser.getDateEditor().getUiComponent().setForeground(Color.BLACK);
@@ -57,6 +68,7 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
         btnRegistrar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         TxtFAlergias = new javax.swing.JTextField();
+        BotonRegresar = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,25 +78,25 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
         LblTitulo.setText("REGISTRO DE PACIENTES");
         add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 480, 50));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("NOMBRES COMPLETOS:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, -1, -1));
 
         TxtFNombre.setBackground(new java.awt.Color(255, 255, 255));
         TxtFNombre.setForeground(new java.awt.Color(0, 0, 0));
         TxtFNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
         add(TxtFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 210, 30));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("FECHA DE NACIMIENTO:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("GÉNERO:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         CBSangre.setBackground(new java.awt.Color(255, 255, 255));
         CBSangre.setForeground(new java.awt.Color(0, 0, 0));
@@ -92,10 +104,10 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
         CBSangre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
         add(CBSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 210, 30));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("DNI:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
 
         TxtFDNI.setBackground(new java.awt.Color(255, 255, 255));
         TxtFDNI.setForeground(new java.awt.Color(0, 0, 0));
@@ -107,20 +119,20 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
         TxtFTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
         add(TxtFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 210, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("TELÉFONO:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
 
         TxtFEnfermedadesCronicas.setBackground(new java.awt.Color(255, 255, 255));
         TxtFEnfermedadesCronicas.setForeground(new java.awt.Color(0, 0, 0));
         TxtFEnfermedadesCronicas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
         add(TxtFEnfermedadesCronicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 210, 30));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("ENFERMEDADES CRONICAS:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
 
         CBGenero.setBackground(new java.awt.Color(255, 255, 255));
         CBGenero.setForeground(new java.awt.Color(0, 0, 0));
@@ -128,15 +140,15 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
         CBGenero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
         add(CBGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 210, 30));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("TIPO DE SANGRE:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("NOTAS MÉDICAS URGENTES:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, -1, -1));
 
         TxtFNotasMedicas.setBackground(new java.awt.Color(255, 255, 255));
         TxtFNotasMedicas.setForeground(new java.awt.Color(0, 0, 0));
@@ -155,17 +167,30 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
         });
         add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, 150, 60));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("ALERGIAS:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
         TxtFAlergias.setBackground(new java.awt.Color(255, 255, 255));
         TxtFAlergias.setForeground(new java.awt.Color(0, 0, 0));
         TxtFAlergias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
         add(TxtFAlergias, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 210, 30));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
+        BotonRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseExited(evt);
+            }
+        });
+        add(BotonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/registrar-pacientes.jpg"))); // NOI18N
         add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 510));
     }//GEN-END:initComponents
 
@@ -185,9 +210,31 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
                                             pacientes.generarIDAlfanumerico());
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void BotonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseClicked
+        PanelMenu_Hospital medicos_registro = new PanelMenu_Hospital();
+        medicos_registro.setSize(740, 530);
+        medicos_registro.setLocation(0,0);
+        contenedor.setLayout(new BorderLayout());
+        contenedor.removeAll();
+        contenedor.add(medicos_registro, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }//GEN-LAST:event_BotonRegresarMouseClicked
+
+    private void BotonRegresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseEntered
+        icon.setIconColor(java.awt.Color.WHITE);
+        BotonRegresar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_BotonRegresarMouseEntered
+
+    private void BotonRegresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseExited
+        icon.setIconColor(java.awt.Color.RED);
+        BotonRegresar.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_BotonRegresarMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel BotonRegresar;
     private javax.swing.JComboBox<String> CBGenero;
     private javax.swing.JComboBox<String> CBSangre;
     private javax.swing.JLabel LblTitulo;

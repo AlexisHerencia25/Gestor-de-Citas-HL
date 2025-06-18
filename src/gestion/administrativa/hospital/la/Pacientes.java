@@ -264,7 +264,8 @@ public class Pacientes {
                     diagnostico = ultimaAtencion.getString("diagnóstico");
                     medicoEncargado = ultimaAtencion.getString("Medico encargado");
                     
-                    PanelEditarPaciente pacientesform = new PanelEditarPaciente(IDEditar, nombresCompletos, fechaNacimiento, genero, dni, telefono, alergias, tipoSangre, enfermedadesCronicas, notasUrgentes);
+                    JPanel panel = new JPanel();
+                    PanelEditarPaciente pacientesform = new PanelEditarPaciente(IDEditar, nombresCompletos, fechaNacimiento, genero, dni, telefono, alergias, tipoSangre, enfermedadesCronicas, notasUrgentes, panel);
                     pacientesform.setSize(740, 530);
                     pacientesform.setLocation(0,0);
         

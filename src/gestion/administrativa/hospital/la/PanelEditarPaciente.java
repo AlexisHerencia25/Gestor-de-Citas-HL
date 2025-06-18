@@ -11,7 +11,16 @@ import com.toedter.calendar.JDateChooser;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import org.json.JSONObject;
+import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
+import org.kordamp.ikonli.swing.FontIcon;
+
+import java.awt.*;
+import javax.swing.JOptionPane;
+import java.awt.Component;
+import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
+import org.kordamp.ikonli.swing.FontIcon;
 /**
  *
  * @author Alexis
@@ -19,13 +28,18 @@ import org.json.JSONObject;
 public class PanelEditarPaciente extends javax.swing.JPanel {
 
     JDateChooser dateChooser = new JDateChooser();
+    private JPanel contenedor;
+    FontIcon icon = FontIcon.of(FontAwesomeSolid.CHEVRON_LEFT, 35);
     /**
      * Creates new form PanelEditarPaciente
      */
     public PanelEditarPaciente(String ID, String nombres, String fechaNacimiento, String genero,
         String dni, String telefono, String alergias, String tipoSangre,
-        String enfermedadesCronicas, String notasUrgentes) {
+        String enfermedadesCronicas, String notasUrgentes, JPanel content) {
         initComponents();
+        contenedor = content;
+        icon.setIconColor(java.awt.Color.RED);
+        BotonRegresar.setIcon(icon);
         TxtFID.setText(ID);
         TxtFNombre.setText(nombres);
         TxtFDNI.setText(dni);
@@ -89,6 +103,7 @@ public class PanelEditarPaciente extends javax.swing.JPanel {
         btnEditar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         TxtFAlergias = new javax.swing.JTextField();
+        BotonRegresar = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -208,7 +223,20 @@ public class PanelEditarPaciente extends javax.swing.JPanel {
         TxtFAlergias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 13, 236), 2));
         add(TxtFAlergias, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 210, 30));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
+        BotonRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonRegresarMouseExited(evt);
+            }
+        });
+        add(BotonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, -1, -1));
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/registrar-pacientes.jpg"))); // NOI18N
         add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 510));
     }//GEN-END:initComponents
 
@@ -227,9 +255,31 @@ public class PanelEditarPaciente extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
+    private void BotonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseClicked
+        PanelMenu_Hospital medicos_registro = new PanelMenu_Hospital();
+        medicos_registro.setSize(740, 530);
+        medicos_registro.setLocation(0,0);
+        contenedor.setLayout(new BorderLayout());
+        contenedor.removeAll();
+        contenedor.add(medicos_registro, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }//GEN-LAST:event_BotonRegresarMouseClicked
+
+    private void BotonRegresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseEntered
+        icon.setIconColor(java.awt.Color.WHITE);
+        BotonRegresar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_BotonRegresarMouseEntered
+
+    private void BotonRegresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseExited
+        icon.setIconColor(java.awt.Color.RED);
+        BotonRegresar.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_BotonRegresarMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel BotonRegresar;
     private javax.swing.JComboBox<String> CBGenero;
     private javax.swing.JComboBox<String> CBSangre;
     private javax.swing.JLabel LblTitulo;
