@@ -8,6 +8,12 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import org.json.JSONObject;
 
+
+import javax.swing.border.LineBorder;
+import java.awt.*;
+import javax.swing.JOptionPane;
+import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
+import org.kordamp.ikonli.swing.FontIcon;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.nio.file.Files;
@@ -25,13 +31,18 @@ public class PanelMedicos extends javax.swing.JPanel {
      */
     
     private BaseMedicos base_de_datos = new BaseMedicos("src/gestion/administrativa/hospital/la/medicos.json");
-    public PanelMedicos() {
+    private JPanel contenedor;
+    FontIcon icon = FontIcon.of(FontAwesomeSolid.CHEVRON_LEFT, 35);
+    public PanelMedicos(JPanel content) {
         initComponents();
         jScrollPane2.setBackground(Color.red);
         TblMedicos.getColumnModel().getColumn(0).setPreferredWidth(250);   // ID
         TblMedicos.getColumnModel().getColumn(1).setPreferredWidth(150);  // Nombres y Apellidos
         TblMedicos.getColumnModel().getColumn(2).setPreferredWidth(80);  // Especialidad
         TblMedicos.getColumnModel().getColumn(3).setPreferredWidth(70);
+        contenedor = content;
+        icon.setIconColor(java.awt.Color.RED);
+        BotonRegresar1.setIcon(icon);
     }
 
     /**
@@ -51,6 +62,7 @@ public class PanelMedicos extends javax.swing.JPanel {
         TblMedicos = new javax.swing.JTable();
         TxfFNombre = new javax.swing.JTextField();
         lblMedicos = new javax.swing.JLabel();
+        BotonRegresar1 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,7 +81,7 @@ public class PanelMedicos extends javax.swing.JPanel {
         LblNombre.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         LblNombre.setForeground(new java.awt.Color(0, 0, 0));
         LblNombre.setText("Nombre:");
-        add(LblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 110, -1));
+        add(LblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 110, -1));
 
         btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -81,7 +93,7 @@ public class PanelMedicos extends javax.swing.JPanel {
                 btnBuscarActionPerformed(evt);
             }
         });
-        add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 160, 50));
+        add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 160, 50));
 
         btnRegistrar.setBackground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -93,7 +105,7 @@ public class PanelMedicos extends javax.swing.JPanel {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 190, 50));
+        add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 190, 50));
 
         TblMedicos.setBackground(new java.awt.Color(255, 255, 255));
         TblMedicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(8, 79, 176), 3));
@@ -117,11 +129,11 @@ public class PanelMedicos extends javax.swing.JPanel {
         TblMedicos.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(TblMedicos);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 680, 240));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 680, 240));
 
         TxfFNombre.setBackground(new java.awt.Color(255, 255, 255));
         TxfFNombre.setForeground(new java.awt.Color(0, 0, 0));
-        add(TxfFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 350, 30));
+        add(TxfFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 350, 30));
 
         lblMedicos.setBackground(new java.awt.Color(255, 255, 255));
         lblMedicos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -129,13 +141,26 @@ public class PanelMedicos extends javax.swing.JPanel {
         lblMedicos.setText(" MEDICOS");
         lblMedicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(8, 79, 176), 3));
         lblMedicos.setOpaque(true);
-        add(lblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 680, 60));
+        add(lblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 680, 60));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
+        BotonRegresar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonRegresar1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonRegresar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonRegresar1MouseExited(evt);
+            }
+        });
+        add(BotonRegresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/paciente-registro.jpg"))); // NOI18N
         Background.setText("jLabel1");
         Background.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Background.setOpaque(true);
-        add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 540));
+        add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 510));
     }//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -143,7 +168,7 @@ public class PanelMedicos extends javax.swing.JPanel {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        PanelRegistrodeCitas registros = new PanelRegistrodeCitas();
+        PanelRegistrodeCitas registros = new PanelRegistrodeCitas(contenedor);
         registros.setSize(740, 530);
         registros.setLocation(0,0);
         
@@ -154,9 +179,31 @@ public class PanelMedicos extends javax.swing.JPanel {
         this.repaint();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void BotonRegresar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresar1MouseClicked
+        PanelMenu_Hospital medicos_registro = new PanelMenu_Hospital();
+        medicos_registro.setSize(740, 530);
+        medicos_registro.setLocation(0,0);
+        contenedor.setLayout(new BorderLayout());
+        contenedor.removeAll();
+        contenedor.add(medicos_registro, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }//GEN-LAST:event_BotonRegresar1MouseClicked
+
+    private void BotonRegresar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresar1MouseEntered
+        icon.setIconColor(java.awt.Color.WHITE);
+        BotonRegresar1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_BotonRegresar1MouseEntered
+
+    private void BotonRegresar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresar1MouseExited
+        icon.setIconColor(java.awt.Color.RED);
+        BotonRegresar1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_BotonRegresar1MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel BotonRegresar1;
     private javax.swing.JLabel LblNombre;
     private javax.swing.JTable TblMedicos;
     private javax.swing.JTextField TxfFNombre;

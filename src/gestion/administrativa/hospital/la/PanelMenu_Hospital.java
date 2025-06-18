@@ -55,11 +55,9 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
         LblPacientes = new javax.swing.JLabel();
         LblHospital = new javax.swing.JLabel();
         LblMedicos = new javax.swing.JLabel();
-        LblExamenes = new javax.swing.JLabel();
+        LblHistorialesClinicos = new javax.swing.JLabel();
         LblCitas = new javax.swing.JLabel();
         BtnAgendar = new javax.swing.JButton();
-
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -71,7 +69,7 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
         content.add(BackgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 730, 350));
 
         wsp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/wsp.png"))); // NOI18N
-        content.add(wsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 40, -1, 30));
+        content.add(wsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, 30));
 
         LblLoayza.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         LblLoayza.setForeground(new java.awt.Color(236, 31, 54));
@@ -80,18 +78,18 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
 
         LblNumero1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblNumero1.setForeground(new java.awt.Color(6, 5, 235));
-        LblNumero1.setText("4800");
-        content.add(LblNumero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 50, 60, -1));
+        LblNumero1.setText("0000");
+        content.add(LblNumero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 60, -1));
 
         LblContacto.setFont(new java.awt.Font("Segoe UI Semibold", 2, 18)); // NOI18N
         LblContacto.setForeground(new java.awt.Color(6, 5, 235));
         LblContacto.setText("CONTACTO");
-        content.add(LblContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 40, 100, -1));
+        content.add(LblContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 100, -1));
 
         LblNumero3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblNumero3.setForeground(new java.awt.Color(6, 5, 235));
-        LblNumero3.setText("509");
-        content.add(LblNumero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 20, -1, -1));
+        LblNumero3.setText("217");
+        content.add(LblNumero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, -1));
 
         LblPacientes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblPacientes.setForeground(new java.awt.Color(6, 5, 235));
@@ -108,7 +106,7 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
                 LblPacientesLblMouseSalirOpciones(evt);
             }
         });
-        content.add(LblPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 140, 150, 40));
+        content.add(LblPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 140, 130, 40));
 
         LblHospital.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         LblHospital.setForeground(new java.awt.Color(6, 5, 235));
@@ -130,19 +128,30 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
                 LblMedicosLblMouseSalirOpciones(evt);
             }
         });
-        content.add(LblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 140, 150, 40));
+        content.add(LblMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 140, 120, 40));
 
-        LblExamenes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        LblExamenes.setForeground(new java.awt.Color(48, 73, 101));
-        LblExamenes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LblExamenes.setText("Exámenes");
-        content.add(LblExamenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 140, 150, 40));
+        LblHistorialesClinicos.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        LblHistorialesClinicos.setForeground(new java.awt.Color(6, 5, 235));
+        LblHistorialesClinicos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblHistorialesClinicos.setText("Historiales clínicos");
+        LblHistorialesClinicos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LblHistorialesClinicosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LblHistorialesClinicosLblMouseEncimaOpciones(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LblHistorialesClinicosLblMouseSalirOpciones(evt);
+            }
+        });
+        content.add(LblHistorialesClinicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 210, 40));
 
         LblCitas.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblCitas.setForeground(new java.awt.Color(48, 73, 101));
         LblCitas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblCitas.setText("Citas médicas activas");
-        content.add(LblCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 140, 270, 40));
+        content.add(LblCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 240, 40));
 
         BtnAgendar.setBackground(new java.awt.Color(0, 74, 173));
         BtnAgendar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -157,71 +166,22 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
                 BtnAgendarActionPerformed(evt);
             }
         });
-        content.add(BtnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 20, 140, 70));
+        content.add(BtnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 20, 170, 70));
 
-        add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }//GEN-END:initComponents
 
-    private void LblPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesMouseClicked
-        PanelPacientes pacientes = new PanelPacientes(content);
-        pacientes.setSize(740, 530);
-        pacientes.setLocation(0,0);
-
-        content.setLayout(new BorderLayout());
-        content.removeAll();
-        content.add(pacientes, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-    }//GEN-LAST:event_LblPacientesMouseClicked
-
-    private void LblPacientesLblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesLblMouseEncimaOpciones
-        Object fuente = evt.getSource();
-        if (fuente instanceof JLabel){
-            JLabel label = (JLabel) fuente;
-            label.setForeground(Color.WHITE);
-            label.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        }
-    }//GEN-LAST:event_LblPacientesLblMouseEncimaOpciones
-
-    private void LblPacientesLblMouseSalirOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesLblMouseSalirOpciones
-        if (evt.getSource() instanceof JComponent componente){
-            componente.setForeground(new Color (6,5,235));
-            componente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-
-        }
-    }//GEN-LAST:event_LblPacientesLblMouseSalirOpciones
-
-    private void LblMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosMouseClicked
-        PanelMedicos medicos = new PanelMedicos();
-        medicos.setSize(740, 530);
-        medicos.setLocation(0,0);
-
-        content.setLayout(new BorderLayout());
-        content.removeAll();
-        content.add(medicos, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-    }//GEN-LAST:event_LblMedicosMouseClicked
-
-    private void LblMedicosLblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosLblMouseEncimaOpciones
-        Object fuente = evt.getSource();
-        if (fuente instanceof JLabel){
-            JLabel label = (JLabel) fuente;
-            label.setForeground(Color.WHITE);
-            label.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        }
-    }//GEN-LAST:event_LblMedicosLblMouseEncimaOpciones
-
-    private void LblMedicosLblMouseSalirOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosLblMouseSalirOpciones
-        if (evt.getSource() instanceof JComponent componente){
-            componente.setForeground(new Color (6,5,235));
-            componente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-
-        }
-    }//GEN-LAST:event_LblMedicosLblMouseSalirOpciones
-
     private void BtnAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgendarActionPerformed
-        PanelRegistrodeCitas registros = new PanelRegistrodeCitas();
+        PanelRegistrodeCitas registros = new PanelRegistrodeCitas(content);
         registros.setSize(740, 530);
         registros.setLocation(0,0);
 
@@ -232,6 +192,134 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
         content.repaint();
     }//GEN-LAST:event_BtnAgendarActionPerformed
 
+    private void LblHistorialesClinicosLblMouseSalirOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblHistorialesClinicosLblMouseSalirOpciones
+        if (evt.getSource() instanceof JComponent componente){
+            componente.setForeground(new Color (6,5,235));
+            componente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+        }
+    }//GEN-LAST:event_LblHistorialesClinicosLblMouseSalirOpciones
+
+    private void LblHistorialesClinicosLblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblHistorialesClinicosLblMouseEncimaOpciones
+        Object fuente = evt.getSource();
+        if (fuente instanceof JLabel){
+            JLabel label = (JLabel) fuente;
+            label.setForeground(Color.WHITE);
+            label.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
+    }//GEN-LAST:event_LblHistorialesClinicosLblMouseEncimaOpciones
+
+    private void LblHistorialesClinicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblHistorialesClinicosMouseClicked
+        PanelHistorialClinico historial = new PanelHistorialClinico(content);
+        historial.setSize(740, 530);
+        historial.setLocation(0,0);
+
+        content.setLayout(new BorderLayout());
+        content.removeAll();
+        content.add(historial, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_LblHistorialesClinicosMouseClicked
+
+    private void LblMedicosLblMouseSalirOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosLblMouseSalirOpciones
+        if (evt.getSource() instanceof JComponent componente){
+            componente.setForeground(new Color (6,5,235));
+            componente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+        }
+    }//GEN-LAST:event_LblMedicosLblMouseSalirOpciones
+
+    private void LblMedicosLblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosLblMouseEncimaOpciones
+        Object fuente = evt.getSource();
+        if (fuente instanceof JLabel){
+            JLabel label = (JLabel) fuente;
+            label.setForeground(Color.WHITE);
+            label.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
+    }//GEN-LAST:event_LblMedicosLblMouseEncimaOpciones
+
+    private void LblMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblMedicosMouseClicked
+        int opcion = JOptionPane.showOptionDialog(
+            this,
+            "¿Qué deseas hacer?\na) Registrar nuevos médicos\nb) Buscar y eliminar",
+            "Confirmación",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            new Object[] { "a", "b" },  // Opciones personalizadas
+            "Sí"
+        );
+        if (opcion == JOptionPane.YES_OPTION) {
+            PanelRegistroMedicos medicos_registro = new PanelRegistroMedicos(content);
+            medicos_registro.setSize(740, 530);
+            medicos_registro.setLocation(0,0);
+            content.setLayout(new BorderLayout());
+            content.removeAll();
+            content.add(medicos_registro, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+        } else if (opcion == JOptionPane.NO_OPTION) {
+            PanelMedicos medicos = new PanelMedicos(content);
+            medicos.setSize(740, 530);
+            medicos.setLocation(0,0);
+
+            content.setLayout(new BorderLayout());
+            content.removeAll();
+            content.add(medicos, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+        }
+    }//GEN-LAST:event_LblMedicosMouseClicked
+
+    private void LblPacientesLblMouseSalirOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesLblMouseSalirOpciones
+        if (evt.getSource() instanceof JComponent componente){
+            componente.setForeground(new Color (6,5,235));
+            componente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+        }
+    }//GEN-LAST:event_LblPacientesLblMouseSalirOpciones
+
+    private void LblPacientesLblMouseEncimaOpciones(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesLblMouseEncimaOpciones
+        Object fuente = evt.getSource();
+        if (fuente instanceof JLabel){
+            JLabel label = (JLabel) fuente;
+            label.setForeground(Color.WHITE);
+            label.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
+    }//GEN-LAST:event_LblPacientesLblMouseEncimaOpciones
+
+    private void LblPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblPacientesMouseClicked
+        int opcion = JOptionPane.showOptionDialog(
+            this,
+            "¿Qué deseas hacer?\na) Registrar nuevos pacientes\nb) Buscar y eliminar",
+            "Confirmación",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            new Object[] { "a", "b" },  // Opciones personalizadas
+            "Sí"
+        );
+        if (opcion == JOptionPane.YES_OPTION) {
+            PanelRegistroPacientes pacientes_registro = new PanelRegistroPacientes(content);
+            pacientes_registro.setSize(740, 530);
+            pacientes_registro.setLocation(0,0);
+            content.setLayout(new BorderLayout());
+            content.removeAll();
+            content.add(pacientes_registro, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+        } else if (opcion == JOptionPane.NO_OPTION) {
+            PanelPacientes pacientes = new PanelPacientes(content);
+            pacientes.setSize(740, 530);
+            pacientes.setLocation(0,0);
+            content.setLayout(new BorderLayout());
+            content.removeAll();
+            content.add(pacientes, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+        }
+    }//GEN-LAST:event_LblPacientesMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackgroundMenu;
@@ -239,7 +327,7 @@ public class PanelMenu_Hospital extends javax.swing.JPanel {
     private javax.swing.JLabel IconMenu;
     private javax.swing.JLabel LblCitas;
     private javax.swing.JLabel LblContacto;
-    private javax.swing.JLabel LblExamenes;
+    private javax.swing.JLabel LblHistorialesClinicos;
     private javax.swing.JLabel LblHospital;
     private javax.swing.JLabel LblLoayza;
     private javax.swing.JLabel LblMedicos;

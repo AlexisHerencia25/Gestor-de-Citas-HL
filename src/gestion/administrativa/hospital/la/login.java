@@ -5,13 +5,15 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.nio.file.Files;
 
 
 public class Login {
     
     static String rutaJSONAdministrador = "src/gestion/administrativa/hospital/la/admins.json";
-    
+    public String rolusuario = "";
     
     // HashMap para almacenar usuarios registrados
     private static final HashMap<String, Administrador> usuarios = new HashMap<>();
@@ -30,19 +32,24 @@ public class Login {
             JSONArray arreglo = new JSONArray(contenido.toString());
 
             for (int i = 0; i < arreglo.length(); i++) {
-                JSONObject objAdmin = arreglo.getJSONObject(i).getJSONObject("Administrador");
+                JSONObject objetoRol = arreglo.getJSONObject(i);
 
-                String usuario = objAdmin.getString("Usuario");
-                String contrasena = objAdmin.getString("Contraseña");
+                // Detecta el rol dinámicamente (Administrador, Auditor, etc.)
+                rolusuario = objetoRol.keys().next();
+                JSONObject datosUsuario = objetoRol.getJSONObject(rolusuario);
+
+                String usuario = datosUsuario.getString("Usuario");
+                String contrasena = datosUsuario.getString("Contraseña");
 
                 if (usuario.equals(nombreUsuario) && contrasena.equals(contraseña)) {
-                    return true; // Credenciales válidas
+                    System.out.println("Inicio de sesión exitoso como: " + rolusuario);
+                    return true;
                 }
             }
 
-            } catch (Exception e) {
-                System.out.println("Error al verificar credenciales: " + e.getMessage());
-            }
+        } catch (Exception e) {
+            System.out.println("Error al verificar credenciales: " + e.getMessage());
+        }
         return false;
     }
 
@@ -57,7 +64,7 @@ public class Login {
     }
     
     // Lectura de los usuarios de los administradores en el JSON
-    public static String LecturaJsonUsuarios(String usuarioBuscado) {
+    public String LecturaJsonUsuarios(String usuarioBuscado) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(rutaJSONAdministrador));
             StringBuilder contenido = new StringBuilder();
@@ -66,12 +73,17 @@ public class Login {
                 contenido.append(linea);
             }
             reader.close();
+
             JSONArray arreglo = new JSONArray(contenido.toString());
+
             for (int i = 0; i < arreglo.length(); i++) {
-                JSONObject objAdmin = arreglo.getJSONObject(i).getJSONObject("Administrador");
-                String usuario = objAdmin.getString("Usuario");
+                JSONObject objetoRol = arreglo.getJSONObject(i);
+                rolusuario = objetoRol.keys().next();
+                JSONObject datos = objetoRol.getJSONObject(rolusuario);
+
+                String usuario = datos.getString("Usuario");
                 if (usuario.equals(usuarioBuscado)) {
-                    return usuario;
+                    return "Usuario encontrado: " + usuario + " (" + rolusuario + ")";
                 }
             }
         } catch (Exception e) {

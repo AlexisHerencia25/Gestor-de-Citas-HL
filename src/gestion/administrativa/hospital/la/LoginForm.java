@@ -46,24 +46,30 @@ public class LoginForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/logo.jpeg"))); // NOI18N
+        getContentPane().add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 90));
 
         lblusuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblusuario.setForeground(new java.awt.Color(0, 0, 0));
         lblusuario.setText("USUARIO");
+        getContentPane().add(lblusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 80, 20));
 
         lblcontraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblcontraseña.setForeground(new java.awt.Color(0, 0, 0));
         lblcontraseña.setText("CONTRASEÑA");
+        getContentPane().add(lblcontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 120, -1));
 
         txtusuario.setBackground(new java.awt.Color(255, 255, 255));
         txtusuario.setForeground(new java.awt.Color(0, 0, 0));
         txtusuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        getContentPane().add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 430, 37));
 
         txtcontraseña.setBackground(new java.awt.Color(255, 255, 255));
         txtcontraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        getContentPane().add(txtcontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 430, 34));
 
         btnIniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -75,20 +81,24 @@ public class LoginForm extends javax.swing.JFrame {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
+        getContentPane().add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 300, 70));
 
         lbltitulo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         lbltitulo.setForeground(new java.awt.Color(0, 0, 0));
         lbltitulo.setText("ACCEDE AL SISTEMA");
+        getContentPane().add(lbltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 330, -1));
 
         chterminos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         chterminos.setForeground(new java.awt.Color(255, 255, 255));
         chterminos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         chterminos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(chterminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
         chdatos.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         chdatos.setForeground(new java.awt.Color(0, 0, 0));
         chdatos.setText("<html>HE LEÍDO Y ACEPTO EL TRATAMIENTO DE MIS DATOS PERSONALES<br>PARA FINALIDADES ADICONALES<html>");
         chdatos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        getContentPane().add(chdatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 480, 60));
 
         lblterminos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblterminos.setForeground(new java.awt.Color(0, 0, 0));
@@ -101,16 +111,33 @@ public class LoginForm extends javax.swing.JFrame {
                 JLabelMouseSalir(evt);
             }
         });
+        getContentPane().add(lblterminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 190, -1));
+        lblterminos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lblterminos.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                try {
+                    // Reemplaza el link con el de tu sitio o archivo
+                    java.awt.Desktop.getDesktop().browse(new java.net.URI("https://cdn.www.gob.pe/uploads/document/file/6097137/5393559-r-a-n-191-2024-hnal-op.pdf"));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/banner.jpeg"))); // NOI18N
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 430, -1));
 
         LblLoayza.setFont(new java.awt.Font("Corbel", 0, 24)); // NOI18N
         LblLoayza.setForeground(new java.awt.Color(255, 39, 40));
         LblLoayza.setText("LOAYZA NACIONAL");
+        getContentPane().add(LblLoayza, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 52, -1, -1));
 
         LblHospital.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
         LblHospital.setForeground(new java.awt.Color(6, 5, 235));
         LblHospital.setText("HOSPITAL ARZOBISPO");
+        getContentPane().add(LblHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         LblOlvideContraseña.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         LblOlvideContraseña.setForeground(new java.awt.Color(0, 0, 0));
@@ -126,96 +153,7 @@ public class LoginForm extends javax.swing.JFrame {
                 JLabelMouseSalir(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblHospital)
-                            .addComponent(LblLoayza)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lbltitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(LblOlvideContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(chterminos)
-                        .addGap(1, 1, 1)
-                        .addComponent(lblterminos, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(chdatos, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
-                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(LblHospital)
-                        .addGap(2, 2, 2)
-                        .addComponent(LblLoayza)))
-                .addGap(20, 20, 20)
-                .addComponent(lbltitulo)
-                .addGap(42, 42, 42)
-                .addComponent(lblusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(lblcontraseña)
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LblOlvideContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chterminos)
-                    .addComponent(lblterminos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addComponent(chdatos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(Background)
-        );
-
-        lblterminos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        lblterminos.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent e) {
-                try {
-                    // Reemplaza el link con el de tu sitio o archivo
-                    java.awt.Desktop.getDesktop().browse(new java.net.URI("https://cdn.www.gob.pe/uploads/document/file/6097137/5393559-r-a-n-191-2024-hnal-op.pdf"));
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
+        getContentPane().add(LblOlvideContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 100, 40));
 
         pack();
     }//GEN-END:initComponents
@@ -232,7 +170,7 @@ public class LoginForm extends javax.swing.JFrame {
             return;
         }
         if (login.iniciarSesion(usuario, contraseña)) {
-            JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso.");
+            JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso. \n(Usted ingreso como " + login.rolusuario + ")");
             this.dispose();
             FormMenu_Hospital menu = new FormMenu_Hospital();
             menu.setVisible(true);

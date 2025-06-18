@@ -36,7 +36,6 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         
         FontIcon iconoregresar = FontIcon.of(FontAwesomeSolid.CHEVRON_LEFT);
         iconoregresar.setIconColor(java.awt.Color.RED);
-        Iconoprueba.setIcon(iconoregresar);
     }
 
     /**
@@ -61,7 +60,6 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
         LblHistorialesClinicos = new javax.swing.JLabel();
         LblCitas = new javax.swing.JLabel();
         BtnAgendar = new javax.swing.JButton();
-        Iconoprueba = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
@@ -87,7 +85,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
 
         LblNumero1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblNumero1.setForeground(new java.awt.Color(6, 5, 235));
-        LblNumero1.setText("4800");
+        LblNumero1.setText("0000");
         content.add(LblNumero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 60, -1));
 
         LblContacto.setFont(new java.awt.Font("Segoe UI Semibold", 2, 18)); // NOI18N
@@ -97,7 +95,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
 
         LblNumero3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         LblNumero3.setForeground(new java.awt.Color(6, 5, 235));
-        LblNumero3.setText("509");
+        LblNumero3.setText("217");
         content.add(LblNumero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, -1));
 
         LblPacientes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
@@ -176,7 +174,6 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
             }
         });
         content.add(BtnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 20, 170, 70));
-        content.add(Iconoprueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 80, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -208,7 +205,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
                     "Sí"
                 );
         if (opcion == JOptionPane.YES_OPTION) {
-            PanelRegistroMedicos medicos_registro = new PanelRegistroMedicos();
+            PanelRegistroMedicos medicos_registro = new PanelRegistroMedicos(content);
             medicos_registro.setSize(740, 530);
             medicos_registro.setLocation(0,0);
             content.setLayout(new BorderLayout());
@@ -218,7 +215,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
             content.repaint();
             this.setTitle("Registro de Médicos");
         } else if (opcion == JOptionPane.NO_OPTION) {
-            PanelMedicos medicos = new PanelMedicos();
+            PanelMedicos medicos = new PanelMedicos(content);
             medicos.setSize(740, 530);
             medicos.setLocation(0,0);
         
@@ -243,7 +240,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
                     "Sí"
                 );
         if (opcion == JOptionPane.YES_OPTION) {
-            PanelRegistroPacientes pacientes_registro = new PanelRegistroPacientes();
+            PanelRegistroPacientes pacientes_registro = new PanelRegistroPacientes(content);
             pacientes_registro.setSize(740, 530);
             pacientes_registro.setLocation(0,0);
             content.setLayout(new BorderLayout());
@@ -283,7 +280,7 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
     }//GEN-LAST:event_LblMouseSalirOpciones
 
     private void BtnAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgendarActionPerformed
-        PanelRegistrodeCitas registros = new PanelRegistrodeCitas();
+        PanelRegistrodeCitas registros = new PanelRegistrodeCitas(content);
         registros.setSize(740, 530);
         registros.setLocation(0,0);
         
@@ -350,7 +347,6 @@ public class FormMenu_Hospital extends javax.swing.JFrame {
     private javax.swing.JLabel BackgroundMenu;
     private javax.swing.JButton BtnAgendar;
     private javax.swing.JLabel IconMenu;
-    private javax.swing.JLabel Iconoprueba;
     private javax.swing.JLabel LblCitas;
     private javax.swing.JLabel LblContacto;
     private javax.swing.JLabel LblHistorialesClinicos;
