@@ -198,6 +198,27 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
         Pacientes pacientes = new Pacientes();
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = dateChooser.getDate();
+        String nombre = TxtFNombre.getText().trim();
+        String genero = CBGenero.getSelectedItem().toString();
+        String dni = TxtFDNI.getText().trim();
+        String telefono = TxtFTelefono.getText().trim();
+        String alergias = TxtFAlergias.getText().trim();
+        String enfermedades = TxtFEnfermedadesCronicas.getText().trim();
+        String sangre = CBSangre.getSelectedItem().toString();
+        String notas = TxtFNotasMedicas.getText().trim();
+        if (nombre.isEmpty() || fecha == null || genero.isEmpty() || dni.isEmpty() || telefono.isEmpty() ||
+            alergias.isEmpty() || enfermedades.isEmpty() || sangre.isEmpty() || notas.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos.", "Campos incompletos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (!dni.matches("\\d{8}")) {
+            JOptionPane.showMessageDialog(null, "El DNI debe tener exactamente 8 dígitos numéricos.", "DNI inválido", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (!telefono.matches("0\\d{8}")) {
+            JOptionPane.showMessageDialog(null, "El teléfono debe tener 9 dígitos y comenzar con 0.", "Teléfono inválido", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         pacientes.RegistrarNuevosPacientes(TxtFNombre.getText(), 
                                             formato.format(fecha), 
                                             CBGenero.getSelectedItem().toString(), 
@@ -208,6 +229,7 @@ public class PanelRegistroPacientes extends javax.swing.JPanel {
                                             CBSangre.getSelectedItem().toString(), 
                                             TxtFNotasMedicas.getText(), 
                                             pacientes.generarIDAlfanumerico());
+        JOptionPane.showMessageDialog(null, "Paciente registrado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void BotonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseClicked

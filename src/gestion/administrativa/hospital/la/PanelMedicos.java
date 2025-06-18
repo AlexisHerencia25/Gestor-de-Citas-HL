@@ -98,14 +98,14 @@ public class PanelMedicos extends javax.swing.JPanel {
         btnRegistrar.setBackground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrar.setText("REGISTRAR CITA");
+        btnRegistrar.setText("ELIMINAR");
         btnRegistrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 190, 50));
+        add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 170, 50));
 
         TblMedicos.setBackground(new java.awt.Color(255, 255, 255));
         TblMedicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(8, 79, 176), 3));
@@ -164,6 +164,11 @@ public class PanelMedicos extends javax.swing.JPanel {
     }//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        String nombre = TxfFNombre.getText().trim();
+        if (nombre.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar un nombre para realizar la búsqueda.", "Campo vacío", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         base_de_datos.MostrarTablaMedicos(TxfFNombre, TblMedicos);
     }//GEN-LAST:event_btnBuscarActionPerformed
 

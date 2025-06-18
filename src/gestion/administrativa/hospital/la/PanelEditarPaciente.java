@@ -245,13 +245,37 @@ public class PanelEditarPaciente extends javax.swing.JPanel {
         JSONObject nuevoPaciente = new JSONObject();
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = dateChooser.getDate();
-        try{
-            paciente.ConfirmarEdicion(TxtFID.getText(), TxtFNombre.getText(), formato.format(fecha), 
-                CBGenero.getSelectedItem().toString(), TxtFDNI.getText(), TxtFTelefono.getText(),
-                TxtFAlergias.getText(), TxtFEnfermedadesCronicas.getText(), CBSangre.getSelectedItem().toString(), TxtFNotasMedicas.getText());
+
+        String id = TxtFID.getText().trim();
+        String nombre = TxtFNombre.getText().trim();
+        String dni = TxtFDNI.getText().trim();
+        String telefono = TxtFTelefono.getText().trim();
+        String alergias = TxtFAlergias.getText().trim();
+        String enfermedades = TxtFEnfermedadesCronicas.getText().trim();
+        String sangre = CBSangre.getSelectedItem().toString().trim();
+        String notas = TxtFNotasMedicas.getText().trim();
+        String genero = CBGenero.getSelectedItem().toString().trim();
+        if (id.isEmpty() || nombre.isEmpty() || fecha == null || genero.isEmpty() || 
+            dni.isEmpty() || telefono.isEmpty() || alergias.isEmpty() || 
+            enfermedades.isEmpty() || sangre.isEmpty() || notas.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor complete todos los campos antes de continuar.", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (!dni.matches("\\d{8}")) {
+            JOptionPane.showMessageDialog(null, "El DNI debe contener exactamente 8 dígitos numéricos.", "DNI inválido", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (!telefono.matches("0\\d{8}")) {
+            JOptionPane.showMessageDialog(null, "El teléfono debe comenzar con 0 y tener exactamente 9 dígitos.", "Teléfono inválido", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        try {
+            paciente.ConfirmarEdicion(id, nombre, formato.format(fecha), 
+                genero, dni, telefono, alergias, enfermedades, sangre, notas);
+        
             JOptionPane.showMessageDialog(null, "Se editaron correctamente los cambios.", "Editado", JOptionPane.INFORMATION_MESSAGE);
-        } catch (Exception ex){
-            JOptionPane.showMessageDialog(null, "No se pudieron realizar los cambios: " + ex.getMessage(), "ERROR", JOptionPane.ERROR);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "No se pudieron realizar los cambios: " + ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 

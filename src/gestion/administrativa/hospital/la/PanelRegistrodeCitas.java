@@ -216,6 +216,16 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
     }//GEN-LAST:event_CB_EspecialidadItemStateChanged
 
     private void BtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConfirmarActionPerformed
+        int filaSeleccionada = Tabla_Médico.getSelectedRow();
+        if (filaSeleccionada == -1) {
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione un médico de la tabla.", "Médico no seleccionado", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        String nom_paciente = (String) CB_Paciente.getSelectedItem();
+        if (nom_paciente == null || nom_paciente.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione un paciente del combo box.", "Paciente no seleccionado", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         guardarFilaSeleccionada(Tabla_Médico);
         Ticket ticket = new Ticket();
         String nom_medico = Tabla_Médico.getValueAt(Tabla_Médico.getSelectedRow(), 0).toString();
@@ -224,7 +234,6 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         String dia_medico = Tabla_Médico.getValueAt(Tabla_Médico.getSelectedRow(), 3).toString();
         String horario_medico = hora_medico + " / " + dia_medico;
         String especialidad = Tabla_Médico.getValueAt(Tabla_Médico.getSelectedRow(), 4).toString();
-        String nom_paciente = CB_Paciente.getSelectedItem().toString();
         String id_paciente = ticket.ObtenerIDPaciente(nom_paciente);
         boolean generarticket = ticket.RegistrarNuevaCita(nom_medico, id_medico, dia_medico, hora_medico, especialidad, nom_paciente, id_paciente);
         if (generarticket){

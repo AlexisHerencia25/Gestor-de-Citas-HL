@@ -133,6 +133,12 @@ public class PanelHistorialClinico extends javax.swing.JPanel {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         Pacientes pacientes = new Pacientes();
+        String id = txtID.getText().trim();
+        String buscar = txtBuscar.getText().trim();
+        if (id.isEmpty() || buscar.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe completar ambos campos (ID y criterio de búsqueda) antes de continuar.", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+            return; // Cancelar búsqueda si hay campos vacíos
+        }
         pacientes.BuscarYMostrarHistorialClinico(tblinformacion, txtID, txtBuscar);
         tblinformacion.getColumnModel().getColumn(2).setCellRenderer(new DefaultTableCellRenderer() {
             @Override
