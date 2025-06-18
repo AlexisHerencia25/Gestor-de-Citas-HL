@@ -221,8 +221,7 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Por favor, seleccione un médico de la tabla.", "Médico no seleccionado", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        String nom_paciente = (String) CB_Paciente.getSelectedItem();
-        if (nom_paciente == null || nom_paciente.trim().isEmpty()) {
+        if (CB_Paciente.getSelectedItem().toString().equals("---------Sin seleccionar---------")) {
             JOptionPane.showMessageDialog(null, "Por favor, seleccione un paciente del combo box.", "Paciente no seleccionado", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -233,6 +232,7 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         String hora_medico = Tabla_Médico.getValueAt(Tabla_Médico.getSelectedRow(), 2).toString();
         String dia_medico = Tabla_Médico.getValueAt(Tabla_Médico.getSelectedRow(), 3).toString();
         String horario_medico = hora_medico + " / " + dia_medico;
+        String nom_paciente = (String) CB_Paciente.getSelectedItem();
         String especialidad = Tabla_Médico.getValueAt(Tabla_Médico.getSelectedRow(), 4).toString();
         String id_paciente = ticket.ObtenerIDPaciente(nom_paciente);
         boolean generarticket = ticket.RegistrarNuevaCita(nom_medico, id_medico, dia_medico, hora_medico, especialidad, nom_paciente, id_paciente);
@@ -240,6 +240,8 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
             //Mensaje de que se creo un ticket
             ticket.generarCitaPDF(nom_paciente, id_paciente, horario_medico, especialidad, nom_medico, ticket.CantidadCitas(), "src/gestion/administrativa/hospital/la/ticket/ticket" + String.format("%03d", ticket.CantidadCitas()) + ".pdf");
         }
+        else
+            JOptionPane.showMessageDialog(null, "No se puede registrar la cita ya que ese horario ya esta programado\nPor favor, elija otro.", "Cita cancelada", JOptionPane.WARNING_MESSAGE);
         String medicoSeleccionado = (String) CB_Médicos.getSelectedItem();
         base_de_datos.llenarTablaMedicoSeleccionado(Tabla_Médico, medicoSeleccionado);
     }//GEN-LAST:event_BtnConfirmarActionPerformed

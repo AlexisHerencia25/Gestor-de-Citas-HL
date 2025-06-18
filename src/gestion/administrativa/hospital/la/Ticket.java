@@ -129,6 +129,23 @@ public class Ticket {
         try {
             String contenido = new String(Files.readAllBytes(jsoncitas.toPath()));
             JSONArray citas = new JSONArray(contenido);
+            
+            for (int i = 0; i < citas.length(); i++) {
+                JSONObject citaExistente = citas.getJSONObject(i);
+                JSONObject medicoExistente = citaExistente.getJSONObject("medico");
+                String idMedicoExistente = medicoExistente.getString("id");
+                String diaExistente = citaExistente.getString("dia");
+                String horaExistente = citaExistente.getString("hora");
+                String estado = citaExistente.getString("estado");
+
+                if (estado.equalsIgnoreCase("Programada") &&
+                    idMedicoExistente.equals(id_medico) &&
+                    diaExistente.equals(dia) &&
+                    horaExistente.equals(hora)) {
+                    System.err.println("Conflicto: Ya existe una cita programada para este médico en el mismo día y hora.");
+                    return false;
+                }
+            }
 
             JSONObject paciente = new JSONObject();
             paciente.put("nombres_completos", nombre_paciente);
