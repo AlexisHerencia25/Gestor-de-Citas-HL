@@ -171,6 +171,12 @@ public class PanelPacientes extends javax.swing.JPanel {
     }//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        String id = txtID.getText().trim();
+        String criterio = txtBuscar.getText().trim();
+        if (id.isEmpty() || criterio.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe llenar ambos campos: ID y criterio de búsqueda.", "Campos incompletos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         Pacientes pacientes = new Pacientes();
         pacientes.BuscarYMostrarPacientes(tblinformacion, txtID, txtBuscar);
         tblinformacion.getColumnModel().getColumn(2).setCellRenderer(new DefaultTableCellRenderer() {

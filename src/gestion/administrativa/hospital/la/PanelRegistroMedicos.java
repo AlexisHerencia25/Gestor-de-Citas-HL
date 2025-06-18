@@ -199,6 +199,33 @@ public class PanelRegistroMedicos extends javax.swing.JPanel {
         BaseMedicos medicos = new BaseMedicos("src/gestion/administrativa/hospital/la/medicos.json");
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = dateChooser.getDate();
+        String nombre = TxtFNombre.getText().trim();
+        String genero = CBGenero.getSelectedItem().toString();
+        String dni = TxtFDNI.getText().trim();
+        String telefono = TxtFTelefono.getText().trim();
+        String especialidad = TxtFEspecialidad.getText().trim();
+        String cargo = TxtFCargo.getText().trim();
+        String sangre = CBSangre.getSelectedItem().toString();
+        String area = TxtFArea.getText().trim();
+
+        // Validar campos vacíos
+        if (nombre.isEmpty() || fecha == null || genero.isEmpty() || dni.isEmpty() || telefono.isEmpty() ||
+            especialidad.isEmpty() || cargo.isEmpty() || sangre.isEmpty() || area.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos.", "Campos incompletos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Validar DNI: 8 dígitos numéricos
+        if (!dni.matches("\\d{8}")) {
+            JOptionPane.showMessageDialog(null, "El DNI debe tener exactamente 8 dígitos numéricos.", "DNI inválido", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Validar teléfono: debe tener 9 dígitos y comenzar con 0
+        if (!telefono.matches("0\\d{8}")) {
+            JOptionPane.showMessageDialog(null, "El teléfono debe tener 9 dígitos y comenzar con 0.", "Teléfono inválido", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         boolean registro = medicos.RegistrarNuevosMedicos(TxtFNombre.getText(), 
                                             formato.format(fecha), 
                                             CBGenero.getSelectedItem().toString(), 
