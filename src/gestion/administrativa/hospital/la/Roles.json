@@ -1,0 +1,24 @@
+[
+    {
+    "id": "ROL-001",
+    "nombre": "Administrador",
+    "descripcion": "Acceso completo al sistema"
+  },
+  {
+    "id": "ROL-002",
+    "nombre": "Supervisor",
+    "descripcion": "Acceso a consultas y reportes, con algunas funciones limitadas"
+  },
+  {
+    "id": "ROL-003",
+    "nombre": "Auditor",
+    "descripcion": "Solo acceso de consulta y generación de reportes"
+  },
+  {
+    "id": "ROL-004",
+    "nombre": "Médico",
+    "descripcion": "Acceso a historias clínicas y gestión de pacientes"
+  }
+
+
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "usuario": "admin01",
+    "rol_id": "ROL-001",
+    "activo": true
+  },
+  {
+    "usuario": "admin02",
+    "rol_id": "ROL-001",
+    "activo": true
+  },
+  {
+    "usuario": "jefeAdmin",
+    "rol_id": "ROL-001",
+    "activo": true
+  },
+  {
+    "usuario": "soporte01",
+    "rol_id": "ROL-001",
+    "activo": true
+  },
+  {
+    "usuario": "adminExtra",
+    "rol_id": "ROL-001",
+    "activo": true
+  },
+  {
+    "usuario": "auditor01",
+    "rol_id": "ROL-003",
+    "activo": true
+  },
+  {
+    "usuario": "supervisor01",
+    "rol_id": "ROL-002",
+    "activo": true
+  },
+  {
+    "usuario": "Medico01",
+    "rol_id": "ROL-004",
+    "activo": true
+  }
+]

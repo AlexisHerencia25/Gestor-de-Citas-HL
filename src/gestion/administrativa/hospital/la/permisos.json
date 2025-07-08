@@ -1,0 +1,85 @@
+[
+  
+  {
+    "id": "PER-001",
+    "rol_id": "ROL-001",
+    "menu_id": "MEN-001",
+    "buscar":true,    
+    "consultar": true,
+    "agendar": true,
+    "editar": true,
+    "eliminar": true
+  },
+  {
+    "id": "PER-002",
+    "rol_id": "ROL-001",
+    "menu_id": "MEN-001",
+    "buscar":true,   
+    "consultar": true,
+    "agendar": true,
+    "editar": true,
+    "eliminar": true
+  },
+  {
+    "id": "PER-003",
+    "rol_id": "ROL-001",
+    "menu_id": "MEN-001",
+    "buscar":true,    
+    "consultar": true,
+    "agendar": true,
+    "editar": true,
+    "eliminar": true
+  },
+  {
+    "id": "PER-004",
+    "rol_id": "ROL-001",
+    "menu_id": "MEN-001",
+    "buscar":true,
+    "consultar": true,
+    "agendar": true,
+    "editar": true,
+    "eliminar": true
+  },
+  {
+    "id": "PER-005",
+    "rol_id": "ROL-001",
+    "menu_id": "MEN-001",
+    "buscar":true,
+    "consultar": true,
+    "agendar": true,
+    "editar": true,
+    "eliminar": true
+  },
+  {
+    "id": "PER-006",
+    "rol_id": "ROL-002",
+    "menu_id": "MEN-002",
+    "buscar":true,
+    "consultar": true,
+    "agendar": false,
+    "editar": true,
+    "eliminar": false
+  },
+  {
+    "id": "PER-007",
+    "rol_id": "ROL-003",
+    "menu_id": "MEN-003",
+    "buscar":true,
+    "consultar": true,
+    "agendar": true,
+    "editar": false,
+    "eliminar": true
+  },
+  {
+    "id": "PER-006",
+    "rol_id": "ROL-004",
+    "menu_id": "MEN-002",
+    "buscar":true,
+    "consultar": true,
+    "agendar": false,
+    "editar": false,
+    "eliminar": false
+  }
+  
+
+]
