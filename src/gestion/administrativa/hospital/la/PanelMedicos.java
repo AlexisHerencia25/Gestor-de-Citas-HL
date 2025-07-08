@@ -185,14 +185,31 @@ public class PanelMedicos extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void BotonRegresar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresar1MouseClicked
-        PanelMenu_Hospital medicos_registro = new PanelMenu_Hospital();
-        medicos_registro.setSize(740, 530);
-        medicos_registro.setLocation(0,0);
-        contenedor.setLayout(new BorderLayout());
-        contenedor.removeAll();
-        contenedor.add(medicos_registro, BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
+        Login login = new Login();
+        String rol=login.rolusuario;
+        if ("auditor".equalsIgnoreCase(rol)) {
+    FormAuditor auditor = new FormAuditor();
+    auditor.setVisible(true);
+    SwingUtilities.getWindowAncestor(this).dispose();
+} else if ("supervisor".equalsIgnoreCase(rol)) {
+    FormSupervisor supervisor = new FormSupervisor();
+    supervisor.setVisible(true);
+    SwingUtilities.getWindowAncestor(this).dispose();
+} else if ("medico".equalsIgnoreCase(rol)) {
+    FormMedico medico = new FormMedico();
+    medico.setVisible(true);
+    SwingUtilities.getWindowAncestor(this).dispose();
+} else {
+    // Rol desconocido: vuelve a menú principal
+    PanelMenu_Hospital medicos_registro = new PanelMenu_Hospital();
+    medicos_registro.setSize(740, 530);
+    medicos_registro.setLocation(0, 0);
+    contenedor.setLayout(new BorderLayout());
+    contenedor.removeAll();
+    contenedor.add(medicos_registro, BorderLayout.CENTER);
+    contenedor.revalidate();
+    contenedor.repaint();
+}
     }//GEN-LAST:event_BotonRegresar1MouseClicked
 
     private void BotonRegresar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresar1MouseEntered

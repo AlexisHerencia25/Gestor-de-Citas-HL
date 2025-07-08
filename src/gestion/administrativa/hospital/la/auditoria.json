@@ -1,0 +1,237 @@
+[
+    {
+        "acción": "inicio_sesión",
+        "fecha_hora": "2025-06-30T16:23:32-05:00",
+        "usuario": "admin01",
+        "detalles": "Inició sesión como Administrador"
+    },
+    {
+        "acción": "inicio_sesión",
+        "fecha_hora": "2025-06-30T16:26:03-05:00",
+        "usuario": "admin01",
+        "detalles": "Inició sesión como Administrador"
+    },
+    {
+        "objetivo": "supervisor01",
+        "acción": "cambio_rol",
+        "fecha_hora": "2025-06-30T16:26:34-05:00",
+        "usuario": "admin01",
+        "detalles": "Cambio de rol a Administrador (de rol anterior)"
+    },
+    {
+        "objetivo": "supervisor01",
+        "acción": "bloqueo",
+        "fecha_hora": "2025-06-30T16:26:43-05:00",
+        "usuario": "admin01",
+        "detalles": "Usuario bloqueado (estado anterior: falso)"
+    },
+    {
+        "objetivo": "supervisor01",
+        "acción": "desbloqueo",
+        "fecha_hora": "2025-06-30T16:26:59-05:00",
+        "usuario": "admin01",
+        "detalles": "Usuario desbloqueado (estado anterior: verdadero)"
+    },
+    {
+        "objetivo": "asiel",
+        "acción": "registro",
+        "fecha_hora": "2025-06-30T16:28:44-05:00",
+        "usuario": "admin01",
+        "detalles": "Registrado como Auditor"
+    },
+    {
+        "acción": "inicio_sesión",
+        "fecha_hora": "2025-06-30T16:38:16-05:00",
+        "usuario": "admin01",
+        "detalles": "Inició sesión como Administrador"
+    },
+    {
+        "acción": "inicio_sesión",
+        "fecha_hora": "2025-06-30T16:40:13-05:00",
+        "usuario": "admin01",
+        "detalles": "Inició sesión como Administrador"
+    },
+    {
+        "acción": "inicio_sesión",
+        "fecha_hora": "2025-06-30T17:44:12-05:00",
+        "usuario": "auditor01",
+        "detalles": "Inició sesión como Auditor"
+    },
+    {
+        "acción": "inicio_sesión",
+        "fecha_hora": "2025-06-30T17:44:32-05:00",
+        "usuario": "admin01",
+        "detalles": "Inició sesión como Administrador"
+    },
+    {
+        "objetivo": "auditor01",
+        "acción": "cambio_rol",
+        "fecha_hora": "2025-06-30T17:44:48-05:00",
+        "usuario": "admin01",
+        "detalles": "Cambio de rol a Supervisor (de Auditor)"
+    },
+    {
+        "objetivo": "asiel",
+        "acción": "registro",
+        "fecha_hora": "2025-06-30T17:45:27-05:00",
+        "usuario": "admin01",
+        "detalles": "Registrado como Auditor"
+    },
+    {
+        "acción": "inicio_sesión",
+        "fecha_hora": "2025-06-30T18:02:35-05:00",
+        "usuario": "admin01",
+        "detalles": "Inició sesión como Administrador"
+    },
+    {
+        "acción": "selección_rol",
+        "fecha_hora": "2025-06-30T18:02:51-05:00",
+        "usuario": "admin01",
+        "detalles": "Rol seleccionado: Médico"
+    },
+    {
+        "acción": "selección_rol",
+        "fecha_hora": "2025-06-30T18:03:31-05:00",
+        "usuario": "admin01",
+        "detalles": "Rol seleccionado: Supervisor"
+    },
+    {
+        "objetivo": "perritocaliente",
+        "acción": "registro",
+        "fecha_hora": "2025-06-30T18:03:32-05:00",
+        "usuario": "admin01",
+        "detalles": "Registrado como Supervisor"
+    },
+    {
+        "acción": "selección_rol",
+        "fecha_hora": "2025-06-30T18:10:10-05:00",
+        "usuario": "admin01",
+        "detalles": "Rol seleccionado: Auditor"
+    },
+    {
+        "objetivo": "admin01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-06-30T18:38:24.3430237-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario admin01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "admin01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-06-30T20:18:20.1269223-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario admin01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "admin02",
+        "acción": "Eliminación",
+        "fecha_hora": "2025-06-30T20:18:35.4934037-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario admin02 ha sido eliminado"
+    },
+    {
+        "objetivo": "admin01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-06-30T20:20:38.2575576-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario admin01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "adminExtra",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-02T15:49:05.2218495-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario adminExtra inició sesión como Administrador"
+    },
+    {
+        "objetivo": "supervisor01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-02T15:51:26.1499432-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario supervisor01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "supervisor01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-02T15:52:02.8142298-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario supervisor01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "supervisor01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-02T15:53:58.1119621-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario supervisor01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "auditor01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-02T15:59:18.930407-05:00",
+        "usuario": "Supervisor",
+        "detalles": "Usuario auditor01 inició sesión como Supervisor"
+    },
+    {
+        "objetivo": "adminExtra",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-02T16:40:46.6931833-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario adminExtra inició sesión como Administrador"
+    },
+    {
+        "objetivo": "adminExtra",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-02T16:41:06.2315716-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario adminExtra inició sesión como Administrador"
+    },
+    {
+        "objetivo": "admin01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-06T21:43:54.2790187-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario admin01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "asiel",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-06T21:50:02.9454117-05:00",
+        "usuario": "Auditor",
+        "detalles": "Usuario asiel inició sesión como Auditor"
+    },
+    {
+        "objetivo": "perritocaliente",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-06T21:50:36.97928-05:00",
+        "usuario": "Supervisor",
+        "detalles": "Usuario perritocaliente inició sesión como Supervisor"
+    },
+    {
+        "objetivo": "supervisor01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-06T21:51:31.6374184-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario supervisor01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "supervisor01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-06T21:52:04.2434046-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario supervisor01 inició sesión como Administrador"
+    },
+    {
+        "objetivo": "auditor01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-06T21:52:58.6207572-05:00",
+        "usuario": "Supervisor",
+        "detalles": "Usuario auditor01 inició sesión como Supervisor"
+    },
+    {
+        "objetivo": "auditor01",
+        "acción": "Inicio de sesión",
+        "fecha_hora": "2025-07-06T21:58:02.9198239-05:00",
+        "usuario": "Supervisor",
+        "detalles": "Usuario auditor01 inició sesión como Supervisor"
+    }
+]

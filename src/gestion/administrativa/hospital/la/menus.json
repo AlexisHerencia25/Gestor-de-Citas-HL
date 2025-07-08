@@ -1,0 +1,38 @@
+[
+  {
+    "id": "MEN-001",
+    "nombre": "Gestión de Usuarios",
+    "ruta": "/usuarios",
+    "icono": "people"
+  },
+  {
+    "id": "MEN-002",
+    "nombre": "Gestión de Pacientes",
+    "ruta": "/pacientes",
+    "icono": "personal_injury"
+  },
+  {
+    "id": "MEN-003",
+    "nombre": "Gestión de Médicos",
+    "ruta": "/medicos",
+    "icono": "medical_services"
+  },
+  {
+    "id": "MEN-004",
+    "nombre": "Gestión de Citas",
+    "ruta": "/citas",
+    "icono": "event"
+  },
+  {
+    "id": "MEN-005",
+    "nombre": "Reportes",
+    "ruta": "/reportes",
+    "icono": "assessment"
+  },
+  {
+    "id": "MEN-006",
+    "nombre": "Auditoría",
+    "ruta": "/auditoria",
+    "icono": "security"
+  }
+]

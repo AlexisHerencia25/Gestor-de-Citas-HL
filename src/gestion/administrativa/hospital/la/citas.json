@@ -165,5 +165,69 @@
     },
     "dia": "12:00 - 16:00",
     "especialidad": "Traumatología"
+  },
+  {
+    "cita_id": "CITA-98OoGldZOF",
+    "estado": "Programada",
+    "hora": "miércoles",
+    "paciente": {
+      "nombres_completos": "Ana Patricia Gutiérrez",
+      "id": "P-Ana Patricia Gutiérrez"
+    },
+    "medico": {
+      "horario_disponible": "08:00 - 12:00 / miércoles",
+      "nombres_completos": "Dr. Javier Gómez",
+      "id": "M-QzXwEcRvTfGbYhUnJmIkOlPaSd19YT"
+    },
+    "dia": "08:00 - 12:00",
+    "especialidad": "Gastroenterología"
+  },
+  {
+    "cita_id": "CITA-OfFOyuXkvD",
+    "estado": "Programada",
+    "hora": "martes",
+    "paciente": {
+      "nombres_completos": "Carlos Perez",
+      "id": "P-Carlos Perez"
+    },
+    "medico": {
+      "horario_disponible": "10:00 - 14:00 / martes",
+      "nombres_completos": "Dr. Esteban Vera",
+      "id": "M-zYxWvUtS12rQpOnMlKjIhGfEdCbAe4"
+    },
+    "dia": "10:00 - 14:00",
+    "especialidad": "Traumatología"
+  },
+  {
+    "cita_id": "CITA-D0ZLDo3HB0",
+    "estado": "Programada",
+    "hora": "lunes",
+    "paciente": {
+      "nombres_completos": "Valeria Noemí Pinto",
+      "id": "P-Valeria Noemí Pinto"
+    },
+    "medico": {
+      "horario_disponible": "14:00 - 18:00 / lunes",
+      "nombres_completos": "Dr. Javier Gómez",
+      "id": "M-QzXwEcRvTfGbYhUnJmIkOlPaSd19YT"
+    },
+    "dia": "14:00 - 18:00",
+    "especialidad": "Gastroenterología"
+  },
+  {
+    "cita_id": "CITA-sozUC08lVM",
+    "estado": "Programada",
+    "hora": "jueves",
+    "paciente": {
+      "nombres_completos": "Camila Soledad Ortiz",
+      "id": "P-Camila Soledad Ortiz"
+    },
+    "medico": {
+      "horario_disponible": "10:00 - 14:00 / jueves",
+      "nombres_completos": "Dr. Pablo Linares",
+      "id": "M-XyZaBcDeFgHiJkLmNoPqRsTuVw34nC"
+    },
+    "dia": "10:00 - 14:00",
+    "especialidad": "Pediatría"
   }
 ]

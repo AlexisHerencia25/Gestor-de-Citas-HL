@@ -17,9 +17,30 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    // Getters y setters comunes
-    public String getNombreUsuario() { return nombreUsuario; }
-    public String getContraseña() { return contraseña; }
-    public void setNombreUsuario(String nombreUsuario) { this.nombreUsuario = nombreUsuario; }
-    public void setContraseña(String contraseña) { this.contraseña = contraseña; }
+    public Usuario() {
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+    
+    
+    
+
+   
+    
+
+    
 }
