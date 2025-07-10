@@ -283,4 +283,55 @@ public class Ticket {
 
         return hoy.plusDays(diasDiferencia);
     }
+    public boolean ReprogramarCita(String citaId, String nuevoDia, String nuevaHora) {
+    try {
+        String contenido = new String(Files.readAllBytes(jsoncitas.toPath()));
+        JSONArray citas = new JSONArray(contenido);
+
+        for (int i = 0; i < citas.length(); i++) {
+            JSONObject cita = citas.getJSONObject(i);
+
+            if (cita.getString("cita_id").equals(citaId)) {
+                JSONObject medico = cita.getJSONObject("medico");
+                String idMedico = medico.getString("id");
+
+                // Verificar si hay conflicto
+                for (int j = 0; j < citas.length(); j++) {
+                    if (j == i) continue; // Saltar la cita actual
+
+                    JSONObject otraCita = citas.getJSONObject(j);
+                    JSONObject otroMedico = otraCita.getJSONObject("medico");
+
+                    boolean mismoMedico = otroMedico.getString("id").equals(idMedico);
+                    boolean mismoDia = otraCita.getString("dia").equalsIgnoreCase(nuevoDia);
+                    boolean mismaHora = otraCita.getString("hora").equals(nuevaHora);
+                    boolean activa = otraCita.getString("estado").equalsIgnoreCase("Programada");
+
+                    if (mismoMedico && mismoDia && mismaHora && activa) {
+                        System.err.println("⚠️ Conflicto: el médico ya tiene una cita en ese horario.");
+                        return false;
+                    }
+                }
+
+                // Si no hay conflicto, actualizar la cita
+                cita.put("dia", nuevoDia);
+                cita.put("hora", nuevaHora);
+                cita.put("fecha", obtenerProximaFechaDesdeTexto(nuevoDia).toString());
+
+                // Guardar
+                Files.write(jsoncitas.toPath(), citas.toString(2).getBytes(),
+                    StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+
+                System.out.println("✅ Cita reprogramada correctamente.");
+                return true;
+            }
+        }
+
+        System.out.println("❌ No se encontró la cita con el ID especificado.");
+        return false;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+}
 }

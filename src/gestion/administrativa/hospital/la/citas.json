@@ -1,9 +1,9 @@
 [
   {
-    "fecha": "2025-06-21",
+    "fecha": "2025-07-15",
     "cita_id": "CITA-001",
     "estado": "Programada",
-    "hora": "12:30",
+    "hora": "08:00 - 12:00",
     "paciente": {
       "nombres_completos": "Luciana Andrea Ríos",
       "id": "P-ALzGEiJBI1g5tJMN38T8ClbHYZ9FMD"
@@ -13,14 +13,14 @@
       "nombres_completos": "Dr. Esteban Vera",
       "id": "M-aBc12XyZ90pQr34TuV56WlMn78kOJp"
     },
-    "dia": "viernes",
+    "dia": "martes",
     "especialidad": "Traumatología"
   },
   {
-    "fecha": "2025-06-22",
+    "fecha": "2025-07-10",
     "cita_id": "CITA-002",
     "estado": "Programada",
-    "hora": "09:00",
+    "hora": "14:00 - 17:00",
     "paciente": {
       "nombres_completos": "Martina Sofía Hidalgo",
       "id": "P-KL3Y7HiXBGqPLUzJQ1m98vFoCNZ2XRM"
@@ -30,7 +30,7 @@
       "nombres_completos": "Dra. Ana Torres",
       "id": "M-aBc12XyZ90pQr34TuV56WlMn78kOJp"
     },
-    "dia": "sábado",
+    "dia": "jueves",
     "especialidad": "Pediatría"
   },
   {
@@ -135,9 +135,10 @@
     "especialidad": "Oftalmología"
   },
   {
+    "fecha": "2025-07-10",
     "cita_id": "CITA-vwzXSI0YO1",
     "estado": "Programada",
-    "hora": "jueves",
+    "hora": "10:00 - 13:00",
     "paciente": {
       "nombres_completos": "Camila Soledad Ortiz",
       "id": "P-Camila Soledad Ortiz"
@@ -147,13 +148,14 @@
       "nombres_completos": "Dr. Ernesto Cabrera",
       "id": "M-fGhIjKlMnOpQrStUvWxYzAbCdE34sS"
     },
-    "dia": "10:00 - 13:00",
+    "dia": "jueves",
     "especialidad": "Ginecología"
   },
   {
+    "fecha": "2025-07-16",
     "cita_id": "CITA-Y58Rkqv8Wh",
     "estado": "Programada",
-    "hora": "viernes",
+    "hora": "14:00 - 18:00",
     "paciente": {
       "nombres_completos": "Alexis Javier Jesus Herencia Huaracha",
       "id": "P-Alexis Javier Jesus Herencia Huaracha"
@@ -163,7 +165,7 @@
       "nombres_completos": "Dr. Esteban Vera",
       "id": "M-zYxWvUtS12rQpOnMlKjIhGfEdCbAe4"
     },
-    "dia": "12:00 - 16:00",
+    "dia": "miércoles",
     "especialidad": "Traumatología"
   },
   {

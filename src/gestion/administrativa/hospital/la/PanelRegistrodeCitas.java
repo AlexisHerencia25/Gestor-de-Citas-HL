@@ -50,6 +50,7 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         lbl_especialidad = new javax.swing.JLabel();
         CB_Médicos = new javax.swing.JComboBox<>();
         CB_Especialidad = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         BtnConfirmar = new javax.swing.JButton();
         lbl_especialidad1 = new javax.swing.JLabel();
         lbl_paciente = new javax.swing.JLabel();
@@ -67,13 +68,10 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         add(Lbl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 6, 460, -1));
 
         lbl_especialidad.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        lbl_especialidad.setForeground(new java.awt.Color(0, 0, 0));
         lbl_especialidad.setText("Médico:");
         add(lbl_especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 80, -1));
 
-        CB_Médicos.setBackground(new java.awt.Color(255, 255, 255));
         CB_Médicos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        CB_Médicos.setForeground(new java.awt.Color(0, 0, 0));
         CB_Médicos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------Sin seleccionar---------" }));
         CB_Médicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
         CB_Médicos.addItemListener(new java.awt.event.ItemListener() {
@@ -83,9 +81,7 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         });
         add(CB_Médicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, 39));
 
-        CB_Especialidad.setBackground(new java.awt.Color(255, 255, 255));
         CB_Especialidad.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        CB_Especialidad.setForeground(new java.awt.Color(0, 0, 0));
         CB_Especialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------Sin seleccionar---------" }));
         CB_Especialidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
         CB_Especialidad.addItemListener(new java.awt.event.ItemListener() {
@@ -93,11 +89,24 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
                 CB_EspecialidadItemStateChanged(evt);
             }
         });
+        CB_Especialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_EspecialidadActionPerformed(evt);
+            }
+        });
         add(CB_Especialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, 39));
 
-        BtnConfirmar.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setText("REPROGRAMAR CITAS");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255), 3));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 170, 50));
+
         BtnConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BtnConfirmar.setForeground(new java.awt.Color(0, 0, 0));
         BtnConfirmar.setText("CONFIRMAR");
         BtnConfirmar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
         BtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,26 +114,21 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
                 BtnConfirmarActionPerformed(evt);
             }
         });
-        add(BtnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 170, 50));
+        add(BtnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 170, 50));
 
         lbl_especialidad1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        lbl_especialidad1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_especialidad1.setText("Especialidad:");
         add(lbl_especialidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, -1, -1));
 
         lbl_paciente.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        lbl_paciente.setForeground(new java.awt.Color(0, 0, 0));
         lbl_paciente.setText("Paciente:");
         add(lbl_paciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
-        CB_Paciente.setBackground(new java.awt.Color(255, 255, 255));
         CB_Paciente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        CB_Paciente.setForeground(new java.awt.Color(0, 0, 0));
         CB_Paciente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---------Sin seleccionar---------" }));
         CB_Paciente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(6, 5, 235), 3));
         add(CB_Paciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 220, 39));
 
-        Tabla_Médico.setBackground(new java.awt.Color(255, 255, 255));
         Tabla_Médico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Tabla_Médico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -284,6 +288,16 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
         BotonRegresar.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_BotonRegresarMouseExited
 
+    private void CB_EspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_EspecialidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_EspecialidadActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        FormReprogramarCitas form = new FormReprogramarCitas();
+        form.setVisible(true);
+        form.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
@@ -294,6 +308,7 @@ public class PanelRegistrodeCitas extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> CB_Paciente;
     private javax.swing.JLabel Lbl_Titulo;
     private javax.swing.JTable Tabla_Médico;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl_especialidad;
     private javax.swing.JLabel lbl_especialidad1;

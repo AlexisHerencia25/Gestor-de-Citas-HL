@@ -187,51 +187,44 @@
     },
     {
         "objetivo": "admin01",
+        "acción": "Bloqueo automático",
+        "fecha_hora": "2025-07-07T11:46:16.134624-05:00",
+        "usuario": "",
+        "detalles": "Usuario bloqueado tras 3 intentos fallidos."
+    },
+    {
+        "objetivo": "admin01",
+        "acción": "Bloqueo automático",
+        "fecha_hora": "2025-07-07T11:58:37.2930396-05:00",
+        "usuario": "",
+        "detalles": "Usuario bloqueado tras 3 intentos fallidos."
+    },
+    {
+        "objetivo": "admin01",
         "acción": "Inicio de sesión",
-        "fecha_hora": "2025-07-06T21:43:54.2790187-05:00",
+        "fecha_hora": "2025-07-08T22:44:50.2219624-05:00",
         "usuario": "Administrador",
         "detalles": "Usuario admin01 inició sesión como Administrador"
     },
     {
-        "objetivo": "asiel",
+        "objetivo": "admin01",
         "acción": "Inicio de sesión",
-        "fecha_hora": "2025-07-06T21:50:02.9454117-05:00",
-        "usuario": "Auditor",
-        "detalles": "Usuario asiel inició sesión como Auditor"
-    },
-    {
-        "objetivo": "perritocaliente",
-        "acción": "Inicio de sesión",
-        "fecha_hora": "2025-07-06T21:50:36.97928-05:00",
-        "usuario": "Supervisor",
-        "detalles": "Usuario perritocaliente inició sesión como Supervisor"
-    },
-    {
-        "objetivo": "supervisor01",
-        "acción": "Inicio de sesión",
-        "fecha_hora": "2025-07-06T21:51:31.6374184-05:00",
+        "fecha_hora": "2025-07-09T16:40:22.4191993-05:00",
         "usuario": "Administrador",
-        "detalles": "Usuario supervisor01 inició sesión como Administrador"
+        "detalles": "Usuario admin01 inició sesión como Administrador"
     },
     {
-        "objetivo": "supervisor01",
+        "objetivo": "admin01",
         "acción": "Inicio de sesión",
-        "fecha_hora": "2025-07-06T21:52:04.2434046-05:00",
+        "fecha_hora": "2025-07-09T17:45:17.4023325-05:00",
         "usuario": "Administrador",
-        "detalles": "Usuario supervisor01 inició sesión como Administrador"
+        "detalles": "Usuario admin01 inició sesión como Administrador"
     },
     {
-        "objetivo": "auditor01",
+        "objetivo": "admin01",
         "acción": "Inicio de sesión",
-        "fecha_hora": "2025-07-06T21:52:58.6207572-05:00",
-        "usuario": "Supervisor",
-        "detalles": "Usuario auditor01 inició sesión como Supervisor"
-    },
-    {
-        "objetivo": "auditor01",
-        "acción": "Inicio de sesión",
-        "fecha_hora": "2025-07-06T21:58:02.9198239-05:00",
-        "usuario": "Supervisor",
-        "detalles": "Usuario auditor01 inició sesión como Supervisor"
+        "fecha_hora": "2025-07-09T18:12:49.8130403-05:00",
+        "usuario": "Administrador",
+        "detalles": "Usuario admin01 inició sesión como Administrador"
     }
 ]

@@ -167,6 +167,14 @@ public class LoginForm extends javax.swing.JFrame {
         
         String rol=Login.iniciarSesion(usuario, contraseña);
         
+        if(!chterminos.isSelected()){
+            JOptionPane.showMessageDialog(this, "Debe aceptar los Términos y Condiciones.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if(!chdatos.isSelected()){
+            JOptionPane.showMessageDialog(this, "Debe aceptar el tratamiento de datos personales.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         if(rol != null)
         {
             JOptionPane.showMessageDialog(null,"Bienvenido: " +rol);
@@ -186,27 +194,8 @@ public class LoginForm extends javax.swing.JFrame {
         }
         this.dispose();
         }else{
-            JOptionPane.showMessageDialog(null, "Credenciales incorrectas");
+            Login.manejarIntentoFallido(usuario);
         }
-                
-            
-        /*
-        if(!chterminos.isSelected()){
-            JOptionPane.showMessageDialog(this, "Debe aceptar los Términos y Condiciones.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if(!chdatos.isSelected()){
-            JOptionPane.showMessageDialog(this, "Debe aceptar el tratamiento de datos personales.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if (login.iniciarSesion(usuario, contraseña)) {
-            JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso. \n(Usted ingreso como " + login.rolusuario + ")");
-            this.dispose();
-            FormMenu_Hospital menu = new FormMenu_Hospital();
-            menu.setVisible(true);
-        } else{
-            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
-        }*/
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void LblOlvideContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblOlvideContraseñaMouseClicked

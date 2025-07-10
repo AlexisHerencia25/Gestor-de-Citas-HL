@@ -54,32 +54,41 @@ public class FormRecuperacionContraseña extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Recuperacion Constraseña");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BtnAceptar.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 16)); // NOI18N
+        BtnAceptar.setBackground(new java.awt.Color(255, 255, 255));
+        BtnAceptar.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 16)); // NOI18N
         BtnAceptar.setForeground(new java.awt.Color(0, 0, 0));
         BtnAceptar.setText("ACEPTAR");
-        BtnAceptar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BtnAceptar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 204), 2));
         BtnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAceptarActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 210, 40));
 
         LblTitulo.setFont(new java.awt.Font("Chewy", 0, 36)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(57, 74, 128));
-        LblTitulo.setText("RECUPERAR CONTRASEÑA");
+        LblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblTitulo.setText("<html>RECUPERACIÓN DE<br>       CONTRASEÑA</html");
+        LblTitulo.setToolTipText("");
+        getContentPane().add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 280, -1));
 
-        LblCorreo.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 16)); // NOI18N
+        LblCorreo.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 20)); // NOI18N
         LblCorreo.setForeground(new java.awt.Color(0, 0, 0));
         LblCorreo.setText("CORREO ELECTRÓNICO");
+        getContentPane().add(LblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 220, -1));
 
-        LblClave.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 16)); // NOI18N
+        LblClave.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 20)); // NOI18N
         LblClave.setForeground(new java.awt.Color(0, 0, 0));
         LblClave.setText("CODIGO DE VERIFICACIÓN");
+        getContentPane().add(LblClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, -1, 30));
 
         LblEnvioCorrectamente.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
         LblEnvioCorrectamente.setForeground(new java.awt.Color(0, 204, 0));
         LblEnvioCorrectamente.setToolTipText("");
+        getContentPane().add(LblEnvioCorrectamente, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 210, 100));
 
         TxtFCorreo.setBackground(new java.awt.Color(255, 255, 255));
         TxtFCorreo.setForeground(new java.awt.Color(0, 0, 0));
@@ -89,61 +98,15 @@ public class FormRecuperacionContraseña extends javax.swing.JFrame {
                 TxtFCorreoKeyReleased(evt);
             }
         });
+        getContentPane().add(TxtFCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, 230, 30));
 
         TxtFClave.setBackground(new java.awt.Color(255, 255, 255));
         TxtFClave.setForeground(new java.awt.Color(0, 0, 0));
         TxtFClave.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(TxtFClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 230, 30));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/background.jpeg"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(LblCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(TxtFCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(LblClave, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(360, 360, 360)
-                .addComponent(LblEnvioCorrectamente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(LblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(TxtFClave, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(BtnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(LblCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(TxtFCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(LblClave))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(LblEnvioCorrectamente, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(LblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(TxtFClave, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(BtnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestion/administrativa/hospital/la/recuperacioncontraseña.png"))); // NOI18N
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, -1));
 
         pack();
     }//GEN-END:initComponents

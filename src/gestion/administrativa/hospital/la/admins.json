@@ -1,53 +1,62 @@
 [
     {"Administrador": {
+        "IntentosFallidos": 0,
         "Usuario": "admin01",
         "Correo electrónico": "alexisherencia25@gmail.com",
         "Bloqueado": false,
         "Contraseña": "lucas01"
     }},
     {"Administrador": {
+        "IntentosFallidos": 0,
         "Usuario": "jefeAdmin",
         "Correo electrónico": "jefe.admin@gmail.com",
         "Bloqueado": false,
         "Contraseña": "Jefe@2025"
     }},
     {"Administrador": {
+        "IntentosFallidos": 0,
         "Usuario": "soporte01",
         "Correo electrónico": "soporte@gmail.com",
         "Bloqueado": false,
         "Contraseña": "Soporte!123"
     }},
     {"Administrador": {
+        "IntentosFallidos": 0,
         "Usuario": "adminExtra",
         "Correo electrónico": "extra.admin@gmail.com",
         "Bloqueado": false,
         "Contraseña": "Extra$Admin9"
     }},
     {"Auditor": {
+        "IntentosFallidos": 0,
         "Usuario": "admin",
         "Correo electrónico": "asiel@gmail.com",
         "Bloqueado": false,
         "Contraseña": "123456"
     }},
     {"Administrador": {
+        "IntentosFallidos": 0,
         "Usuario": "supervisor01",
         "Correo electrónico": "supervisor.control@gmail.com",
         "Bloqueado": false,
         "Contraseña": "Super@vision2025"
     }},
     {"Supervisor": {
+        "IntentosFallidos": 0,
         "Usuario": "auditor01",
         "Correo electrónico": "auditor.seguridad@gmail.com",
         "Bloqueado": false,
         "Contraseña": "Audit#Secure2025"
     }},
     {"Auditor": {
+        "IntentosFallidos": 0,
         "Usuario": "asiel",
         "Correo electrónico": "corsio205@gmail.com",
         "Bloqueado": false,
         "Contraseña": "123212"
     }},
     {"Supervisor": {
+        "IntentosFallidos": 0,
         "Usuario": "perritocaliente",
         "Correo electrónico": "perro.205@gmail.com",
         "Bloqueado": false,

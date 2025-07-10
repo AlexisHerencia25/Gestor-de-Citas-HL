@@ -342,5 +342,42 @@ public class Login {
         }
         return false;
     }
+    public static void manejarIntentoFallido(String nombreUsuario) {
+    try {
+        JSONArray arreglo = readJsonFile(rutaJSONAdministrador);
 
+        for (int i = 0; i < arreglo.length(); i++) {
+            JSONObject objetoRol = arreglo.getJSONObject(i);
+            String rol = objetoRol.keys().next();
+            JSONObject datos = objetoRol.getJSONObject(rol);
+
+            if (datos.getString("Usuario").equals(nombreUsuario)) {
+                boolean bloqueado = datos.optBoolean("Bloqueado", false);
+                if (bloqueado) {
+                    JOptionPane.showMessageDialog(null, "Este usuario ya está bloqueado.", "Bloqueado", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                int intentos = datos.optInt("IntentosFallidos", 0) + 1;
+                datos.put("IntentosFallidos", intentos);
+
+                if (intentos >= 3) {
+                    datos.put("Bloqueado", true);
+                    registrarAuditoria("Bloqueo automático", nombreUsuario, "Usuario bloqueado tras 3 intentos fallidos.");
+                    JOptionPane.showMessageDialog(null, "Usuario bloqueado por múltiples intentos fallidos.", "Bloqueado", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Contraseña incorrecta. Intento " + intentos + " de 3.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                }
+                arreglo.put(i, new JSONObject().put(rol, datos));
+                writeJsonFile(rutaJSONAdministrador, arreglo);
+                return;
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "Usuario no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al leer el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error al manejar intento fallido: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
 }
